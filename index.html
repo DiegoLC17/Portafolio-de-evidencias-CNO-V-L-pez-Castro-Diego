@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+            <h1>Diego López Castro <b>A.K.A. HASIDBQYI</b></h1>
+            <h2>CNO V – Seguridad Informática</h2>
+            <h3>Universidad Politécnica de San Luis Potosí</h3>
+            <h4>Octavo semestre (8vo)</h4>
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="#inicio">
+                        <span class="icono">
+                            <img src="img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#notas">
+                        <span class="icono">
+                            <img src="img/notas.png" alt="Inicio">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#herramientas">
+                        <span class="icono">
+                            <img src="img/herramientas.png" alt="Inicio">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#proyectos">
+                        <span class="icono">
+                            <img src="img/proyectos.png" alt="Inicio">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#certificaciones">
+                        <span class="icono">
+                            <img src="img/certificaciones.png" alt="Inicio">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- ================= PRESENTACIÓN ================= -->
+    <section class="seccion">
+        <h2 class="seccion-titulo">PRESENTACIÓN DEL PORTAFOLIO</h2>
+
+        <div class="seccion-contenido izquierda">
+            <div class="seccion-texto">
+                <p>
+                    Aquí puedes escribir la presentación general de tu portafolio.
+                    Explica el objetivo del sitio, qué encontrará el visitante y
+                    cómo se relaciona con tu formación académica y profesional.
+                </p>
+            </div>
+
+            <div class="seccion-imagen">
+                <img src="img/portafolio.png" alt="Presentación del portafolio">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PERFIL ================= -->
+    <section class="seccion">
+        <h2 class="seccion-titulo">PERFIL DEL ESTUDIANTE</h2>
+
+        <div class="seccion-contenido derecha">
+            <div class="seccion-texto">
+                <p>
+                    Describe tu perfil como estudiante: habilidades, intereses,
+                    áreas de especialización y enfoque profesional.
+                </p>
+            </div>
+
+            <div class="seccion-imagen">
+                <img src="img/estudiante.png" alt="Perfil del estudiante">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INFORMACIÓN TÉCNICA ================= -->
+    <section class="seccion">
+        <h2 class="seccion-titulo">INFORMACIÓN TÉCNICA BÁSICA</h2>
+
+        <div class="seccion-contenido izquierda">
+            <div class="seccion-texto">
+                <p>
+                    Aquí puedes listar conocimientos técnicos, herramientas,
+                    lenguajes, metodologías o tecnologías que dominas.
+                </p>
+            </div>
+
+            <div class="seccion-imagen">
+                <img src="img/informacion.png" alt="Información técnica básica">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="seccion">
+        <h2 class="seccion-titulo">FORMULARIO DE CONTACTO</h2>
+        <div>
+            <!-- modify this form HTML and place wherever you want your form -->
+            <form
+                class="formulario-contacto"
+                action="https://formspree.io/f/xgoaldzv"
+                method="POST"
+            >
+
+                <div class="campo-form">
+                    <label for="nombre">Escriba su nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Escriba su correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="mensaje">Escriba el mensaje que requiera enviar</label>
+                    <textarea id="mensaje" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+
+                <p class="leyenda-form">
+                    Luego del envío, me contactaré a la brevedad
+                </p>
+
+            </form>
+        </div>
+        <!-- El formulario lo podemos agregar después -->
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <a href="#">Aviso de privacidad</a>
+            <a href="#">Contacto</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
