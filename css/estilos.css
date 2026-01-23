@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #CFCFCF;
+    color: #333;
+}
+
+main {
+    flex: 1;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background-color: #1f1f1f;
+    padding: 20px 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/* ---------- TÍTULOS (IZQUIERDA) ---------- */
+
+.header-titulos {
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.header-titulos h1,
+.header-titulos h2,
+.header-titulos h3,
+.header-titulos h4 {
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+/* ---------- NAVEGACIÓN (DERECHA) ---------- */
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header-nav ul li {
+    display: flex;
+}
+
+/* BOTONES (TAMAÑO SEGÚN CONTENIDO) */
+.header-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;                 /* separación icono-texto */
+    padding: 0 28px;           /* el botón crece con el contenido */
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 1000;
+    /*border-left: 1px solid #444;*/
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ICONO */
+.header-nav .icono {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.header-nav .icono img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* TEXTO */
+.header-nav .texto {
+    white-space: nowrap;       /* evita saltos raros */
+}
+
+/* Hover */
+.header-nav ul li a:hover {
+    background-color: #e0e0e0;
+    color: #1f1f1f;
+}
+
+.header-nav ul li a:hover .icono {
+    background-color: #e0e0e0;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 20px 30px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* ayuda en pantallas pequeñas */
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-right a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-right a:hover {
+    color: #bdbdbd;
+}
+
+/* ================= MAIN ================= */
+
+main {
+    padding: 40px 60px;
+}
+
+/* Secciones */
+.seccion {
+    margin-bottom: 60px;
+}
+
+/* Títulos centrados */
+.seccion-titulo {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #1f1f1f;
+}
+
+/* Control de orientación imagen / texto */
+.seccion-contenido {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.seccion-contenido.izquierda {
+    flex-direction: row;
+}
+
+.seccion-contenido.derecha {
+    flex-direction: row-reverse;
+}
+
+.seccion-texto {
+    flex: 2;
+    background-color: #e6e6e6;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.seccion-texto p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 25px;
+}
+
+/* Imagen */
+.seccion-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.seccion-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.seccion-contenido.izquierda {
+    flex-direction: row-reverse;
+}
+
+.seccion-contenido.derecha {
+    flex-direction: row;
+}
+
+/* ================= FORMULARIO ================= */
+
+.formulario-contacto {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Contenedor de cada campo */
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1f1f1f;
+}
+
+/* Inputs y textarea */
+.campo-form input,
+.campo-form textarea {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: #1f1f1f;
+    background-color: #ffffff;
+}
+
+/* Botón */
+.formulario-contacto button {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.formulario-contacto button:hover {
+    background-color: #333;
+}
+
+.leyenda-form {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    /* ----- HEADER ----- */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-nav ul li a {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    /* ----- MAIN ----- */
+    main {
+        padding: 20px;
+    }
+
+    /* ----- SECCIONES ----- */
+    .seccion-contenido {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    .seccion-imagen {
+        justify-content: center;
+    }
+
+    .seccion-texto p {
+        font-size: 18px;
+    }
+
+    .seccion-titulo {
+        font-size: 22px;
+    }
+
+    /* ----- FORMULARIO ----- */
+    .formulario-contacto {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Títulos del header */
+    .header-titulos h1 {
+        font-size: 20px;
+    }
+
+    .header-titulos h2 {
+        font-size: 16px;
+    }
+
+    .header-titulos h3,
+    .header-titulos h4 {
+        font-size: 14px;
+    }
+
+    /* Texto general */
+    .seccion-texto p {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1255px) {
+    .header-nav .texto {
+        display: none;
+    }
+
+    .header-nav ul {
+        justify-content: center;
+    }
+
+    .header-nav ul li a {
+        padding: 12px;
+    }
+}
+
+/* ================= HEADER RESPONSIVE FINAL ================= */
+
+/* Tablet y monitores chicos: solo íconos, horizontal */
+@media (max-width: 1024px) {
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav .texto {
+        display: none;
+    }
+
+    .header-nav ul li a {
+        padding: 12px;
+    }
+}
+
+/* Celular: sigue horizontal (NO columna) */
+@media (max-width: 768px) {
+
+    .header-nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
