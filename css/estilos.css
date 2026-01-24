@@ -81,8 +81,8 @@ header {
 
 /* ICONO */
 .header-nav .icono {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,7 +361,7 @@ main {
     }
 }
 
-@media (max-width: 1255px) {
+@media (max-width: 1385px) {
     .header-nav .texto {
         display: none;
     }
@@ -416,3 +416,13 @@ main {
     }
 }
 
+/* Contenedor centrado solo con texto */
+.seccion-centrada {
+    display: flex;
+    justify-content: center;
+}
+
+.seccion-centrada .seccion-texto {
+    max-width: 900px;   /* ajusta el ancho si lo deseas */
+    width: 100%;
+}
