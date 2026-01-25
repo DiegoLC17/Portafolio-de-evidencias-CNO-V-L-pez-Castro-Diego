@@ -48,7 +48,7 @@ header {
 .header-titulos h3,
 .header-titulos h4 {
     font-weight: normal;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 /* ---------- NAVEGACIÓN (DERECHA) ---------- */
@@ -202,7 +202,7 @@ main {
 }
 
 .seccion-imagen img {
-    max-width: 80%;
+    max-width: 90%;
     height: auto;
     border-radius: 6px;
 }
