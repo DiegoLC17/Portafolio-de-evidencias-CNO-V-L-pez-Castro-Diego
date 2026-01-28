@@ -1,8 +1,10 @@
+/* ================= CONFIGURACIÓN GENERAL ================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html, body {
@@ -12,8 +14,8 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #CFCFCF;
-    color: #333;
+    background-color: #e6e6e6; /* fondo general un poco más oscuro */
+    color: #2b2b2b;
 }
 
 main {
@@ -23,153 +25,117 @@ main {
 /* ================= HEADER ================= */
 
 header {
-    background-color: #1f1f1f;
-    padding: 20px 30px;
+    background-color: #1b1b1b;
+    padding: 25px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 
-/* ---------- TÍTULOS (IZQUIERDA) ---------- */
+/* ---------- TÍTULOS HEADER ---------- */
 
 .header-titulos {
-    color: #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.2;
+    color: #e5e5e5;
+    line-height: 1.25;
 }
 
-.header-titulos h1,
-.header-titulos h2,
-.header-titulos h3,
-.header-titulos h4 {
-    font-weight: normal;
+.header-titulos h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
     margin-bottom: 6px;
 }
 
-/* ---------- NAVEGACIÓN (DERECHA) ---------- */
-
-.header-nav {
-    display: flex;
+.header-titulos h2 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #cfcfcf;
+    margin-bottom: 4px;
 }
+
+.header-titulos h3,
+.header-titulos h4 {
+    font-size: 15px;
+    color: #b5b5b5;
+}
+
+/* ---------- NAVEGACIÓN ---------- */
 
 .header-nav ul {
     list-style: none;
     display: flex;
 }
 
-.header-nav ul li {
-    display: flex;
-}
-
-/* BOTONES (TAMAÑO SEGÚN CONTENIDO) */
 .header-nav ul li a {
     display: flex;
     align-items: center;
-    gap: 12px;                 /* separación icono-texto */
-    padding: 0 28px;           /* el botón crece con el contenido */
-    color: #e0e0e0;
+    gap: 10px;
+    padding: 10px 22px;
+    color: #e5e5e5;
     text-decoration: none;
-    font-weight: 1000;
-    /*border-left: 1px solid #444;*/
-    transition: background 0.3s, color 0.3s;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ICONO */
+.header-nav ul li a:hover {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
 .header-nav .icono {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
 }
 
 .header-nav .icono img {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* TEXTO */
-.header-nav .texto {
-    white-space: nowrap;       /* evita saltos raros */
-}
-
-/* Hover */
-.header-nav ul li a:hover {
-    background-color: #e0e0e0;
-    color: #1f1f1f;
-}
-
-.header-nav ul li a:hover .icono {
-    background-color: #e0e0e0;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    padding: 20px 30px;
-    margin-top: 40px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* ayuda en pantallas pequeñas */
-}
-
-.footer-left p {
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.footer-right {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-right a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-right a:hover {
-    color: #bdbdbd;
 }
 
 /* ================= MAIN ================= */
 
-main {
-    padding: 40px 60px;
+.contenido-principal {
+    padding: 45px 70px; /* menos padding */
+    background-color: #dedede; /* fondo del main más oscuro */
 }
 
-/* Secciones */
+/* ================= SECCIONES ================= */
+
 .seccion {
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* antes 90px */
 }
 
-/* Títulos centrados */
+/* ---------- TÍTULOS DE SECCIÓN ---------- */
+
 .seccion-titulo {
     text-align: center;
-    font-size: 26px;
-    margin-bottom: 30px;
-    color: #1f1f1f;
+    font-size: 30px;
+    margin-bottom: 28px; /* antes 50px */
+    color: #1c1c1c;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
 }
 
-/* Control de orientación imagen / texto */
+.seccion-titulo::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #1c1c1c;
+    margin: 10px auto 0 auto; /* menos espacio */
+}
+
+/* ================= CONTENIDO ================= */
+
 .seccion-contenido {
     display: flex;
-    gap: 40px;
+    gap: 30px; /* antes 50px */
     align-items: center;
 }
 
@@ -181,38 +147,35 @@ main {
     flex-direction: row-reverse;
 }
 
+/* ---------- TEXTO ---------- */
+
 .seccion-texto {
     flex: 2;
-    background-color: #e6e6e6;
-    padding: 25px;
-    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 24px; /* antes 30px */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .seccion-texto p {
-    text-align: justify;
+    font-size: 18px;
     line-height: 1.6;
-    font-size: 22px;
+    text-align: justify;
 }
 
-/* Imagen */
+/* ---------- IMÁGENES SIN BORDES ---------- */
+
 .seccion-imagen {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .seccion-imagen img {
-    max-width: 90%;
+    max-width: 70%;
     height: auto;
-    border-radius: 6px;
-}
-
-.seccion-contenido.izquierda {
-    flex-direction: row-reverse;
-}
-
-.seccion-contenido.derecha {
-    flex-direction: row;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* ================= FORMULARIO ================= */
@@ -220,209 +183,119 @@ main {
 .formulario-contacto {
     max-width: 700px;
     margin: 0 auto;
-    background-color: #e6e6e6;
+    background-color: #ffffff;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Contenedor de cada campo */
 .campo-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 16px; /* menos espacio */
 }
 
 .campo-form label {
     font-weight: 600;
-    margin-bottom: 6px;
-    color: #1f1f1f;
+    margin-bottom: 5px;
 }
 
-/* Inputs y textarea */
 .campo-form input,
 .campo-form textarea {
-    padding: 10px;
+    padding: 9px;
     font-size: 15px;
-    border: 1px solid #999;
+    border: 1px solid #bbb;
     border-radius: 4px;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
 }
 
 .campo-form input:focus,
 .campo-form textarea:focus {
     outline: none;
-    border-color: #1f1f1f;
+    border-color: #1c1c1c;
     background-color: #ffffff;
 }
 
-/* Botón */
 .formulario-contacto button {
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    padding: 12px;
+    display: block; /* ← ESTA es la clave */
+    background-color: #1c1c1c;
+    color: #ffffff;
+    padding: 11px;
     border: none;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
-    display: block;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
 }
 
-.formulario-contacto button:hover {
-    background-color: #333;
-}
 
 .leyenda-form {
-    margin-top: 12px;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
     color: #555;
     font-style: italic;
 }
 
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #1c1c1c;
+    color: #e5e5e5;
+    padding: 22px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
-    /* ----- HEADER ----- */
+    .contenido-principal {
+        padding: 35px;
+    }
+
     .header-container {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
     }
 
-    .header-nav ul {
-        flex-direction: column;
-        width: 100%;
+    .header-nav .texto {
+        display: none;
     }
+}
 
-    .header-nav ul li a {
-        justify-content: center;
-        padding: 12px;
-    }
+@media (max-width: 768px) {
 
-    /* ----- MAIN ----- */
-    main {
+    .contenido-principal {
         padding: 20px;
     }
 
-    /* ----- SECCIONES ----- */
     .seccion-contenido {
         flex-direction: column !important;
         gap: 20px;
     }
 
-    .seccion-imagen {
-        justify-content: center;
+    .seccion-titulo {
+        font-size: 25px;
     }
 
     .seccion-texto p {
-        font-size: 18px;
-    }
-
-    .seccion-titulo {
-        font-size: 22px;
-    }
-
-    /* ----- FORMULARIO ----- */
-    .formulario-contacto {
-        padding: 20px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
 
-    /* Títulos del header */
-    .header-titulos h1 {
-        font-size: 20px;
-    }
-
-    .header-titulos h2 {
-        font-size: 16px;
-    }
-
-    .header-titulos h3,
-    .header-titulos h4 {
-        font-size: 14px;
-    }
-
-    /* Texto general */
-    .seccion-texto p {
-        font-size: 16px;
-    }
-
-    /* Footer */
     .footer-container {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
-}
-
-@media (max-width: 1385px) {
-    .header-nav .texto {
-        display: none;
-    }
-
-    .header-nav ul {
-        justify-content: center;
-    }
-
-    .header-nav ul li a {
-        padding: 12px;
-    }
-}
-
-/* ================= HEADER RESPONSIVE FINAL ================= */
-
-/* Tablet y monitores chicos: solo íconos, horizontal */
-@media (max-width: 1024px) {
-
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .header-nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .header-nav .texto {
-        display: none;
-    }
-
-    .header-nav ul li a {
-        padding: 12px;
-    }
-}
-
-/* Celular: sigue horizontal (NO columna) */
-@media (max-width: 768px) {
-
-    .header-nav ul {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    main {
-        padding: 20px;
-    }
-}
-
-/* Contenedor centrado solo con texto */
-.seccion-centrada {
-    display: flex;
-    justify-content: center;
-}
-
-.seccion-centrada .seccion-texto {
-    max-width: 900px;   /* ajusta el ancho si lo deseas */
-    width: 100%;
 }
