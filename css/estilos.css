@@ -416,8 +416,6 @@ footer {
     }
 }
 
-Entonces, así esta bien la función?
-
 @media (max-width: 480px) {
 
     /* ===== HEADER ===== */
@@ -490,4 +488,5 @@ Entonces, así esta bien la función?
         margin: 0;
     }
 }
+
 
