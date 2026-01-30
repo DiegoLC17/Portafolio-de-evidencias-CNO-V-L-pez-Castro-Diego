@@ -376,16 +376,25 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+    /* ===== HEADER ===== */
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
     .header-titulos {
         flex-direction: row;
         align-items: center;
-        text-align: left;
         gap: 12px;
+        max-width: 100%;
     }
 
     .header-imagen img {
-        width: 90px;
-        height: 90px;
+        width: 85px;
+        height: 85px;
     }
 
     .header-textos {
@@ -393,24 +402,35 @@ footer {
     }
 
     .header-fijo h1 {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.2;
+        margin-bottom: 0;
     }
 
-    .header-texto h2 {
-        font-size: 13px;
+    /* 🔴 DESACTIVAR TEXTO ANIMADO EN MÓVIL */
+    .header-animaciones {
+        display: none;
     }
 
-    .header-texto h3,
-    .header-texto h4 {
-        font-size: 12px;
-    }
-    
+    /* ===== NAVEGACIÓN ===== */
+
     .header-nav ul {
-        flex-wrap: wrap;
+        display: flex;
         justify-content: center;
-        gap: 8px;
+        flex-wrap: nowrap;   /* ← fuerza horizontal */
+        gap: 18px;
     }
+
+    .header-nav ul li a {
+        padding: 8px;
+    }
+
+    .header-nav .icono {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* ===== INFORMACIÓN TÉCNICA ===== */
 
     .info-tecnica-grid {
         display: none;
@@ -422,33 +442,13 @@ footer {
         gap: 20px;
     }
 
-    .info-bloque h3 {
-        text-align: center;
-        font-size: 16px;
-        margin-bottom: 8px;
-        letter-spacing: 0.5px;
-    }
-
-    .info-bloque p {
-        font-size: 14px;
-        line-height: 1.5;
-        text-align: justify;
-    }
+    /* ===== FOOTER ===== */
 
     .footer-container {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-        align-items: center;
-    }
-
-    .footer-left,
-    .footer-right {
-        text-align: center;
-    }
-
-    .footer-left p,
-    .footer-right p {
-        margin: 0;
     }
 }
+
+
