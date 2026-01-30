@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herramientas</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" type="image/png" href="img/icono.png">
 </head>
 <body>
 
@@ -13,16 +13,40 @@
     <div class="header-container">
 
         <div class="header-titulos">
-            <h1>Diego López Castro <b>A.K.A. TRY4NGULO</b></h1>
-            <h2>CNO V – Seguridad Informática</h2>
-            <h3>Universidad Politécnica de San Luis Potosí</h3>
-            <h4>Octavo semestre (8vo)</h4>
+
+            <div class="header-imagen">
+                <img src="img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>182032@upslp.edu.mx</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
+
 
         <nav class="header-nav">
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="index.html" data-tooltip="Inicio">
                         <span class="icono">
                             <img src="img/inicio.png" alt="Inicio">
                         </span>
@@ -30,33 +54,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_1.html">
+                    <a href="notas.html" data-tooltip="Notas">
                         <span class="icono">
-                            <img src="img/notas.png" alt="Inicio">
+                            <img src="img/notas.png" alt="Notas">
                         </span>
                         <span class="texto">NOTAS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_2.html">
+                    <a href="herramientas.html" data-tooltip="Herramientas">
                         <span class="icono">
-                            <img src="img/herramientas.png" alt="Inicio">
+                            <img src="img/herramientas.png" alt="Herramientas">
                         </span>
                         <span class="texto">HERRAMIENTAS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_3.html">
+                    <a href="proyectos.html" data-tooltip="Proyectos">
                         <span class="icono">
-                            <img src="img/proyectos.png" alt="Inicio">
+                            <img src="img/proyectos.png" alt="Proyectos">
                         </span>
                         <span class="texto">PROYECTOS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="final.html">
+                    <a href="certificaciones.html" data-tooltip="Certificaciones">
                         <span class="icono">
-                            <img src="img/certificaciones.png" alt="Inicio">
+                            <img src="img/certificaciones.png" alt="Certificaciones">
                         </span>
                         <span class="texto">CERTIFICACIONES</span>
                     </a>
@@ -69,8 +93,6 @@
 
 
 <main class="contenido-principal">
-
-    <!-- ================= PRESENTACIÓN ================= -->
     <section class="seccion">
         <h1 class="seccion-titulo">HERRAMIENTAS</h1>
 
@@ -96,15 +118,22 @@
         </div>
 
         <div class="footer-right">
-            <a href="#">Aviso de privacidad</a>
-            <a href="#">Contacto</a>
+            <p>🔒︎ Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
         </div>
 
     </div>
 </footer>
 
+<script>
+    const textos = document.querySelectorAll('.header-texto');
+    let indice = 0;
+
+    setInterval(() => {
+        textos[indice].classList.remove('activo');
+        indice = (indice + 1) % textos.length;
+        textos[indice].classList.add('activo');
+    }, 6000);
+</script>
+
 </body>
 </html>
-
-
-
