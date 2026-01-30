@@ -414,6 +414,13 @@ footer {
         font-size: 10px;
     }
 
+    .header-texto {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
     .info-tecnica-grid {
         display: none;
     }
@@ -454,6 +461,8 @@ footer {
         margin: 0;
     }
 }
+
+
 
 
 
