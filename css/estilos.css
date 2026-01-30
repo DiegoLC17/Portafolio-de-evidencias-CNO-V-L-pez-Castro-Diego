@@ -354,6 +354,11 @@ footer {
     flex-wrap: wrap;
 }
 
+/* Por defecto: solo desktop */
+.info-tecnica-movil {
+    display: none;
+}
+
 /* ================= RESPONSIVE ================= */
 
 /* Pantallas medianas: solo iconos, header en fila */
@@ -488,5 +493,6 @@ footer {
         margin: 0;
     }
 }
+
 
 
