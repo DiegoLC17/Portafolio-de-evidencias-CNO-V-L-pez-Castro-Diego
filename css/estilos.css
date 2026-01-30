@@ -401,24 +401,32 @@ footer {
     }
 
     .header-titulos h1 {
-        font-size: 19px;
+        font-size: 21px;
         line-height: 1.2;
     }
 
     .header-titulos h2 {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .header-titulos h3,
     .header-titulos h4 {
-        font-size: 10px;
+        font-size: 13px;
+    }
+
+   .header-animaciones {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 
     .header-texto {
-        left: 50%;
-        transform: translateX(-50%);
         width: 100%;
         text-align: center;
+        left: 0;
+        transform: none;
     }
 
     .info-tecnica-grid {
@@ -461,6 +469,7 @@ footer {
         margin: 0;
     }
 }
+
 
 
 
