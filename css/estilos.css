@@ -390,14 +390,24 @@ footer {
 @media (max-width: 480px) {
 
     .header-titulos {
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         gap: 12px;
+        text-align: left;
     }
 
     .header-imagen img {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .header-textos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .header-titulos h1 {
@@ -414,7 +424,7 @@ footer {
         font-size: 10px;
     }
 
-   .header-animaciones {
+    .header-animaciones {
         position: relative;
         width: 100%;
         display: flex;
@@ -469,6 +479,8 @@ footer {
         margin: 0;
     }
 }
+
+
 
 
 
