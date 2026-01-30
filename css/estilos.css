@@ -1,5 +1,3 @@
-/* ================= CONFIGURACIÓN GENERAL ================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -14,15 +12,13 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #e6e6e6; /* fondo general un poco más oscuro */
+    background-color: #e6e6e6;
     color: #2b2b2b;
 }
 
 main {
     flex: 1;
 }
-
-/* ================= HEADER ================= */
 
 header {
     background-color: #1b1b1b;
@@ -36,8 +32,6 @@ header {
     align-items: center;
 }
 
-/* ---------- FOTO + TEXTO ---------- */
-
 .header-titulos {
     display: flex;
     align-items: center;
@@ -47,8 +41,6 @@ header {
     line-height: 1.25;
 }
 
-/* ---------- IMAGEN ---------- */
-
 .header-imagen img {
     width: 140px;
     height: 140px;
@@ -57,14 +49,10 @@ header {
     flex-shrink: 0;
 }
 
-/* ---------- CONTENEDOR DE TEXTOS ---------- */
-
 .header-textos {
     display: flex;
     flex-direction: column;
 }
-
-/* ---------- TEXTO FIJO ---------- */
 
 .header-fijo h1 {
     font-size: 32px;
@@ -73,14 +61,10 @@ header {
     margin-bottom: 8px;
 }
 
-/* ---------- CONTENEDOR ANIMADO ---------- */
-
 .header-animaciones {
     position: relative;
-    min-height: 75px; /* reserva espacio para el bloque más alto */
+    min-height: 75px;
 }
-
-/* ---------- TEXTO ANIMADO ---------- */
 
 .header-texto {
     position: absolute;
@@ -98,8 +82,6 @@ header {
     pointer-events: auto;
 }
 
-/* ---------- TIPOGRAFÍA ANIMADA ---------- */
-
 .header-texto h2 {
     font-size: 19px;
     font-weight: 500;
@@ -112,8 +94,6 @@ header {
     font-size: 15px;
     color: #b5b5b5;
 }
-
-/* ---------- NAVEGACIÓN ---------- */
 
 .header-nav ul {
     list-style: none;
@@ -129,7 +109,7 @@ header {
     text-decoration: none;
     font-weight: 600;
     border-radius: 6px;
-    position: relative; /* 🔑 necesario para el tooltip */
+    position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -166,25 +146,19 @@ header {
     max-width: 100%;
 }
 
-/* ================= MAIN ================= */
-
 .contenido-principal {
-    padding: 45px 70px; /* menos padding */
-    background-color: #dedede; /* fondo del main más oscuro */
+    padding: 45px 70px;
+    background-color: #dedede;
 }
-
-/* ================= SECCIONES ================= */
 
 .seccion {
-    margin-bottom: 100px; /* antes 90px */
+    margin-bottom: 100px;
 }
-
-/* ---------- TÍTULOS DE SECCIÓN ---------- */
 
 .seccion-titulo {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 28px; /* antes 50px */
+    margin-bottom: 28px;
     color: #1c1c1c;
     letter-spacing: 1.8px;
     font-weight: 700;
@@ -198,17 +172,15 @@ header {
     width: 70px;
     height: 3px;
     background-color: #1c1c1c;
-    margin: 10px auto 0 auto; /* menos espacio */
+    margin: 10px auto 0 auto;
 }
-
-/* ================= CONTENIDO ================= */
 
 .seccion-contenido {
     display: flex;
     gap: 30px;
     align-items: stretch;
-    max-width: 1500px;     /* controla el ancho total */
-    margin: 0 auto;        /* centra todo el bloque */
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 
@@ -220,12 +192,10 @@ header {
     flex-direction: row-reverse;
 }
 
-/* ---------- TEXTO ---------- */
-
 .seccion-texto {
     flex: 2;
     background-color: #ffffff;
-    padding: 24px; /* antes 30px */
+    padding: 24px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
@@ -236,12 +206,10 @@ header {
     text-align: justify;
 }
 
-/* ---------- IMÁGENES SIN BORDES ---------- */
-
 .seccion-imagen {
     flex: 1;
     display: flex;
-    align-items: center;     /* centra verticalmente respecto al texto */
+    align-items: center;
     justify-content: center;
 }
 
@@ -254,8 +222,6 @@ header {
     border-radius: 0;
     box-shadow: none;
 }
-
-/* ===== INFORMACIÓN TÉCNICA EN 3 COLUMNAS ===== */
 
 .info-tecnica-grid {
     display: grid;
@@ -279,9 +245,6 @@ header {
     text-align: justify;
 }
 
-
-/* ================= FORMULARIO ================= */
-
 .formulario-contacto {
     max-width: 700px;
     margin: 0 auto;
@@ -294,7 +257,7 @@ header {
 .campo-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px; /* menos espacio */
+    margin-bottom: 16px;
 }
 
 .campo-form label {
@@ -319,7 +282,7 @@ header {
 }
 
 .formulario-contacto button {
-    display: block; /* ← ESTA es la clave */
+    display: block;
     background-color: #1c1c1c;
     color: #ffffff;
     padding: 11px;
@@ -339,8 +302,6 @@ header {
     font-style: italic;
 }
 
-/* ================= FOOTER ================= */
-
 footer {
     background-color: #1c1c1c;
     color: #e5e5e5;
@@ -354,14 +315,10 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Versión móvil oculta por defecto */
 .info-tecnica-movil {
     display: none;
 }
 
-/* ================= RESPONSIVE ================= */
-
-/* Pantallas medianas: solo iconos, header en fila */
 @media (max-width: 1460px) {
 
     .header-nav .texto {
@@ -373,19 +330,16 @@ footer {
     }
 
     .header-container {
-        flex-direction: row;     /* sigue horizontal */
+        flex-direction: row;
         text-align: left;
     }
 
-    /* 🔑 ACTIVAR TOOLTIP SOLO AQUÍ */
     .header-nav ul li a:hover::after {
         opacity: 1;
         transform: translateX(-50%) translateY(4px);
     }
 }
 
-
-/* Tablets y móviles: header en columna */
 @media (max-width: 950px) {
 
     .contenido-principal {
@@ -393,7 +347,7 @@ footer {
     }
 
     .header-container {
-        flex-direction: column;  /* 🔑 AQUÍ bajan las pestañas */
+        flex-direction: column;
         gap: 15px;
         text-align: center;
     }
@@ -422,40 +376,46 @@ footer {
 }
 
 @media (max-width: 480px) {
-
-    /* ===== HEADER ===== */
-
     .header-titulos {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
         gap: 12px;
     }
 
     .header-imagen img {
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
     }
 
-    .header-titulos h1 {
-        font-size: 22px;
+    .header-textos {
+        align-items: flex-start;
+    }
+
+    .header-fijo h1 {
+        font-size: 18px;
         line-height: 1.2;
     }
 
-    .header-titulos h2 {
-        font-size: 15px;
-    }
-
-    .header-titulos h3,
-    .header-titulos h4 {
+    .header-texto h2 {
         font-size: 13px;
     }
 
-    /* Ocultar estructura de 3 columnas */
+    .header-texto h3,
+    .header-texto h4 {
+        font-size: 12px;
+    }
+    
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
     .info-tecnica-grid {
         display: none;
     }
 
-    /* Mostrar estructura móvil */
     .info-tecnica-movil {
         display: flex;
         flex-direction: column;
@@ -474,7 +434,6 @@ footer {
         line-height: 1.5;
         text-align: justify;
     }
-    /* ===== FOOTER ===== */
 
     .footer-container {
         flex-direction: column;
@@ -493,4 +452,3 @@ footer {
         margin: 0;
     }
 }
-
