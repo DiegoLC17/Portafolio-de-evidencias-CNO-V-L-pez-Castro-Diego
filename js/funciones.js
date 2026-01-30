@@ -7,11 +7,16 @@ const form = document.getElementById("contact-form");
 if (form) {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
-        const serviceID = "service_f05d8gn";
-        const templateAdmin = "template_2olmcqb";
-        const templateUser = "template_b4leipl";
-
+    
+        const nombre = form.name.value.trim();
+        const email = form.email.value.trim();
+        const mensaje = form.message.value.trim();
+    
+        if (!nombre || !email || !mensaje) {
+            alert("Por favor, completa todos los campos correctamente.");
+            return;
+        }
+    
         emailjs.sendForm(serviceID, templateAdmin, this)
             .then(() => emailjs.sendForm(serviceID, templateUser, this))
             .then(() => {
@@ -35,3 +40,4 @@ if (textos.length > 0) {
         textos[indice].classList.add('activo');
     }, 6000);
 }
+
