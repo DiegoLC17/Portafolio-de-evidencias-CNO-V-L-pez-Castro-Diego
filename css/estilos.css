@@ -354,6 +354,11 @@ footer {
     flex-wrap: wrap;
 }
 
+/* Versión móvil oculta por defecto */
+.info-tecnica-movil {
+    display: none;
+}
+
 /* ================= RESPONSIVE ================= */
 
 /* Pantallas medianas: solo iconos, header en fila */
@@ -445,28 +450,30 @@ footer {
         font-size: 13px;
     }
 
-    /* ===== SECCIÓN DE CONTENIDO ===== */
-
-    .seccion-contenido {
-        flex-direction: column;
-        gap: 25px;
+    /* Ocultar estructura de 3 columnas */
+    .info-tecnica-grid {
+        display: none;
     }
 
-    /* ===== COLUMNAS DE INFORMACIÓN ===== */
-
-    .info-tecnica-grid {
+    /* Mostrar estructura móvil */
+    .info-tecnica-movil {
+        display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .info-columna {
+    .info-bloque h3 {
         text-align: center;
+        font-size: 16px;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
     }
 
-    .info-columna p {
+    .info-bloque p {
         font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
     }
-
     /* ===== FOOTER ===== */
 
     .footer-container {
@@ -486,7 +493,4 @@ footer {
         margin: 0;
     }
 }
-
-
-
 
