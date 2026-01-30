@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Evidencias | Diego López Castro</title>
+    <title>Portafolio de Evidencias</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -12,16 +12,40 @@
     <div class="header-container">
 
         <div class="header-titulos">
-            <h1>Diego López Castro <b>A.K.A. TRY4NGULO</b></h1>
-            <h2>CNO V – Seguridad Informática</h2>
-            <h3>Universidad Politécnica de San Luis Potosí</h3>
-            <h4>Octavo semestre (8vo)</h4>
+
+            <div class="header-imagen">
+                <img src="img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>182032@upslp.edu.mx</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
+
 
         <nav class="header-nav">
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="index.html" data-tooltip="Inicio">
                         <span class="icono">
                             <img src="img/inicio.png" alt="Inicio">
                         </span>
@@ -29,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_1.html">
+                    <a href="notas.html" data-tooltip="Notas">
                         <span class="icono">
                             <img src="img/notas.png" alt="Notas">
                         </span>
@@ -37,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_2.html">
+                    <a href="herramientas.html" data-tooltip="Herramientas">
                         <span class="icono">
                             <img src="img/herramientas.png" alt="Herramientas">
                         </span>
@@ -45,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="parcial_3.html">
+                    <a href="proyectos.html" data-tooltip="Proyectos">
                         <span class="icono">
                             <img src="img/proyectos.png" alt="Proyectos">
                         </span>
@@ -53,7 +77,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="final.html">
+                    <a href="certificaciones.html" data-tooltip="Certificaciones">
                         <span class="icono">
                             <img src="img/certificaciones.png" alt="Certificaciones">
                         </span>
@@ -68,14 +92,13 @@
 
 <main class="contenido-principal">
 
-    <!-- ================= PRESENTACIÓN ================= -->
     <section class="seccion">
         <h2 class="seccion-titulo">PRESENTACIÓN DEL PORTAFOLIO</h2>
 
         <div class="seccion-contenido izquierda">
             <div class="seccion-texto">
                 <p>
-                    El presente portafolio tiene la finalidad de concentrar y presentar de forma ordenada, profesional y clara, las evidencias académicas desarrolladas en el curso de Seguridad Informática, de forma que puedan ser consultadas por el profesor y ser revisadas en tiempo y forma.<br>
+                    El presente portafolio tiene la finalidad de concentrar y presentar de forma ordenada, profesional y clara, las evidencias académicas desarrolladas en el curso de <b>CNO V – Seguridad Informática</b>, de forma que puedan ser consultadas por el profesor y ser revisadas en tiempo y forma.<br>
                     El contenido del portafolio se enfoca en los principales temas abordados durante el curso, tales como la <b>seguridad informática</b>, el <b>análisis de vulnerabilidades</b> y las <b>pruebas de penetración</b>, los cuales permiten comprender los riesgos asociados a los sistemas de información y las estrategias utilizadas para su protección.<br>
                     Asimismo, este portafolio constituye una evidencia del proceso de aprendizaje, ya que refleja el desarrollo progresivo de conocimientos teóricos y habilidades prácticas adquiridas durante el curso, así como la aplicación de principios de documentación técnica y buenas prácticas en el ámbito de la seguridad informática.
                 </p>
@@ -87,7 +110,6 @@
         </div>
     </section>
 
-    <!-- ================= PERFIL ================= -->
     <section class="seccion">
         <h2 class="seccion-titulo">PERFIL DEL ESTUDIANTE</h2>
 
@@ -105,18 +127,39 @@
         </div>
     </section>
 
-    <!-- ================= INFORMACIÓN TÉCNICA ================= -->
     <section class="seccion">
         <h2 class="seccion-titulo">INFORMACIÓN TÉCNICA BÁSICA</h2>
 
         <div class="seccion-contenido izquierda">
             <div class="seccion-texto">
-                <p>
-                    Para la creación del portafolio se utilizaron las siguientes tecnologías web:<br>
-                    • <b>HTML</b> (Lenguaje de marcado)<br>
-                    • <b>CSS</b> (Lenguaje de estilos)<br>
-                    El sitio web fue publicado a través de la plataforma <b>GitHub</b>, utilizada para el alojamiento y la gestión de proyectos de software en la nube. Se implementó un control de versiones básico, realizando actualizaciones directamente sobre la rama principal del repositorio, sin el uso de ramas adicionales ni flujos avanzados de versionado.
-                </p>
+                <div class="info-tecnica-grid">
+                    <div class="info-columna">
+                        <h3>LENGUAJES Y TECNOLOGÍAS</h3>
+                        <p>
+                            El sitio web fue desarrollado utilizando <b>HTML5</b> para la estructura del contenido, <b>CSS3</b> para el diseño y la adaptación responsiva, y <b>JavaScript</b> para la implementación 
+                            de funcionalidades dinámicas. Además, se integró la <b>API EmailJS</b> para la gestión del envío de correos electrónicos desde el formulario de contacto sin requerir un servidor propio.
+                        </p>
+                    </div>
+
+                    <div class="info-columna">
+                        <h3>PLATAFORMA DE PUBLICACIÓN</h3>
+                        <p>
+                            El portafolio se encuentra alojado en <b>GitHub Pages</b>, plataforma que permite la publicación de sitios web estáticos directamente desde un repositorio. 
+                            Esta solución facilita el acceso público al proyecto, garantiza disponibilidad continua y permite integrar de forma directa el despliegue con el control 
+                            de versiones del código fuente.
+                        </p>
+                    </div>
+
+                    <div class="info-columna">
+                        <h3>CONTROL DE VERSIONES</h3>
+                        <p>
+                            El proyecto es gestionado mediante un sistema de control de versiones basado en <b>Git</b> y <b>GitHub</b>, lo que permite registrar y organizar de forma ordenada los cambios 
+                            realizados en el código fuente. Este enfoque facilita la trazabilidad de las modificaciones, el mantenimiento del proyecto y la recuperación de versiones estables 
+                            ante posibles errores o ajustes durante el desarrollo.
+                        </p>
+                    </div>
+
+                </div>
             </div>
 
             <div class="seccion-imagen">
@@ -125,7 +168,6 @@
         </div>
     </section>
 
-    <!-- ================= CONTACTO ================= -->
     <section class="seccion">
         <h2 class="seccion-titulo">FORMULARIO DE CONTACTO</h2>
 
@@ -166,8 +208,7 @@
         </div>
 
         <div class="footer-right">
-            <a href="#">Aviso de privacidad</a>
-            <a href="#">Contacto</a>
+            <p>🔒︎ Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
         </div>
 
     </div>
@@ -203,6 +244,19 @@
         });
     });
 </script>
+
+<script>
+    const textos = document.querySelectorAll('.header-texto');
+    let indice = 0;
+
+    setInterval(() => {
+        textos[indice].classList.remove('activo');
+        indice = (indice + 1) % textos.length;
+        textos[indice].classList.add('activo');
+    }, 6000);
+</script>
+
+
 
 </body>
 </html>
