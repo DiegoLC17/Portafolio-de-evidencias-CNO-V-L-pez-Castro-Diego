@@ -2,23 +2,19 @@
     emailjs.init("rZUu9htn801_jj4cD");
 })();
 
-const form = document.getElementById("contact-form");
-
-if (form) {
-    form.addEventListener("submit", function (event) {
+document
+    .getElementById("contact-form")
+    ?.addEventListener("submit", function (event) {
         event.preventDefault();
-    
-        const nombre = form.name.value.trim();
-        const email = form.email.value.trim();
-        const mensaje = form.message.value.trim();
-    
-        if (!nombre || !email || !mensaje) {
-            alert("Por favor, completa todos los campos correctamente.");
-            return;
-        }
-    
+
+        const serviceID = "service_f05d8gn";
+        const templateAdmin = "template_2olmcqb";
+        const templateUser = "template_b4leipl";
+
         emailjs.sendForm(serviceID, templateAdmin, this)
-            .then(() => emailjs.sendForm(serviceID, templateUser, this))
+            .then(() => {
+                return emailjs.sendForm(serviceID, templateUser, this);
+            })
             .then(() => {
                 alert("Mensaje enviado correctamente. Revisa tu correo.");
                 this.reset();
@@ -28,7 +24,6 @@ if (form) {
                 console.error(error);
             });
     });
-}
 
 const textos = document.querySelectorAll('.header-texto');
 let indice = 0;
@@ -40,4 +35,3 @@ if (textos.length > 0) {
         textos[indice].classList.add('activo');
     }, 6000);
 }
-
