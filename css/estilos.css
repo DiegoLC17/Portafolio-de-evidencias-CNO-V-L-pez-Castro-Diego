@@ -425,16 +425,17 @@ footer {
     }
 
     .header-animaciones {
-        position: relative;
         width: 100%;
-        display: flex;
-        justify-content: center;
+        max-width: 360px;
+        margin: 0 auto;
+        position: relative;
         text-align: center;
     }
 
     .header-texto {
         width: 100%;
         text-align: center;
+        white-space: nowrap;
         left: 0;
         transform: none;
     }
@@ -479,6 +480,7 @@ footer {
         margin: 0;
     }
 }
+
 
 
 
