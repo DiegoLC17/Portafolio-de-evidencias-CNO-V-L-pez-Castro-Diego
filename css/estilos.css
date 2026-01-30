@@ -417,6 +417,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+    /* ===== HEADER ===== */
+
     .header-titulos {
         flex-direction: column;
         text-align: center;
@@ -442,8 +445,18 @@ footer {
         font-size: 13px;
     }
 
-    .info-grid {
-        grid-template-columns: 1fr;   /* 🔑 columnas una debajo de otra */
+    /* ===== SECCIÓN DE CONTENIDO ===== */
+
+    .seccion-contenido {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* ===== COLUMNAS DE INFORMACIÓN ===== */
+
+    .info-tecnica-grid {
+        flex-direction: column;
+        gap: 20px;
     }
 
     .info-columna {
@@ -453,6 +466,8 @@ footer {
     .info-columna p {
         font-size: 14px;
     }
+
+    /* ===== FOOTER ===== */
 
     .footer-container {
         flex-direction: column;
@@ -471,5 +486,7 @@ footer {
         margin: 0;
     }
 }
+
+
 
 
