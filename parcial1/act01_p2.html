@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 01</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <style>
+        .sangria-francesa {
+            padding-left: 2em;
+            text-indent: -2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 02</h1>
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="articulo-header">
+            <h1>Análisis de servicios de seguridad (X.800 y RFC 4949)</h1>
+            <p class="articulo-subtitulo">
+                Análisis de servicios de seguridad (X.800 y RFC 4949)
+            </p>
+        </div>
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>Introducción contextual</h2>
+            <p>
+                El marco ITU-T X.800 y el Glosario oficial RFC son marcos de vital importancia para
+                la seguridad informática. El marco ITU-T X.800 es el comunicado emitido por la
+                Unión Internacional de Telecomunicaciones (UIT), que tiene como propósito de
+                brindar un servicio de seguridad a través de seis definiciones clave para mantener
+                a flote la triada de la seguridad informática: integridad, disponibilidad y
+                confidencialidad, mientras que el RFC 4949 ofrece una amplia gama de conceptos
+                necesarios para la comprender de forma formal la rama de la ciberseguridad. Ambos
+                conceptos son de vital importancia para dicha rama puesto que es gracias a ellos
+                es que, conociendo cualquier situación relacionada al tema de la ciberseguridad, se
+                puede analizar si una infraestructura o sistema de redes se encuentra seguro en su
+                seguridad informática, conociendo los conceptos que engloban al mismo a
+                profundidad y mostrar el mejor resultado posible.<br>
+                La presenta página tiene la finalidad de analizar diversos escenarios y, en base
+                a sus respectivas características, evaluar en base a los dos marcos antes
+                mencionados la situación y recomendar una medida de control para tratar de
+                solucionar cada caso.
+            </p>
+        </article>
+
+        <!-- CONTEXTO -->
+        <!-- IMPACTO -->
+        <article class="articulo-bloque">
+            <h2>Escenario 1</h2>
+            <p>
+                En múltiples incidentes atribuidos al grupo LockBit, organizaciones públicas y
+                privadas han sufrido el cifrado masivo de servidores tras un acceso inicial no
+                autorizado. Antes de ejecutar el ransomware, los atacantes exfiltraron información
+                sensible y posteriormente amenazaron con su publicación, evidenciando un
+                compromiso simultáneo de la confidencialidad, la integridad y la disponibilidad.
+                Desde el enfoque del RFC 4949, el incidente se clasifica como un multi-stage attack
+                con data breach y availability attack, donde la indisponibilidad del sistema es solo
+                una fase final del daño. La ausencia de respaldos inmutables y de detección
+                temprana permitió que el impacto fuera total
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Confidencialidad de datos,
+                                disponibilidad, integridad de datos y
+                                control de acceso.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>multi-stage attack:</b> Es aquel ataque en
+                                donde se siguió una secuencia de
+                                etapas para comprometer el sistema
+                                objetivo.<br>
+                                <b>data breach:</b> Incidente que implica la
+                                copia, tranmisión, visualización, robo o
+                                uso de información sensible por parte
+                                de una persona no autorizada.<br>
+                                <b>availability attack:</b> Tipo de ataque que
+                                retrasa o que definitivamente impide los
+                                accesos autorizados a una parte del
+                                sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Externa (Ya que se usaron credenciales válidas)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Se acceso no autorizado seguido de un
+                                ataque de varias etapas en donde hubo
+                                exfiltración y el uso del ransomware.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Se perdió la disponibilidad de los
+                                sistemas, se expuso información
+                                sensible y se interrumpieron las
+                                operaciones.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                                Usar respaldos inmutables y el
+                                monitoreo y detección rápida y
+                                temprana de comportamientos fuera de
+                                lo normal.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 1. Escenario 1.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Escenario 2</h2>
+            <p>
+                En diversos casos documentados, bases de datos completas quedaron accesibles
+                públicamente debido a errores de configuración en servicios de almacenamiento en
+                la nube. No existió una explotación técnica sofisticada, sino una falla en el control
+                de acceso, lo que derivó directamente en la pérdida de confidencialidad de los
+                datos. El RFC 4949 describe este tipo de incidentes como misconfiguration y
+                exposure, subrayando que la amenaza no siempre implica malware o intrusión
+                activa. El impacto suele ser legal y reputacional, aun cuando no se pueda demostrar
+                acceso malicioso.
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Control de acceso y Confidencialidad de Datos.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>Misconfiguration:</b> Es aquella que
+                                ocurre cuando un sistema, una
+                                aplicación o un servicio en la nube se
+                                configura incorrectamente desde una
+                                perspectiva de seguridad.
+                                <b>Exposure:</b> Amenaza en donde son
+                                liberados de forma directa datos
+                                sensibles a una entidad sin
+                                autorización.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Interna (Pues todo ocurrió por un error en la configuración)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                La exposición de bases de datos
+                                gracias a una configuración incorrecta
+                                en los controles de acceso en los
+                                servicios en la nube
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Se perdió la confidencialidad de
+                                información sensible, además de
+                                sanciones y un posible daño
+                                reputacional.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                                Revisión constante de la configuración
+                                en el servicio en la nube, además de la
+                                aplicación de privilegios mínimos.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 2. Escenario 2.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Escenario 3</h2>
+            <p>
+                Un proveedor legítimo de software fue comprometido y distribuyó una actualización
+                que incluía código malicioso, afectando a cientos de organizaciones que confiaban
+                en él. Este escenario refleja una violación grave de la integridad de los sistemas y,
+                en muchos casos, de la confidencialidad, al permitir accesos no autorizados
+                posteriores. El RFC 4949 lo identifica como supply chain attack, destacando el
+                abuso de relaciones de confianza. El daño es particularmente crítico porque rompe
+                el supuesto de legitimidad del software firmado.
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Integridad de Datos, Confidencialidad 
+				de Datos, Autentificación. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>supply chain attack:</b> Los atacantes
+                                comprometen primero a un proveedor,
+                                software o servicio confiable y utiliza el
+                                acceso para propagar el ataque los
+                                usuarios que dependan del mismo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Externa (Ya que fue del mismo proveedor)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Se comprometió al proveedor y se
+                                distribuyó una actualización ilegítima.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Se ejecutó código malicioso en
+                                sistemas que eran confiables, accesos
+                                sin autorización y pérdida de confianza
+                                en el proveedor
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                                Validación de las actualizaciones para
+                                verificar que estas sean seguras.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 3. Escenario 3.
+            </p>
+        </article>
+
+	<article class="articulo-bloque">
+            <h2>Escenario 4</h2>
+            <p>
+                Mediante campañas de phishing, atacantes obtuvieron credenciales válidas y 
+accedieron a sistemas corporativos durante meses sin levantar alertas. Aunque la 
+autenticación funcionó técnicamente, el servicio de autenticación fue comprometido 
+al basarse en credenciales robadas, afectando también el control de acceso. Según 
+el RFC 4949, se trata de un credential compromise con authentication failure 
+conceptual, no técnica. La falta de MFA y de monitoreo de comportamiento facilitó 
+la persistencia del atacante. 
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Atenticación y Control de Acceso. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>credential compromise:</b> Se define 
+como la adquisición sin autorización de 
+credenciales legítimas.<br> 
+<b>authentication failure:</b> El atacante 
+consigue engañar a un sistema para 
+que reconozca a un usuario inválido o 
+incorrecto como legítimo. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Externa (Se obtuvieron credenciales válidas) 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Se engañó al personal y se obtuvieron 
+				credenciales válidas. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Acceso prologando no autorizado a los 
+			sistemas, se evadieron mecanismos de 
+			detección y riesgo de exfiltración de 
+			información.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                                Autentificación multifactor y monitoreo 
+				de la actividad de usuarios 
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 4. Escenario 4.
+            </p>
+        </article>
+
+		<article class="articulo-bloque">
+            <h2>Escenario 5</h2>
+            <p>
+                En ataques de ransomware avanzados, los atacantes eliminaron o cifraron los 
+respaldos antes de afectar los sistemas productivos. Este hecho compromete 
+directamente la disponibilidad y la integridad de la información, al impedir la 
+recuperación. El RFC 4949 clasifica este comportamiento como data destruction y 
+availability attack, evidenciando intención deliberada de maximizar el daño. La 
+inexistencia de respaldos offline o inmutables convierte el incidente en catastrófico. 
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Disponibilidad e Integridad de Datos. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>Data destruction:</b> Los atacantes 
+pueden destruir datos y archivos en 
+sistemas específicos o en grandes 
+cantidades en una red para interrumpir 
+la disponibilidad de sistemas, servicios 
+y recursos de red.<br>
+<b>Availability attack:</b> Interrupción por 
+parte de los atacantes a componentes o 
+sistemas esenciales para impedir que el 
+propietario y el operador entreguen 
+productos o servicios. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Externa (Se eliminaron los respaldos) 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Acceso no autorizado previo y 
+				eliminación de respaldos. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Imposibilidad de recuperar la 
+				información. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                                Implementar respaldos sin depender de 
+				internet e inmutables.  
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 5. Escenario 5.
+            </p>
+        </article>
+	
+	<article class="articulo-bloque">
+            <h2>Escenario 6</h2>
+            <p>
+                Un empleado con acceso legítimo extrajo bases de datos completas y las vendió a 
+terceros, sin explotar vulnerabilidades técnicas. El servicio afectado fue 
+principalmente la confidencialidad, junto con fallas en el control de acceso por 
+exceso de privilegios. El RFC 4949 define este escenario como insider threat, 
+destacando que el riesgo interno puede ser tan grave como el externo. La carencia 
+de monitoreo y de políticas de mínimo privilegio fue determinante.
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Confidencialidad de datos y Control de 
+				Acceso. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>Insider threat:</b> Es aquella amenaza 
+				que proviene de personas dentro de 
+				una organización 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Interna (Pues la causó un empleado) 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Acceso legítimo y extracción de bases 
+				de datos completas. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Se perdió la confidencialidad de la 
+				información. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                               Aplicación estricta de privilegios y 
+				monitoreo de actividades.  
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 6. Escenario 6.
+            </p>
+        </article>
+	
+		<article class="articulo-bloque">
+            <h2>Escenario 7</h2>
+            <p>
+                Tras un ataque, los registros del sistema quedaron cifrados o alterados, impidiendo 
+reconstruir la secuencia de eventos. Esto compromete la integridad de los datos y 
+el no repudio, ya que no es posible demostrar qué ocurrió ni quién fue responsable. 
+Desde el RFC 4949, se trata de una violación de evidentiary integrity y del audit trail. 
+El impacto no solo es técnico, sino también probatorio y legal. 
+                <br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Servicios X.800 comprometidos</b></td>
+                            <td>
+                                Confidencialidad de datos y Control de 
+				Acceso. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Definición(es) aplicable(s) RFC 4949</b></td>
+                            <td>
+                                <b>Insider threat:</b> Es aquella amenaza 
+				que proviene de personas dentro de 
+				una organización 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de amenaza</b></td>
+                            <td>
+                                Interna (Pues la causó un empleado) 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de ataque</b></td>
+                            <td>
+                                Acceso legítimo y extracción de bases 
+				de datos completas. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Impacto técnico / operativo</b></td>
+                            <td>
+                                Se perdió la confidencialidad de la 
+				información. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Medida de control recomendada</b></td>
+                            <td>
+                               Aplicación estricta de privilegios y 
+				monitoreo de actividades.  
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 6. Escenario 6.
+            </p>
+        </article>
+
+        <!-- VIDEO YOUTUBE -->
+        <article class="articulo-bloque">
+            <h2>4. Análisis Multimedia</h2>
+
+            <div class="video-responsive">
+                <!-- SOLO CAMBIA EL ENLACE DENTRO DE src -->
+                <iframe width="1356" height="763" src="https://www.youtube.com/embed/CLYjs37LT74" title="Case study: Maersk Notpetya Ransomware attack - by TheTechForce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </article>
+
+        <!-- IMAGEN -->
+        <article class="articulo-bloque">
+            <h2>5. Evidencia Visual</h2>
+
+            <div class="articulo-imagen">
+                <img src="../img/imagen-ejemplo.jpg" alt="Descripción de la imagen">
+                <p class="pie-imagen">
+                    Figura 1. Descripción técnica de la imagen.
+                </p>
+            </div>
+        </article>
+
+        <!-- TABLA TÉCNICA -->
+        <article class="articulo-bloque">
+            <h2>6. Tabla Técnica del Ataque</h2>
+
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Tipo de ataque</b></td>
+                            <td>
+                                Malware destructivo (wiper) disfrazado de ransomware. Sobreescribe el
+                                MBR (Master Boot Record) y cifra la MFT (Master File Table), provocando
+                                una destrucción irreversible de datos y sistemas.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Actor o grupo atacante</b></td>
+                            <td>
+                                Sandworm (Grupo de hackers militares rusos vinculados al GRU,
+                                Inteligencia Militar de la Federación Rusa).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vector de entrada</b></td>
+                            <td>
+                                Sandworm (Grupo de hackers militares rusos vinculados al GRU,
+                                Inteligencia Militar de la Federación Rusa).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Vulnerabilidad explotada</b></td>
+                            <td>
+                                CVE-2017-0144 (EternalBlue, vulnerabilidad en el protocolo SMBv1 de
+                                Windows para ejecución remota de código), EternalRomance (otra
+                                explotación SMB); Mimikatz para extracción de credenciales de memoria
+                                (LSASS), Sistemas no parcheados y obsoletos.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Etapas del ataque (MITRE ATT&CK)</b></td>
+                            <td>
+                                - Acceso Inicial (T1190: Exploit Public-Facing Application via EternalBlue).<br>
+                                - Ejecución (T1059: Command and Scripting Interpreter via rundll32.exe,
+                                PsExec y WMIC).<br>
+                                - Persistencia (T1547: Boot or Logon Autostart Execution mediante
+                                modificación del MBR).<br>
+                                - Escalada de Privilegios (T1134: Access Token Manipulation).<br>
+                                - Acceso a Credenciales (T1003: OS Credential Dumping de LSASS).<br>
+                                - Descubrimiento (T1046: Network Service Scanning).<br>
+                                - Movimiento Lateral (T1210: Exploitation of Remote Services via SMB;
+                                T1021: Remote Services).<br>
+                                - Impacto (T1486: Data Encrypted for Impact; T1490: Inhibit System
+                                Recovery mediante encriptación de MFT y borrado de logs).<br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Sistemas o servicios comprometidos</b></td>
+                            <td>
+                                Servidores Windows, 45,000 PCs y laptops, 1,200 aplicaciones críticas de
+                                negocio, red global interna, sistemas de reserva de envíos
+                                (Maerskline.com), terminales portuarias (17 de 76 afectadas, incluyendo
+                                grúas y puertas), bases de datos ERP, comunicaciones sincronizadas con
+                                Microsoft Outlook.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Duración del incidente</b></td>
+                            <td>
+                                Desde el 27 de junio de 2017 (aprox. 10:30 UTC, inicio de la intrusión
+                                global) hasta la restauración total (aprox. 2 meses después, con
+                                reconstrucción de red en 10 días y operaciones a pleno rendimiento en 6-
+                                8 semanas).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Mecanismos de detección y respuesta</b></td>
+                            <td>
+                                <b>Detección:</b> Inicialmente confundido con fallo eléctrico después
+                                confirmado por mensajes de rescate masivos.<br>
+                                <b>Respuesta:</b> Desconexión inmediata de la red global (2 a 7 horas).
+                                Reconstrucción completa del Active Directory mediante el traslado físico
+                                de un disco duro desde una oficina en Lagos, Nigeria (único controlador
+                                sobreviviente por un apagón local). Reinstalación masiva de 45k equipos.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 1. Tabla técnica del ataque.
+            </p>
+        </article>
+
+        <!-- IMPACTO -->
+        <article class="articulo-bloque">
+            <h2>7. Tabla de evaluación del Impacto</h2>
+            
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Principio</th>
+                            <th>Descripción del impacto</th>
+                            <th>Evidencia del caso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Confidencialidad</b></td>
+                            <td>
+                                No se expuso ni robó
+                                información sensible de
+                                manera confirmada por
+                                Maersk. El impacto fue
+                                mínimo, limitado a exposición
+                                potencial durante la infección
+                                interna sin exfiltración externa.
+                            </td>
+                            <td>
+                                Análisis post-incidente de Maersk y
+                                expertos (Wired, Columbia University)
+                                indican que NotPetya se centró en
+                                destrucción, no en robo de datos. Las
+                                credenciales fueron extraídas localmente
+                                vía Mimikatz para propagación, pero no hay
+                                registros de envío a servidores C2 externos.
+                                No se reportaron brechas de datos
+                                personales o comerciales exfiltrados.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Integridad</b></td>
+                            <td>
+                                Datos y sistemas fueron
+                                alterados irreversiblemente.
+                                Archivos encriptados y
+                                estructuras de disco
+                                corrompidas, afectando la
+                                fiabilidad de la información
+                                crítica.
+                            </td>
+                            <td>
+                                El malware utilizó AES-128 y RSA para
+                                encriptar archivos, sobrescribió el MBR y
+                                corrompió la MFT, rindiendo irrecuperables
+                                datos en 45,000 endpoints y 4,000
+                                servidores. Aplicaciones como ERP y bases
+                                de datos fueron destruidas
+                                intencionalmente, sin opción de rescate
+                                real.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Disponibilidad</b></td>
+                            <td>
+                                Servicios se interrumpieron y
+                                paralizaron globalmente;
+                                operaciones críticas quedaron
+                                inoperativas durante días,
+                                impactando la continuidad del
+                                negocio.
+                            </td>
+                            <td>
+                                Operaciones manuales de 10 días para
+                                reconstrucción inicial, afectando 17
+                                terminales portuarias, sistemas de reservas
+                                y comunicaciones. Pérdidas estimadas en
+                                $300 millones. La recuperación dependió de
+                                un backup offline en Ghana.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 2. Tabla de evaluación del impacto.
+            </p>
+        </article>
+
+        <!-- IMPACTO -->
+        <article class="articulo-bloque">
+            <h2>8. Cálculo del costo total del ciberataque</h2>
+            
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de costo</th>
+                            <th>Descripción</th>
+                            <th>Estimación (MX)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Pérdidas operativas</b></td>
+                            <td>
+                                Se paralizaron 17 de los 76 puertos
+                                internacionales de Maersk y los
+                                sistemas de reservación de envíos
+                                quedaron fuera de servicio
+                            </td>
+                            <td>
+                                No se cuenta con un aproximado de
+                                la pérdida económica, pero se
+                                calcula que se perdió el 20% de los
+                                volúmenes de envíos en los puertos,
+                                siendo la mayor pérdida de la
+                                empresa. Los puertos eran su fuerte.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Daños reputacionales</b></td>
+                            <td>
+                                Durante el ataque quedaron afectados
+                                los servicios donde se registraba toda
+                                la logística, Maersk tuvo que recurrir a
+                                compensar los pagos a los clientes por
+                                el caso de la carga perdida, carga
+                                dañada y las interrupciones lógicas.
+                            </td>
+                            <td>
+                                No se cuenta con un aproximado de
+                                los clientes afectados, pero a cada
+                                cliente afectado se le dio una
+                                compensación de millones de
+                                dólares (alrededor de siete cifras)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Costos técnicos</b></td>
+                            <td>
+                                SMaersk después del ataque tuvo que
+                                hacer una reconstrucción completa de
+                                su red, con alrededor de 4,000
+                                servidores y 45,000 computadores
+                                personales
+                            </td>
+                            <td>
+                                Se estima que el precio de levantar
+                                los servidores y las computadoras
+                                personales ascienden los
+                                $1,714,000,000 de pesos, ya que
+                                hasta la fecha no se cuenta con una
+                                cifra oficial
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Costos legales / regulatorios</b></td>
+                            <td>
+                                Se utilizó un centro de emergencia en
+                                el Reino Unido donde se tenían 600
+                                trabajadores y consultores trabajando
+                                simultáneamente
+                            </td>
+                            <td>
+                                De acuerdo con los cálculos
+                                realizados con prácticas comunes
+                                de cálculo de perdidas en Seguridad
+                                de TI se llegó a la estimación de una
+                                pérdida de $428,000,000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Pago de rescate o extorsión</b></td>
+                            <td>
+                                Se contrató a la firma consultora
+                                Deloitte para llevar a cabo un proceso
+                                de recuperación de sus servidores y
+                                computadoras personales
+                            </td>
+                            <td>
+                                No se cuenta con una cifra exacta
+                                sobre las consultas realizadas por
+                                Deloitte pero se llegó a la estimación
+                                de $428,000,000 pesos de acuerdo
+                                con cálculos hechos con consultoras
+                                y respuestas.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>TOTAL ESTIMADO</b></td>
+                            <td>
+                                De acuerdo al CEO de Maersk, Jim
+                                Hagemann Snabe, se estimó que las
+                                pérdida estimada monetaria ronda
+                                entre los 250 y 300 millones de dólares
+                                lo cual lo empleados consideran que la
+                                cifra está subestimada pero no
+                                proporcional a un monto alternativo.
+                            </td>
+                            <td>
+                                250-300 millones USD<br>
+                                <b>$4,469,375,000.00 -
+                                $5,363,250,000.00 millones de
+                                pesos (MX)</b>, de acuerdo con el valor del
+                                peso mexicano frente al dólar según
+                                el Diario Oficial de la Federación,
+                                para el 27 de junio del 2017.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 3. Calculo de costos.
+            </p>
+            <p>
+                <br>El impacto de NotPetya en Maersk fue desproporcionado: la pérdida de hasta 300 millones
+                        de USD ($5,363 MDP) superó con creces el presupuesto anual de ciberseguridad del sector
+                        logístico en 2017, que apenas rondaba el 3% al 5% del gasto total en TI. Mientras que el
+                        presupuesto preventivo se enfocaba en defensas perimetrales básicas, el ataque obligó a
+                        una reconstrucción total de la infraestructura (4,000 servidores y 45,000 PC), cuyo costo
+                        técnico de $1,714 MDP por sí solo ya equivalía a años de inversión planificada. En concreto,
+                        el ataque representó un "gasto reactivo" que triplicó lo que la empresa habría invertido en
+                        protección anual, evidenciando que el costo de la resiliencia post-incidente es masivamente
+                        superior a cualquier presupuesto de defensa operativa de la época.
+            </p>
+            
+        </article>
+
+        <!-- IMPACTO -->
+        <article class="articulo-bloque">
+            <h2>9. Relación con marcos normativos</h2>
+            <p>
+                El incidente no fue una falla aislada, sino una cascada de fallos en controles preventivos.
+                La organización operaba bajo una arquitectura de red plana que permitió que un
+                compromiso en un software de terceros escalara a una denegación de servicio global.
+                En cuanto a la relación con los marcos normativos tenemos:<br><br>
+            </p>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Escenario de Riesgo</th>
+                            <th>Falla Técnica Observada</th>
+                            <th>Control Relacionado (ISO/NIST)</th>
+                            <th>Impacto Normativo</th>
+                            <th>Recomendación De Remediación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Ataque a Cadena de Suministro</b></td>
+                            <td>
+                                Infiltración vía
+                                actualización de
+                                software
+                                contable
+                            </td>
+                            <td>
+                                <b>ISO 27001 A.15.1:</b>
+                                Política de
+                                seguridad en las
+                                relaciones con
+                                proveedores.
+                            </td>
+                            <td>
+                                Incumplimiento
+                                de debida
+                                diligencia
+                                técnica sobre
+                                software de
+                                terceros.
+                            </td>
+                            <td>
+                                Implementar
+                                entornos de prueba
+                                para toda
+                                actualización de
+                                software antes de
+                                producción.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Movimiento lateral</b></td>
+                            <td>
+                                Red plana que
+                                permitió
+                                propagación de
+                                Ucrania a
+                                centros de datos
+                                globales.
+                            </td>
+                            <td>
+                                <b>NIST CSF PR.AC5:</b> Segmentación
+                                de red y control de
+                                flujo de
+                                comunicaciones.
+                            </td>
+                            <td>
+                                Violación de
+                                principios de
+                                resiliensia y
+                                contenido dee
+                                amenazas.
+                            </td>
+                            <td>
+                                Desplegar
+                                arquitectura de
+                                Microsegmentación
+                                basada en perfiles
+                                de riesgo y
+                                criticidad.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Escalamiento de privilegios</b></td>
+                            <td>
+                                Extracción de
+                                hashes/tokens
+                                de
+                                administrador
+                                en memoria
+                                RAM.
+                            </td>
+                            <td>
+                                <b>ISO 27001 A.9.4:</b>
+                                Gestión de acceso
+                                privilegiado
+                            </td>
+                            <td>
+                                Compromiso total del Directorio Activo.
+                            </td>
+                            <td>
+                                Implementar
+                                Privileged Acces
+                                Management
+                                (PAM) y restringir
+                                credenciales
+                                administrativas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Persistencia y Ejecución</b></td>
+                            <td>
+                                Explotación de protocolo
+                                SMBv1 (EternalBlue) no parchado.
+                            </td>
+                            <td>
+                                <b>NIST CSF PR.IP-12:</b>
+                                Gestión de
+                                vulnerabilidades y
+                                ciclo de vida de
+                                parches.
+                            </td>
+                            <td>
+                                Negligencia en el
+                                mantenimiento
+                                preventivo de
+                                infraestructura
+                                crítica.
+                            </td>
+                            <td>
+                               Establecer SLAs de parcheo de
+                                “Emergencia” (< 24
+                                hrs) para
+                                vulnerabilidades
+                                críticas.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Pérdida de Disponibilidad</b></td>
+                            <td>
+                                Cifrado de
+                                controladores
+                                de dominio y
+                                backups
+                                conectados a la
+                                red.
+                            </td>
+                            <td>
+                                <b>SO 27001
+                                A.12.3/GDPR Art.
+                                32:</b> Copias de
+                                seguridad y
+                                resiliencia
+                            </td>
+                            <td>
+                                Incumplimiento
+                                del derecho a la
+                                disponibilidad de
+                                datos
+                                personales.
+                            </td>
+                            <td>
+                                Implementar la
+                                regla de respaldo 3-
+                                2-1 con
+                                almacenamiento
+                                inmutable y fuera
+                                de línea.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <p class="pie-imagen">
+                <br>Tabla 4. Relación con marcos normativos.
+            </p>
+        </article>
+
+        <!-- LÍNEA DEL TIEMPO -->
+        <article class="articulo-bloque">
+            <h2>10. Lecciones aprendidas y recomendaciones</h2>
+            <p>
+                El ataque a Maersk demostró que debilidades técnicas como sistemas obsoletos (Windows
+                2000) y redes no segmentadas pueden escalar hasta un colapso sistémico global. Fallas
+                críticas como la nula gestión de parches, el abuso de credenciales privilegiadas y la falta
+                de control sobre proveedores convirtieron una actualización de software en un vector de
+                entrada masivo. Para mitigar estos riesgos, habría sido vital aplicar el principio de mínimo
+                privilegio, implementar monitoreo de tráfico interno y mantener respaldos fuera de línea
+                para asegurar la recuperación de datos ante desastres.
+                En México y Latinoamérica, ante presupuestos limitados e infraestructura heredada, es
+                urgente priorizar la actualización de sistemas bajo marcos internacionales como el NIST.
+                Las recomendaciones clave incluyen diversificar proveedores para proteger la cadena de
+                suministro, capacitar al personal y crear planes de respuesta a incidentes locales. En
+                conclusión, el caso Maersk redefine la ciberseguridad como un pilar estratégico
+                indispensable, y no un gasto, para garantizar la resiliencia operativa frente a amenazas
+                avanzadas que trascienden fronteras.
+            </p>
+        </article>
+        <!-- CONCLUSIONES -->
+        <article class="articulo-bloque">
+            <h2>11. Opinión/reflexión técnica del estudiante</h2>
+            <p>
+                El caso NotPetya–Maersk confirma que la ciberseguridad es vital para la continuidad
+                operativa en un mundo interconectado. En América Latina, donde la brecha digital y el uso
+                de sistemas desactualizados son retos comunes, la resiliencia no debe ser opcional. Para
+                fortalecer nuestra región, es imperativo implementar acciones como modernizar la
+                infraestructura crítica, es decir, priorizar la actualización de sistemas legacy y la gestión de
+                parches para cerrar brechas que el software obsoleto deja abiertas; así como también la
+                segmentación y respaldos, es decir, Implementar la división de redes y copias de seguridad
+                offline, soluciones de alta eficacia y bajo costo para protegerse ante el secuestro de datos
+                y por último pero no menos importante, aplicar cultura de prevención en PyMEs,
+                capacitando al capital humano y auditando a proveedores locales, asegurando que el
+                eslabón más débil de la cadena de suministro no sea la puerta de entrada para ataques
+                globales.
+                En definitiva, la estabilidad de las organizaciones latinas depende de entender que la
+                prevención y la resiliencia son tan determinantes como la tecnología misma.
+            </p>
+        </article>
+
+        <!-- REFERENCIAS -->
+        <article class="articulo-bloque">
+            <h2>Referencias técnicas</h2>
+            <p class="sangria-francesa">
+                Columbia University. (2022). NotPetya: A case study of a state-sponsored cyberattack.
+                School of International and Public Affairs (SIPA).
+                <a href="https://www.sipa.columbia.edu/sites/default/files/2022-11/NotPetya%20Final.pdf"  target="_blank">https://www.sipa.columbia.edu/sites/default/files/2022-11/NotPetya%20Final.pdf</a>
+            </p>
+
+            <p class="sangria-francesa">
+                Cybersecurity & Infrastructure Security Agency. (2017, 1 de julio). Petya ransomware (Alert
+                ICS-17-181-01C). U.S. Department of Homeland Security. <a href="https://www.cisa.gov/newsevents/ics-alerts/ics-alert-17-181-01c"  target="_blank">https://www.cisa.gov/newsevents/ics-alerts/ics-alert-17-181-01c</a>
+            </p>
+
+            <p class="sangria-francesa">
+                IBM X-Force. (s.f.). Petya-NotPetya ransomware campaign [Colección de intercambio]. IBM
+                Cloud. <a href="https://exchange.xforce.ibmcloud.com/collection/Petya-NotPetya-RansomwareCampaign-9c4316058c7a4c50931d135e62d55d89"  target="_blank">https://exchange.xforce.ibmcloud.com/collection/Petya-NotPetya-RansomwareCampaign-9c4316058c7a4c50931d135e62d55d89</a>
+            </p>
+
+            <p class="sangria-francesa">
+                National Institute of Standards and Technology. (2024). The NIST Cybersecurity Framework
+                (CSF) 2.0 (NIST CSWP 29). U.S. Department of Commerce.
+                <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf"  target="_blank">https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf</a>
+            </p>
+            <p class="sangria-francesa">
+                Diario Oficial de la Federación. (2017). Tipo de cambio y tasas de interés: Valor del dólar
+                    2017. Secretaría de Gobernación. <a href="https://www.dof.gob.mx/indicadores.php#gsc.tab=0"  target="_blank">https://www.dof.gob.mx/indicadores.php#gsc.tab=0</a>
+            </p>
+        </article>
+
+    </section>
+
+        <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf">
+        <a href="pdf/Act01-Equipo2.pdf" target="_blank" class="btn-exportar">
+            Exportar PDF
+        </a>
+    </div>
+</main>
+
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>
