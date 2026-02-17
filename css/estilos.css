@@ -481,19 +481,217 @@ footer {
     }
 }
 
+/* ============================= */
+/* ===== ACORDEÓN ACTIVIDADES ==== */
+/* ============================= */
+
+.acordeon-actividades {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.acordeon-item {
+    margin-bottom: 18px;
+}
+
+.acordeon-titulo {
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.acordeon-titulo:hover {
+    background-color: #2a2a2a;
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 10px;
+}
+
+.acordeon-contenido.activo {
+    margin-top: 12px;
+}
 
 
 
+.actividad-card {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
+.actividad-card a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1c1c1c;
+    transition: color 0.3s ease;
+}
 
+.actividad-card a:hover {
+    color: #444444;
+}
 
+.tipo-tarea {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
 
+/* ======================================= */
+/* ====== ARTÍCULO TÉCNICO DIGITAL ======= */
+/* ======================================= */
 
+.articulo-tecnico {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
+.articulo-header {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
 
+.articulo-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
+.articulo-subtitulo {
+    font-size: 18px;
+    color: #555;
+}
 
+.articulo-bloque {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
 
+.articulo-bloque h2 {
+    margin-bottom: 18px;
+    font-size: 22px;
+    border-left: 4px solid #1c1c1c;
+    padding-left: 10px;
+}
 
+.articulo-bloque p {
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: justify;
+}
 
+.articulo-imagen {
+    text-align: center;
+}
 
+.articulo-imagen img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.pie-imagen {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+.tabla-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-responsive th,
+.tabla-responsive td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabla-responsive th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lista-referencias {
+    padding-left: 20px;
+}
+
+.lista-referencias li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* ======================================= */
+/* ============ BOTÓN PDF ================ */
+/* ======================================= */
+
+.contenedor-boton-pdf {
+    text-align: center;
+    margin: 60px 0 20px 0;
+}
+
+.btn-exportar {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-exportar:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+.btn-exportar:active {
+    transform: translateY(0);
+}
