@@ -142,9 +142,20 @@
       </p>
     </article>
 
+    <article class="articulo-bloque">
+      <h2>2. Introducción</h2>
+
+      <p>
+       Actualmente, muchas organizaciones requieren conectar redes remotas de forma segura a través de Internet, 
+        evitando que la información sea interceptada o modificada. En esta actividad se implementó una VPN IPSec tipo Tunnel, 
+        configurando routers Cisco para establecer un canal cifrado entre dos redes privadas. A través de distintas fases, se aplicaron políticas ISAKMP, 
+        transform-set, ACLs y crypto maps, logrando una comunicación protegida que garantiza confidencialidad, integridad y autenticación en el intercambio de datos.
+      </p>
+    </article>
+
 
     <article class="articulo-bloque">
-      <h2>2. Configuración de la topología de red</h2>
+      <h2>3. Configuración de la topología de red</h2>
 
       <p>
         En esta actividad se implementó una VPN IPSec tipo Tunnel para asegurar la comunicación
@@ -160,9 +171,9 @@
 
 
     <article class="articulo-bloque">
-      <h2>3. Fases de configuración</h2>
+      <h2>4. Fases de configuración</h2>
 
-      <h3>3.1 Configuración inicial</h3>
+      <h3>4.1 Configuración inicial</h3>
       <p>
         Primero se prepararon los routers configurando hostname, interfaces, direcciones IP y rutas estáticas.
         Se activaron las interfaces con <b>no shutdown</b> y se agregó una ruta por defecto para permitir
@@ -184,7 +195,7 @@ interface g0/0
 ip route 0.0.0.0 0.0.0.0 209.165.100.2
       </pre>
 
-      <h3>3.2 Licencia de seguridad habilitada</h3>
+      <h3>4.2 Licencia de seguridad habilitada</h3>
       <p>
         Para poder usar IPSec, fue necesario habilitar el paquete tecnológico <b>SecurityK9</b>.
         Después se guardó la configuración y se reinició el router para aplicar cambios.
@@ -200,7 +211,7 @@ show version
 
 
     <article class="articulo-bloque">
-      <h2>4. Implementación de ACLs (Tráfico interesante)</h2>
+      <h2>5. Implementación de ACLs (Tráfico interesante)</h2>
 
       <p>
         Se configuró una ACL extendida para definir el tráfico que será cifrado por IPSec.
@@ -216,7 +227,7 @@ access-list 100 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255
 
 
     <article class="articulo-bloque">
-      <h2>5. Phase 1: ISAKMP Policy</h2>
+      <h2>6. Phase 1: ISAKMP Policy</h2>
 
       <p>
         En esta fase se estableció la política ISAKMP, encargada de negociar parámetros de seguridad
@@ -235,7 +246,7 @@ crypto isakmp key secretkey address 209.165.200.1
 
 
     <article class="articulo-bloque">
-      <h2>6. Phase 2: IPSec Transform-Set</h2>
+      <h2>7. Phase 2: IPSec Transform-Set</h2>
 
       <p>
         Se configuró el transform-set para definir cómo se cifrarán y validarán los paquetes.
@@ -250,7 +261,7 @@ crypto ipsec transform-set R2->R1 esp-aes 256 esp-sha-hmac
 
 
     <article class="articulo-bloque">
-      <h2>7. Crear el mapa criptográfico</h2>
+      <h2>8. Crear el mapa criptográfico</h2>
 
       <p>
         El crypto map funciona como contenedor que une peer remoto, transform-set, PFS y la ACL.
@@ -269,7 +280,7 @@ crypto map IPSEC-MAP 10 ipsec-isakmp
 
 
     <article class="articulo-bloque">
-      <h2>8. Aplicar el mapa criptográfico</h2>
+      <h2>9. Aplicar el mapa criptográfico</h2>
 
       <p>
         Finalmente, el mapa criptográfico se aplicó en la interfaz conectada hacia la red pública,
@@ -285,7 +296,7 @@ interface g0/0
 
 
     <article class="articulo-bloque">
-      <h2>9. Resultado final</h2>
+      <h2>10. Resultado final</h2>
 
       <p>
         Una vez completada la configuración, se logró establecer el túnel IPSec entre ambas redes privadas,
@@ -300,7 +311,7 @@ interface g0/0
 
 
     <article class="articulo-bloque">
-      <h2>10. Conclusión</h2>
+      <h2>11. Conclusión</h2>
 
       <p>
         En conclusión, implementar una VPN IPSec Tunnel requiere una configuración organizada y coherente.
