@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 06 | Implementación IPSec VPN</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="icon" type="image/png" href="../img/icono.png">
+
+  <style>
+    .sangria-francesa {
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+
+    pre.codigo {
+      background: #111;
+      color: #fff;
+      padding: 16px;
+      border-radius: 14px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-top: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+    }
+
+    .img-actividad {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .img-actividad img {
+      width: 100%;
+      max-width: 850px;
+      border-radius: 16px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+    }
+
+    .img-actividad p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+
+    <div class="header-titulos">
+
+      <div class="header-imagen">
+        <img src="../img/foto.png" alt="Imagen del portafolio">
+      </div>
+
+      <div class="header-textos">
+        <div class="header-fijo">
+          <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+        </div>
+
+        <div class="header-animaciones">
+
+          <div class="header-texto activo">
+            <h2>CNO V – Seguridad Informática</h2>
+            <h3>Universidad Politécnica de San Luis Potosí</h3>
+            <h4>Octavo semestre | Primavera 2026</h4>
+          </div>
+
+          <div class="header-texto">
+            <h2>Portafolio de Evidencias</h2>
+            <h3>182032@upslp.edu.mx</h3>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="header-nav">
+      <ul>
+        <li>
+          <a href="../index.html" data-tooltip="Inicio">
+            <span class="icono"><img src="../img/inicio.png" alt="Inicio"></span>
+            <span class="texto">INICIO</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="../actividades.html" data-tooltip="Actividades">
+            <span class="icono"><img src="../img/actividades.png" alt="Actividades"></span>
+            <span class="texto">ACTIVIDADES</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="../proyectos.html" data-tooltip="Proyectos">
+            <span class="icono"><img src="../img/proyectos.png" alt="Proyectos"></span>
+            <span class="texto">PROYECTOS</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="../certificaciones.html" data-tooltip="Certificaciones">
+            <span class="icono"><img src="../img/certificaciones.png" alt="Certificaciones"></span>
+            <span class="texto">CERTIFICACIONES</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+<main class="contenido-principal">
+
+  <section class="articulo-tecnico">
+
+    <h1 class="seccion-titulo">ACTIVIDAD 06</h1>
+
+    <div class="articulo-header">
+      <h1>Implementación IPSec VPN</h1>
+      <p class="articulo-subtitulo">
+        Configuración de túnel VPN con IPSec en routers Cisco
+      </p>
+    </div>
+
+
+    <article class="articulo-bloque">
+      <h2>1. Datos Generales</h2>
+
+      <p>
+        <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+        <b>Materia:</b> CNO V – Seguridad Informática <br>
+        <b>Estudiante:</b> López Castro Diego – 182032 <br>
+        <b>Profesor:</b> Mtro. Servando López Contreras <br>
+        <b>Fecha de entrega:</b> 16 – Febrero – 2026
+      </p>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>2. Configuración de la topología de red</h2>
+
+      <p>
+        En esta actividad se implementó una VPN IPSec tipo Tunnel para asegurar la comunicación
+        entre dos redes privadas, conectadas a través de un ISP. Se siguieron diferentes fases
+        de configuración para asegurar conectividad, habilitar criptografía y establecer el túnel.
+      </p>
+
+      <div class="img-actividad">
+        <img src="../img/act06-topologia.png" alt="Topología IPSec VPN">
+        <p>Figura 1. Topología de red utilizada para la VPN IPSec.</p>
+      </div>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>3. Fases de configuración</h2>
+
+      <h3>3.1 Configuración inicial</h3>
+      <p>
+        Primero se prepararon los routers configurando hostname, interfaces, direcciones IP y rutas estáticas.
+        Se activaron las interfaces con <b>no shutdown</b> y se agregó una ruta por defecto para permitir
+        salida hacia el ISP.
+      </p>
+
+      <pre class="codigo">
+enable
+configure terminal
+hostname R1
+interface g0/1
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+
+interface g0/0
+ ip address 209.165.100.1 255.255.255.0
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 209.165.100.2
+      </pre>
+
+      <h3>3.2 Licencia de seguridad habilitada</h3>
+      <p>
+        Para poder usar IPSec, fue necesario habilitar el paquete tecnológico <b>SecurityK9</b>.
+        Después se guardó la configuración y se reinició el router para aplicar cambios.
+      </p>
+
+      <pre class="codigo">
+license boot module c1900 technology-package securityk9
+copy running-config startup-config
+reload
+show version
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>4. Implementación de ACLs (Tráfico interesante)</h2>
+
+      <p>
+        Se configuró una ACL extendida para definir el tráfico que será cifrado por IPSec.
+        En este caso, se permitió comunicación entre las redes privadas:
+        <b>192.168.1.0/24</b> y <b>192.168.3.0/24</b>.
+      </p>
+
+      <pre class="codigo">
+access-list 100 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255
+access-list 100 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>5. Phase 1: ISAKMP Policy</h2>
+
+      <p>
+        En esta fase se estableció la política ISAKMP, encargada de negociar parámetros de seguridad
+        antes de crear el túnel IPSec. Se usó AES 256, autenticación por clave precompartida y grupo DH 5.
+      </p>
+
+      <pre class="codigo">
+crypto isakmp policy 10
+ encryption aes 256
+ authentication pre-share
+ group 5
+
+crypto isakmp key secretkey address 209.165.200.1
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>6. Phase 2: IPSec Transform-Set</h2>
+
+      <p>
+        Se configuró el transform-set para definir cómo se cifrarán y validarán los paquetes.
+        Se utilizó ESP con AES 256 y SHA-HMAC para integridad.
+      </p>
+
+      <pre class="codigo">
+crypto ipsec transform-set R1->R2 esp-aes 256 esp-sha-hmac
+crypto ipsec transform-set R2->R1 esp-aes 256 esp-sha-hmac
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>7. Crear el mapa criptográfico</h2>
+
+      <p>
+        El crypto map funciona como contenedor que une peer remoto, transform-set, PFS y la ACL.
+        Se estableció un tiempo de vida de 24 horas (86400 segundos).
+      </p>
+
+      <pre class="codigo">
+crypto map IPSEC-MAP 10 ipsec-isakmp
+ set peer 209.165.200.1
+ set pfs group5
+ set security-association lifetime seconds 86400
+ set transform-set R1->R2
+ match address 100
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>8. Aplicar el mapa criptográfico</h2>
+
+      <p>
+        Finalmente, el mapa criptográfico se aplicó en la interfaz conectada hacia la red pública,
+        habilitando IPSec en esa interfaz. De esta forma, todo tráfico que coincida con la ACL
+        será cifrado automáticamente.
+      </p>
+
+      <pre class="codigo">
+interface g0/0
+ crypto map IPSEC-MAP
+      </pre>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>9. Resultado final</h2>
+
+      <p>
+        Una vez completada la configuración, se logró establecer el túnel IPSec entre ambas redes privadas,
+        permitiendo tráfico seguro y cifrado a través del ISP.
+      </p>
+
+      <div class="img-actividad">
+        <img src="../img/act06-resultado.png" alt="Resultado final IPSec VPN">
+        <p>Figura 2. Prueba de conectividad y funcionamiento del túnel IPSec.</p>
+      </div>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>10. Conclusión</h2>
+
+      <p>
+        En conclusión, implementar una VPN IPSec Tunnel requiere una configuración organizada y coherente.
+        Primero se estableció conectividad básica mediante direccionamiento IP y rutas estáticas.
+        Luego se habilitó la licencia SecurityK9 para activar funciones criptográficas.
+        Posteriormente, se definió el tráfico interesante con ACLs y se configuraron las fases ISAKMP e IPSec.
+        Finalmente, al aplicar el crypto map en la interfaz externa, se logró establecer una conexión segura,
+        garantizando autenticación, integridad y confidencialidad entre las redes.
+      </p>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>Referencias</h2>
+
+      <p class="sangria-francesa">
+        Cisco. (s.f.). <i>IPSec VPN Configuration Guide</i>.
+        <a href="https://www.cisco.com/" target="_blank">https://www.cisco.com/</a>
+      </p>
+
+      <p class="sangria-francesa">
+        NetAcad. (s.f.). <i>Packet Tracer Documentation</i>.
+        <a href="https://www.netacad.com/" target="_blank">https://www.netacad.com/</a>
+      </p>
+
+    </article>
+
+  </section>
+
+
+  <!-- BOTÓN EXPORTAR PDF -->
+  <div style="margin-top: 35px; text-align: center;">
+    <a href="../pdf/182032-act06.pdf" class="btn-exportar" target="_blank">
+      Exportar PDF
+    </a>
+  </div>
+
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>© 2026 Diego López Castro</p>
+      <p>Portafolio de evidencias</p>
+    </div>
+
+    <div class="footer-right">
+      <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>
