@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 05</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+
+    <style>
+        .sangria-francesa {
+            padding-left: 2em;
+            text-indent: -2em;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 05</h1>
+
+        <div class="articulo-header">
+            <h1>Cartografiando el Pentesting</h1>
+            <p class="articulo-subtitulo">
+                Exploración de metodologías y marcos de referencia para pruebas de penetración
+            </p>
+        </div>
+
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>1. Introducción</h2>
+            <p>
+                En el ámbito de la seguridad informática, las pruebas de penetración representan un proceso
+                fundamental para evaluar el nivel de protección de sistemas, redes y aplicaciones. Para realizar
+                un pentesting de manera organizada y profesional, existen metodologías y estándares que
+                proporcionan fases claras, objetivos definidos y lineamientos técnicos para asegurar un análisis
+                completo y confiable.
+                <br><br>
+                Esta actividad presenta una comparación entre distintas metodologías reconocidas, analizando
+                sus objetivos, fases, orientación, organismos responsables, certificaciones y versiones vigentes.
+            </p>
+        </article>
+
+
+        <!-- TABLA -->
+        <article class="articulo-bloque">
+            <h2>2. Comparación de metodologías de Pentesting</h2>
+
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metodología</th>
+                            <th>Descripción breve</th>
+                            <th>Fases</th>
+                            <th>Objetivo principal</th>
+                            <th>Escenarios de uso</th>
+                            <th>Orientación</th>
+                            <th>Organismo responsable</th>
+                            <th>URL oficial</th>
+                            <th>Certificaciones</th>
+                            <th>Versión vigente</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><b>MITRE ATT&CK</b></td>
+                            <td>
+                                Marco de referencia que documenta tácticas y técnicas utilizadas por adversarios reales.
+                            </td>
+                            <td>
+                                1. Preparación<br>
+                                2. Mapeo de técnicas<br>
+                                3. Simulación<br>
+                                4. Evaluación de detección<br>
+                                5. Respuesta
+                            </td>
+                            <td>
+                                Identificar, clasificar y simular técnicas de ataques reales para evaluar capacidades defensivas.
+                            </td>
+                            <td>
+                                Red Team, Blue Team y Purple Team.
+                            </td>
+                            <td>
+                                Ataque y defensa
+                            </td>
+                            <td>
+                                MITRE Corporation
+                            </td>
+                            <td>
+                                <a href="https://attack.mitre.org" target="_blank">https://attack.mitre.org</a>
+                            </td>
+                            <td>
+                                MITRE ATT&CK DEFENDER™ (MAD)
+                            </td>
+                            <td>
+                                ATT&CK v18 (octubre 2025)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>OWASP WSTG</b></td>
+                            <td>
+                                Guía detallada enfocada en pruebas de seguridad de aplicaciones web.
+                            </td>
+                            <td>
+                                1. Recopilación de información<br>
+                                2. Configuración e implementación<br>
+                                3. Gestión de identidad<br>
+                                4. Autenticación<br>
+                                5. Autorización<br>
+                                6. Gestión de sesiones<br>
+                                7. Validación de entrada<br>
+                                8. Manejo de errores<br>
+                                9. Criptografía débil<br>
+                                10. Lógica empresarial<br>
+                                11. Cliente (front-end)<br>
+                                12. Pruebas API
+                            </td>
+                            <td>
+                                Probar la seguridad de aplicaciones y servicios web.
+                            </td>
+                            <td>
+                                Auditorías web, DevSecOps, evaluaciones de seguridad.
+                            </td>
+                            <td>
+                                Evaluación ofensiva (pentesting web)
+                            </td>
+                            <td>
+                                OWASP (Open Worldwide Application Security Project)
+                            </td>
+                            <td>
+                                <a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank">
+                                    https://owasp.org/www-project-web-security-testing-guide/
+                                </a>
+                            </td>
+                            <td>
+                                OWASP Web Security Testing Guide Training Course Certification
+                            </td>
+                            <td>
+                                Versión 4.2 (diciembre 2020)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>NIST SP 800-115</b></td>
+                            <td>
+                                Guía metodológica para pruebas y evaluaciones de seguridad en sistemas de información.
+                            </td>
+                            <td>
+                                1. Planeación<br>
+                                2. Descubrimiento<br>
+                                3. Ataque<br>
+                                4. Reporte
+                            </td>
+                            <td>
+                                Proporcionar lineamientos estructurados para realizar pruebas técnicas de seguridad.
+                            </td>
+                            <td>
+                                Auditorías formales, entornos de gobierno y cumplimiento normativo.
+                            </td>
+                            <td>
+                                Evaluación de control y evaluación técnica
+                            </td>
+                            <td>
+                                NIST (National Institute of Standards and Technology)
+                            </td>
+                            <td>
+                                <a href="https://csrc.nist.gov/pubs/sp/800/115/final" target="_blank">
+                                    https://csrc.nist.gov/pubs/sp/800/115/final
+                                </a>
+                            </td>
+                            <td>
+                                NCSP® 800-115 Awareness Certificate
+                            </td>
+                            <td>
+                                Última actualización: 30 septiembre 2008
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>OSSTMM</b></td>
+                            <td>
+                                Metodología científica basada en mediciones cuantitativas para pruebas operativas de seguridad.
+                            </td>
+                            <td>
+                                1. Preparación previa<br>
+                                2. Recopilación de inteligencia<br>
+                                3. Modelado de amenazas<br>
+                                4. Análisis de vulnerabilidades<br>
+                                5. Explotación<br>
+                                6. Reporte<br>
+                                7. Optimización
+                            </td>
+                            <td>
+                                Medir objetivamente la seguridad usando métricas cuantitativas.
+                            </td>
+                            <td>
+                                Auditorías integrales y evaluaciones preventivas.
+                            </td>
+                            <td>
+                                Evaluación ofensiva y validación
+                            </td>
+                            <td>
+                                ISECOM (Institute for Security and Open Methodologies)
+                            </td>
+                            <td>
+                                <a href="https://www.isecom.org" target="_blank">https://www.isecom.org</a>
+                            </td>
+                            <td>
+                                OSSTMM Professional Analyst / Tester / Expert / Wireless Expert / Certified Trust Analyst
+                            </td>
+                            <td>
+                                OSSTMM 3 (diciembre 2010)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>PTES</b></td>
+                            <td>
+                                Proceso estándar abierto para pruebas de penetración a nivel corporativo.
+                            </td>
+                            <td>
+                                1. Interacciones previas<br>
+                                2. Recopilación de inteligencia<br>
+                                3. Modelado de amenazas<br>
+                                4. Análisis de vulnerabilidades<br>
+                                5. Explotación<br>
+                                6. Post-explotación<br>
+                                7. Informes
+                            </td>
+                            <td>
+                                Definir un estándar técnico y organizativo para pruebas de penetración.
+                            </td>
+                            <td>
+                                Pentesting corporativo (externo e interno).
+                            </td>
+                            <td>
+                                Ataque ofensivo estructurado
+                            </td>
+                            <td>
+                                Comunidad PTES
+                            </td>
+                            <td>
+                                <a href="http://www.pentest-standard.org/index.php/Main_Page" target="_blank">
+                                    http://www.pentest-standard.org/index.php/Main_Page
+                                </a>
+                            </td>
+                            <td>
+                                CEH, GPEN, GWAPT, LPT, entre otras.
+                            </td>
+                            <td>
+                                Versión 1.1
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>ISSAF</b></td>
+                            <td>
+                                Metodología extensa y detallada para pruebas de penetración y evaluaciones de seguridad.
+                            </td>
+                            <td>
+                                1. Recopilación de información<br>
+                                2. Asignación de red<br>
+                                3. Identificación de vulnerabilidades<br>
+                                4. Penetración<br>
+                                5. Escalamiento de privilegios<br>
+                                6. Enumeración adicional<br>
+                                7. Comprometer usuarios remotos<br>
+                                8. Mantener acceso<br>
+                                9. Cubriendo pistas
+                            </td>
+                            <td>
+                                Proporcionar un marco detallado para pruebas completas.
+                            </td>
+                            <td>
+                                Auditorías técnicas internas en infraestructura.
+                            </td>
+                            <td>
+                                Evaluación ofensiva
+                            </td>
+                            <td>
+                                OISSG (Open Information Security Group)
+                            </td>
+                            <td>
+                                <a href="https://pymesec.org/issaf/" target="_blank">
+                                    https://pymesec.org/issaf/
+                                </a>
+                            </td>
+                            <td>
+                                No cuenta con certificación oficial (comunidad descontinuada).
+                            </td>
+                            <td>
+                                Versión 0.2.1 (2004)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="pie-imagen">
+                <br>Tabla 1. Comparación de metodologías y marcos de referencia utilizados en pruebas de penetración.
+            </p>
+        </article>
+
+
+        <!-- CONCLUSIÓN -->
+        <article class="articulo-bloque">
+            <h2>3. Conclusión</h2>
+            <p>
+                Las metodologías analizadas permiten comprender que el pentesting no solo depende de herramientas,
+                sino de procesos estructurados que aseguren un análisis completo. Marcos como MITRE ATT&CK y OWASP
+                WSTG se enfocan en técnicas modernas de ataque y aplicaciones web, mientras que NIST SP 800-115
+                es una guía más formal orientada a auditorías y cumplimiento.
+                <br><br>
+                Por otro lado, metodologías como OSSTMM, PTES e ISSAF destacan por su enfoque sistemático, orientado
+                a pruebas ofensivas profundas y reportes detallados. En conjunto, todas estas metodologías permiten
+                a un profesional de seguridad aplicar buenas prácticas para realizar pruebas de penetración confiables,
+                repetibles y alineadas a estándares internacionales.
+            </p>
+        </article>
+
+
+        <!-- REFERENCIAS -->
+        <article class="articulo-bloque">
+            <h2>Referencias bibliográficas</h2>
+
+            <p class="sangria-francesa">
+                Cisco Networking Academy. (2026). 1.2 Exploración de las metodologías de pruebas de penetración.
+                Recuperado el 12 de febrero de 2026, de Cisco Networking Academy:
+                <a href="https://www.netacad.com" target="_blank">https://www.netacad.com</a>
+            </p>
+
+            <p class="sangria-francesa">
+                Cybersecurity Education Guides. (2026). What Is The PTES (Penetration Testing Execution Standard)?
+                Recuperado el 12 de febrero de 2026, de Cybersecurity Education Guides:
+                <a href="https://www.cybersecurityeducationguides.org" target="_blank">
+                    https://www.cybersecurityeducationguides.org
+                </a>
+            </p>
+
+            <p class="sangria-francesa">
+                Herzog, P. (2010). OSSTMM 3. Recuperado el 12 de febrero de 2026, de ISECOM:
+                <a href="https://www.isecom.org/OSSTMM.3.pdf" target="_blank">
+                    https://www.isecom.org/OSSTMM.3.pdf
+                </a>
+            </p>
+
+            <p class="sangria-francesa">
+                MITRE Corporation. (2026). ATT&CK. Recuperado el 12 de febrero de 2026, de MITRE ATT&CK:
+                <a href="https://attack.mitre.org" target="_blank">https://attack.mitre.org</a>
+            </p>
+
+            <p class="sangria-francesa">
+                National Institute of Standards and Technology (NIST). (2008). NIST SP 800-115 Technical Guide to
+                Information Security Testing and Assessment. Recuperado el 12 de febrero de 2026, de CSRC NIST:
+                <a href="https://csrc.nist.gov/pubs/sp/800/115/final" target="_blank">
+                    https://csrc.nist.gov/pubs/sp/800/115/final
+                </a>
+            </p>
+
+            <p class="sangria-francesa">
+                OWASP. (2026). OWASP Web Security Testing Guide. Recuperado el 12 de febrero de 2026, de OWASP:
+                <a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank">
+                    https://owasp.org/www-project-web-security-testing-guide/
+                </a>
+            </p>
+
+            <p class="sangria-francesa">
+                PTES. (2014). Main Page. Recuperado el 12 de febrero de 2026, de Pentest Standard:
+                <a href="http://www.pentest-standard.org/index.php/Main_Page" target="_blank">
+                    http://www.pentest-standard.org/index.php/Main_Page
+                </a>
+            </p>
+
+            <p class="sangria-francesa">
+                Open Information Security Group (OISSG). (2024). ISSAF. Recuperado el 12 de febrero de 2026, de PYMESEC:
+                <a href="https://pymesec.org/issaf/" target="_blank">
+                    https://pymesec.org/issaf/
+                </a>
+            </p>
+
+        </article>
+
+    </section>
+
+
+    <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf">
+        <a href="../pdf/182032_act05.pdf" target="_blank" class="btn-exportar">
+            Exportar PDF
+        </a>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>
