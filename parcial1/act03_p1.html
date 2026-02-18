@@ -120,7 +120,7 @@
 
         <!-- INTRODUCCIÓN -->
         <article class="articulo-bloque">
-            <h2>1. Datos Generales</h2>
+            <h2>Datos Generales</h2>
             <p>
                 Esta actividad corresponde a la interpretación y traducción de políticas de filtrado en iptables,
                 aplicando los conceptos básicos del flujo de paquetes, tablas principales y reglas comunes para el
@@ -133,10 +133,21 @@
             </p>
         </article>
 
+        <article class="articulo-bloque">
+            <h2>Introducción</h2>
+            <p>
+                En el ámbito de la seguridad informática, el uso de firewalls es esencial para controlar el tráfico de red y proteger 
+                los sistemas ante accesos no autorizados. En esta actividad se analizan e implementan políticas de filtrado utilizando iptables, 
+                con el objetivo de comprender cómo se establecen reglas de entrada, salida y reenvío de paquetes dentro de un entorno Linux. 
+                A través de distintos escenarios prácticos, se evaluó el impacto de permitir o bloquear servicios específicos, reforzando la importancia
+                de una correcta configuración para mantener la integridad, disponibilidad y confidencialidad de la red.
+            </p>
+        </article>
+
 
         <!-- EJERCICIO 1 -->
         <article class="articulo-bloque">
-            <h2>2. Flujo de un paquete en iptables</h2>
+            <h2>1. Completa los espacios conforme se explica el flujo del paquete</h2>
             <p>
                 Cuando un paquete llega al sistema, primero pasa por una <b>tabla</b>,
                 después por una <b>cadena</b> y finalmente se ejecuta una <b>regla</b>.
@@ -146,7 +157,7 @@
 
         <!-- TABLA DE TABLAS -->
         <article class="articulo-bloque">
-            <h2>3. Tablas principales y propósito</h2>
+            <h2>2. relaciona cada tabla con su proósito principal</h2>
 
             <div class="tabla-responsive">
                 <table>
@@ -195,21 +206,25 @@
 
         <!-- ANATOMÍA -->
         <article class="articulo-bloque">
-            <h2>4. Anatomía de un comando iptables</h2>
-            <p>
-                Ejemplo de comando:
-            </p>
+            <h2>3. Anatomía de un comando iptables</h2>
 
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
-iptables -A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT
+iptables -A <b>INPUT</b> -p tcp -m <b>multiport</b> --dports 80,443 -j <b>ACCEPT</b>
             </pre>
 
-            <p>
-                Este comando permite el tráfico TCP entrante a los puertos <b>80</b> y <b>443</b>.
-            </p>
+            
         </article>
+        
+        <article class="articulo-bloque">
+            <h2>4. Este comando permite:</h2>
 
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+                Este comando permite el tráfico TCP entrante a los puertos <b>80</b> y <b>443</b>
+            </pre>
 
+            
+        </article>
+        
         <!-- VARIABLES -->
         <article class="articulo-bloque">
             <h2>5. Variables y opciones comunes</h2>
@@ -238,7 +253,7 @@ iptables -L -v
 
         <!-- PREGUNTA 6 -->
         <article class="articulo-bloque">
-            <h2>6. Interpretación de regla</h2>
+            <h2>6. ¿Qué hace esta regla?</h2>
 
             <p>
                 Regla dada:
@@ -259,29 +274,28 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 \
 
         <!-- REGLAS DE CONFIG -->
         <article class="articulo-bloque">
-            <h2>7. Reglas solicitadas</h2>
 
             <p><b>7.1 Permitir tráfico HTTP entrante</b></p>
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
             </pre>
 
-            <p><b>7.2 Permitir todo el tráfico saliente</b></p>
+            <p><b>8. Permitir todo el tráfico saliente</b></p>
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A OUTPUT -j ACCEPT
             </pre>
 
-            <p><b>7.3 Permitir SSH solo desde la IP 192.168.1.50</b></p>
+            <p><b>9. Permitir SSH solo desde la IP 192.168.1.50</b></p>
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A INPUT -p tcp --dport 22 -s 192.168.1.50 -j ACCEPT
             </pre>
 
-            <p><b>7.4 Permitir tráfico TCP entrante a puertos 80 y 443 solo si es conexión establecida o relacionada</b></p>
+            <p><b>10. Permitir tráfico TCP entrante a puertos 80 y 443 solo si es conexión establecida o relacionada</b></p>
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A INPUT -p tcp -m multiport --dports 80,443 -m state --state ESTABLISHED,RELATED -j ACCEPT
             </pre>
 
-            <p><b>7.5 Permitir tráfico TCP entrante por eth0 a 22, 80 y 443, registrar intentos y permitir solo NEW y ESTABLISHED</b></p>
+            <p><b>11. Permitir tráfico TCP entrante por eth0 a 22, 80 y 443, registrar intentos y permitir solo NEW y ESTABLISHED</b></p>
 
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW -j LOG --log-prefix "Intento "
