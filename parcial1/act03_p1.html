@@ -275,7 +275,7 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 \
         <!-- REGLAS DE CONFIG -->
         <article class="articulo-bloque">
 
-            <p><b>7.1 Permitir tráfico HTTP entrante</b></p>
+            <p><b>7 Permitir tráfico HTTP entrante</b></p>
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
             </pre>
@@ -309,7 +309,7 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --stat
 
         <!-- EVIDENCIA -->
         <article class="articulo-bloque">
-            <h2>8. Evidencia escaneada</h2>
+            <h2>Evidencia escaneada</h2>
 
             <div class="articulo-imagen">
                 <img src="../img/act03-1.jpg" alt="Actividad 03 página 1">
@@ -330,7 +330,7 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --stat
 
         <!-- CONCLUSIÓN -->
         <article class="articulo-bloque">
-            <h2>9. Conclusión</h2>
+            <h2>Conclusión</h2>
             <p>
                 La actividad permitió comprender cómo funciona el filtrado de paquetes en iptables, identificando el rol
                 de las tablas y cadenas. Además, se reforzó el conocimiento sobre reglas prácticas utilizadas para permitir
