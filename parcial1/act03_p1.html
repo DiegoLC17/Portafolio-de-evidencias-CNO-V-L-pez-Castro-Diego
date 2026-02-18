@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 03</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+
+    <style>
+        .sangria-francesa {
+            padding-left: 2em;
+            text-indent: -2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 03</h1>
+
+        <div class="articulo-header">
+            <h1>Interpretación y traducción de políticas de filtrado en iptables</h1>
+            <p class="articulo-subtitulo">
+                CNO V – Seguridad Informática
+            </p>
+        </div>
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>1. Datos Generales</h2>
+            <p>
+                Esta actividad corresponde a la interpretación y traducción de políticas de filtrado en iptables,
+                aplicando los conceptos básicos del flujo de paquetes, tablas principales y reglas comunes para el
+                control del tráfico en Linux.
+            </p>
+
+            <p>
+                <b>Nombre:</b> Diego López Castro <br>
+                <b>Fecha:</b> 03 de febrero de 2026
+            </p>
+        </article>
+
+
+        <!-- EJERCICIO 1 -->
+        <article class="articulo-bloque">
+            <h2>2. Flujo de un paquete en iptables</h2>
+            <p>
+                Cuando un paquete llega al sistema, primero pasa por una <b>tabla</b>,
+                después por una <b>cadena</b> y finalmente se ejecuta una <b>regla</b>.
+            </p>
+        </article>
+
+
+        <!-- TABLA DE TABLAS -->
+        <article class="articulo-bloque">
+            <h2>3. Tablas principales y propósito</h2>
+
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tabla</th>
+                            <th>Propósito principal</th>
+                            <th>Ejemplo de uso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>FILTER</b></td>
+                            <td>Filtrar tráfico de paquetes</td>
+                            <td>Bloquear el tráfico de paquetes</td>
+                        </tr>
+                        <tr>
+                            <td><b>NAT</b></td>
+                            <td>Traducción de direcciones</td>
+                            <td>Compartir internet</td>
+                        </tr>
+                        <tr>
+                            <td><b>MANGLE</b></td>
+                            <td>Modificación avanzada de paquetes</td>
+                            <td>Cambiar las cabeceras</td>
+                        </tr>
+                        <tr>
+                            <td><b>RAW</b></td>
+                            <td>Excepción de seguimiento</td>
+                            <td>Paquetes no inspeccionados</td>
+                        </tr>
+                        <tr>
+                            <td><b>SECURITY</b></td>
+                            <td>Aplicación de políticas de seguridad</td>
+                            <td>Controlar seguridad adicional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="pie-imagen">
+                <br>Tabla 1. Tablas principales en iptables.
+            </p>
+        </article>
+
+
+        <!-- ANATOMÍA -->
+        <article class="articulo-bloque">
+            <h2>4. Anatomía de un comando iptables</h2>
+            <p>
+                Ejemplo de comando:
+            </p>
+
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT
+            </pre>
+
+            <p>
+                Este comando permite el tráfico TCP entrante a los puertos <b>80</b> y <b>443</b>.
+            </p>
+        </article>
+
+
+        <!-- VARIABLES -->
+        <article class="articulo-bloque">
+            <h2>5. Variables y opciones comunes</h2>
+
+            <p><b>a) Limitar intentos por minuto</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables --limit 1/minute
+            </pre>
+
+            <p><b>b) Filtrar por IP de origen</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -s 192.168.1.0/24
+            </pre>
+
+            <p><b>c) Ver solo números, sin DNS (ni resolución de puertos)</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -L -n
+            </pre>
+
+            <p><b>d) Ver reglas con contadores (paquetes y bytes)</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -L -v
+            </pre>
+        </article>
+
+
+        <!-- PREGUNTA 6 -->
+        <article class="articulo-bloque">
+            <h2>6. Interpretación de regla</h2>
+
+            <p>
+                Regla dada:
+            </p>
+
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 \
+-m state --state NEW,ESTABLISHED -j ACCEPT
+            </pre>
+
+            <p>
+                Esta regla permite que entre tráfico TCP por la interfaz <b>eth0</b> hacia los puertos
+                <b>22</b> (SSH), <b>80</b> (HTTP) y <b>443</b> (HTTPS), siempre que el estado de la conexión sea
+                <b>NEW</b> o <b>ESTABLISHED</b>.
+            </p>
+        </article>
+
+
+        <!-- REGLAS DE CONFIG -->
+        <article class="articulo-bloque">
+            <h2>7. Reglas solicitadas</h2>
+
+            <p><b>7.1 Permitir tráfico HTTP entrante</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+            </pre>
+
+            <p><b>7.2 Permitir todo el tráfico saliente</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A OUTPUT -j ACCEPT
+            </pre>
+
+            <p><b>7.3 Permitir SSH solo desde la IP 192.168.1.50</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -p tcp --dport 22 -s 192.168.1.50 -j ACCEPT
+            </pre>
+
+            <p><b>7.4 Permitir tráfico TCP entrante a puertos 80 y 443 solo si es conexión establecida o relacionada</b></p>
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -p tcp -m multiport --dports 80,443 -m state --state ESTABLISHED,RELATED -j ACCEPT
+            </pre>
+
+            <p><b>7.5 Permitir tráfico TCP entrante por eth0 a 22, 80 y 443, registrar intentos y permitir solo NEW y ESTABLISHED</b></p>
+
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW -j LOG --log-prefix "Intento "
+            </pre>
+
+            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+            </pre>
+        </article>
+
+
+        <!-- EVIDENCIA -->
+        <article class="articulo-bloque">
+            <h2>8. Evidencia escaneada</h2>
+
+            <div class="articulo-imagen">
+                <img src="../img/act03-1.jpg" alt="Actividad 03 página 1">
+                <p class="pie-imagen">
+                    Figura 1. Evidencia escaneada (página 1).
+                </p>
+            </div>
+
+            <div class="articulo-imagen">
+                <img src="../img/act03-2.jpg" alt="Actividad 03 página 2">
+                <p class="pie-imagen">
+                    Figura 2. Evidencia escaneada (página 2).
+                </p>
+            </div>
+
+        </article>
+
+
+        <!-- CONCLUSIÓN -->
+        <article class="articulo-bloque">
+            <h2>9. Conclusión</h2>
+            <p>
+                La actividad permitió comprender cómo funciona el filtrado de paquetes en iptables, identificando el rol
+                de las tablas y cadenas. Además, se reforzó el conocimiento sobre reglas prácticas utilizadas para permitir
+                o bloquear tráfico, así como la aplicación de filtros por IP, puertos y estados de conexión.
+            </p>
+        </article>
+
+
+        <!-- REFERENCIAS -->
+        <article class="articulo-bloque">
+            <h2>Referencias técnicas</h2>
+
+            <p class="sangria-francesa">
+                Netfilter Project. (s.f.). <i>Iptables documentation</i>.
+                <a href="https://www.netfilter.org/documentation/" target="_blank">https://www.netfilter.org/documentation/</a>
+            </p>
+
+            <p class="sangria-francesa">
+                Red Hat. (s.f.). <i>iptables(8) — Linux man page</i>.
+                <a href="https://man7.org/linux/man-pages/man8/iptables.8.html" target="_blank">https://man7.org/linux/man-pages/man8/iptables.8.html</a>
+            </p>
+
+        </article>
+
+    </section>
+
+    <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf">
+        <a href="../pdf/182032-act03.pdf" target="_blank" class="btn-exportar">
+            Exportar PDF
+        </a>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>
