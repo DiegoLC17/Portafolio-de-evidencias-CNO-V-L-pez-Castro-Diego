@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 04</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+
+    <style>
+        .sangria-francesa {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        pre.codigo {
+            background: #111;
+            color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            overflow: auto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 04</h1>
+
+        <div class="articulo-header">
+            <h1>Códigos (iptables)</h1>
+            <p class="articulo-subtitulo">
+                CNO V – Seguridad Informática
+            </p>
+        </div>
+
+
+        <article class="articulo-bloque">
+            <h2>Datos Generales</h2>
+            <p>
+                <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+                <b>Materia:</b> CNO V – Seguridad Informática <br>
+                <b>Estudiante:</b> López Castro Diego – 182032 <br>
+                <b>Profesor:</b> Mtro. Servando López Contreras <br>
+                <b>Fecha de entrega:</b> 02 – Febrero – 2026
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Introducción</h2>
+
+            <p>
+                En el área de seguridad informática, el control del tráfico de red es fundamental para proteger sistemas 
+                y evitar accesos no autorizados. En esta actividad se aplicaron reglas de iptables con el objetivo de filtrar 
+                y administrar el flujo de paquetes en una red, permitiendo únicamente servicios específicos como DNS, correo y navegación web. 
+                De esta forma, se demuestra cómo una configuración adecuada de firewall puede fortalecer la seguridad de una infraestructura
+                y reducir riesgos ante ataques externos.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Descripción del ejercicio</h2>
+
+            <p>
+                Teniendo en cuenta la topología de red mostrada
+                completa la tabla con las reglas de iptables que deberían
+                aplicarse en el Firewall para llevar a cabo las acciones
+                solicitadas. Las reglas, siempre que sea posible, deben
+                determinar protocolo, dirección IP origen y destino,
+                puerto/s origen y destino y el estado de la conexión.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <div class="articulo-imagen">
+                <img src="../img/mecanismos_defensa_de_red.png" alt="Descripción de la imagen">
+                <p class="pie-imagen">
+                    Figura 1. Topología
+                </p>
+            </div>
+        </article>
+
+
+        <article class="articulo-bloque">
+            <h2>Reglas de iptables solicitadas</h2>
+
+            <p><b>1) Establecer una política restrictiva.</b></p>
+            <pre class="codigo">iptables -P DROP</pre>
+
+            <p><b>2) Permitir el tráfico de conexiones ya establecidas.</b></p>
+            <pre class="codigo">iptables -A FORWARD -m state --state ESTABLISHED -j ACCEPT</pre>
+
+            <p><b>3) Aceptar tráfico DNS (TCP) saliente de la red local.</b></p>
+            <pre class="codigo">iptables -A FORWARD -p tcp -d 192.1.2.10 --dport 53 -j ACCEPT</pre>
+
+            <p><b>4) Aceptar correo entrante proveniente de Internet en el servidor de correo.</b></p>
+            <pre class="codigo">iptables -A POSTROUTING -p tcp -s 192.1.2.11 --dport 25 -j ACCEPT</pre>
+
+            <p><b>5) Permitir correo saliente a Internet desde el servidor de correo.</b></p>
+            <pre class="codigo">iptables -A PREROUTING -p tcp -d 192.1.2.10 --dport 25 -j ACCEPT</pre>
+
+            <p><b>6) Aceptar conexiones HTTP desde Internet a nuestro servidor web.</b></p>
+            <pre class="codigo">iptables -A FORWARD -p tcp -d 192.1.2.10 --dport 80 -j ACCEPT</pre>
+
+            <p><b>7) Permitir tráfico HTTP desde la red local a Internet.</b></p>
+            <pre class="codigo">iptables -A FORWARD -p tcp -s 192.1.2.11 --dport 443 -j ACCEPT</pre>
+        </article>
+
+        <!-- IMAGEN -->
+        <article class="articulo-bloque">
+            <div class="articulo-imagen">
+                <img src="../img/codigosIPTables.jpg" alt="Descripción de la imagen">
+                <p class="pie-imagen">
+                    Figura 2. Codigos IPTables
+                </p>
+            </div>
+        </article>
+
+
+        <article class="articulo-bloque">
+            <h2>Conclusión</h2>
+
+            <p>
+                En esta actividad se aplicaron reglas básicas de iptables para restringir el tráfico de red y permitir
+                únicamente las conexiones necesarias. Además, se reforzó el uso de cadenas como <b>FORWARD</b> y el uso
+                de estados de conexión como <b>ESTABLISHED</b> para garantizar un control más seguro del tráfico.
+            </p>
+        </article>
+
+        <!-- VIDEO YOUTUBE -->
+        <article class="articulo-bloque">
+            <h2>Video</h2>
+
+            <div class="video-responsive">
+                <!-- SOLO CAMBIA EL ENLACE DENTRO DE src -->
+                <iframe width="1356" height="763" src="https://www.youtube.com/embed/j6EXVLjJxQY" title="Case study: Maersk Notpetya Ransomware attack - by TheTechForce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="pie-imagen">
+                <br>42 - Introducción a IPTABLES
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Referencias</h2>
+
+            <p class="sangria-francesa">
+                Netfilter Project. (s.f.). <i>iptables documentation</i>.
+                <a href="https://www.netfilter.org/documentation/" target="_blank">https://www.netfilter.org/documentation/</a>
+            </p>
+
+            <p class="sangria-francesa">
+                Linux Man Pages. (s.f.). <i>iptables(8) — Linux manual page</i>.
+                <a href="https://man7.org/linux/man-pages/man8/iptables.8.html" target="_blank">https://man7.org/linux/man-pages/man8/iptables.8.html</a>
+            </p>
+        </article>
+
+    </section>
+
+
+    <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf" style="margin-top: 35px; text-align: center;">
+        <a href="pdf/182032-act04.pdf" class="btn-exportar" target="_blank">
+            Exportar PDF
+        </a>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>

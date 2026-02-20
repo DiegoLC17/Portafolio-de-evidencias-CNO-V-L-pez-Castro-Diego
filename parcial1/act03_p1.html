@@ -9,8 +9,10 @@
 
     <style>
         .sangria-francesa {
-            padding-left: 2em;
-            text-indent: -2em;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
@@ -122,14 +124,11 @@
         <article class="articulo-bloque">
             <h2>Datos Generales</h2>
             <p>
-                Esta actividad corresponde a la interpretación y traducción de políticas de filtrado en iptables,
-                aplicando los conceptos básicos del flujo de paquetes, tablas principales y reglas comunes para el
-                control del tráfico en Linux.
-            </p>
-
-            <p>
-                <b>Nombre:</b> Diego López Castro <br>
-                <b>Fecha:</b> 03 de febrero de 2026
+                <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+                <b>Materia:</b> CNO V – Seguridad Informática <br>
+                <b>Estudiante:</b> López Castro Diego – 182032 <br>
+                <b>Profesor:</b> Mtro. Servando López Contreras <br>
+                <b>Fecha de entrega:</b> 03 – Febrero – 2026
             </p>
         </article>
 
@@ -157,7 +156,7 @@
 
         <!-- TABLA DE TABLAS -->
         <article class="articulo-bloque">
-            <h2>2. relaciona cada tabla con su proósito principal</h2>
+            <h2>2. Relaciona cada tabla con su proósito principal</h2>
 
             <div class="tabla-responsive">
                 <table>
@@ -201,6 +200,25 @@
             <p class="pie-imagen">
                 <br>Tabla 1. Tablas principales en iptables.
             </p>
+        </article>
+
+        <!-- IMAGEN -->
+        <article class="articulo-bloque">
+            <div class="articulo-imagen">
+                <img src="../img/arquitectura_general.png" alt="Descripción de la imagen">
+                <p class="pie-imagen">
+                    Figura 1. Arquitectura general
+                </p>
+            </div>
+        </article>
+
+        <article class="articulo-bloque">
+            <div class="articulo-imagen">
+                <img src="../img/tipos_de_cadenas.png" alt="Descripción de la imagen">
+                <p class="pie-imagen">
+                    Figura 2 Tipos de cadenas en IPTables 
+                </p>
+            </div>
         </article>
 
 
@@ -265,9 +283,7 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 \
             </pre>
 
             <p>
-                Esta regla permite que entre tráfico TCP por la interfaz <b>eth0</b> hacia los puertos
-                <b>22</b> (SSH), <b>80</b> (HTTP) y <b>443</b> (HTTPS), siempre que el estado de la conexión sea
-                <b>NEW</b> o <b>ESTABLISHED</b>.
+                Esta regla permite que el tráfico de tipo TCP que pasa por la interfaz "eth0" al puerto 22 y a los puertos de navegación web 80 y 443, mientras cumpla la condición de que esté establecida y sea nueva
             </p>
         </article>
 
@@ -298,44 +314,25 @@ iptables -A INPUT -p tcp -m multiport --dports 80,443 -m state --state ESTABLISH
             <p><b>11. Permitir tráfico TCP entrante por eth0 a 22, 80 y 443, registrar intentos y permitir solo NEW y ESTABLISHED</b></p>
 
             <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
-iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW -j LOG --log-prefix "Intento "
-            </pre>
-
-            <pre style="background:#111; color:#fff; padding:15px; border-radius:12px; overflow:auto;">
+iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW -j LOG --log-prefix "Intento "<br>
 iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
             </pre>
+
         </article>
 
 
         <!-- VIDEO YOUTUBE -->
         <article class="articulo-bloque">
-            <h2>Análisis Multimedia</h2>
+            <h2>Video</h2>
 
             <div class="video-responsive">
                 <!-- SOLO CAMBIA EL ENLACE DENTRO DE src -->
                 <iframe width="1356" height="763" src="https://www.youtube.com/embed/H3Z6XJC-Rpw" title="Case study: Maersk Notpetya Ransomware attack - by TheTechForce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+            <p class="pie-imagen">
+                <br>05-Netfilter/Iptables:Políticas por defecto
+            </p>
         </article>
-
-        <!-- IMAGEN -->
-        <article class="articulo-bloque">
-            <h2>Evidencia Visual</h2>
-
-            <div class="articulo-imagen">
-                <img src="../img/filtrado.jpg" alt="Descripción de la imagen">
-                <p class="pie-imagen">
-                    Figura 1 Filtrado de IPTables 
-                </p>
-            </div>
-
-            <div class="articulo-imagen">
-                <img src="../img/nat.png" alt="Descripción de la imagen">
-                <p class="pie-imagen">
-                    Figura 2. NAT, reglas de filtrado.
-                </p>
-            </div>
-        </article>
-
 
         <!-- CONCLUSIÓN -->
         <article class="articulo-bloque">
