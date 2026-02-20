@@ -440,6 +440,21 @@ footer {
         transform: none;
     }
 
+    .header-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+    .header-nav ul li a {
+        padding: 8px 12px;
+    }
+
+    .header-nav .icono {
+        width: 26px;
+        height: 26px;
+    }
+
     .info-tecnica-grid {
         display: none;
     }
