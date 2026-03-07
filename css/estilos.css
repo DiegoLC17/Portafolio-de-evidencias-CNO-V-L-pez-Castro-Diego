@@ -716,99 +716,125 @@ footer {
 }
 
 
-/* =========================
-   ROADMAP / TIMELINE STYLES
-   Agregar al final de estilos.css
-   ========================= */
+/* ============================= */
+/* ROADMAP LABORATORIOS */
+/* ============================= */
 
-.roadmap {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 10px 20px 60px 60px;
+.roadmap-labs{
+max-width:1000px;
+margin:0 auto 70px auto;
 }
 
-.timeline {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.roadmap-contenedor{
+display:flex;
+flex-direction:column;
+gap:18px;
+position:relative;
+padding-left:40px;
 }
 
-/* línea central */
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 28px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg,#1c1c1c, #444);
-  border-radius: 4px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+/* linea vertical */
+
+.roadmap-contenedor::before{
+content:"";
+position:absolute;
+left:15px;
+top:0;
+bottom:0;
+width:3px;
+background:#1c1c1c;
 }
 
-/* cada item */
-.timeline-item {
-  position: relative;
-  margin: 30px 0 30px 70px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+/* item */
+
+.roadmap-item{
+display:flex;
+align-items:center;
+gap:15px;
+position:relative;
+padding-left:30px;
 }
 
-/* marcador circular con número */
-.timeline-marker {
-  position: absolute;
-  left: -44px; /* lo coloca sobre la línea */
-  top: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #1c1c1c;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+/* circulo */
+
+.roadmap-numero{
+position:absolute;
+left:-18px;
+top:50%;
+transform:translateY(-50%);
+width:34px;
+height:34px;
+background:#1c1c1c;
+color:#ffffff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:600;
+font-size:14px;
 }
 
-/* contenido del bloque (usa estilo similar a .articulo-bloque) */
-.timeline-content {
-  background: #ffffff;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  width: 100%;
+/* tarjeta */
+
+.roadmap-card{
+background:#ffffff;
+padding:16px 20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+gap:6px;
+width:100%;
+transition:all 0.25s ease;
 }
 
-/* título del lab dentro del content */
-.timeline-content h2 {
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  border-left: 4px solid #1c1c1c;
-  padding-left: 10px;
+.roadmap-card:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.12);
 }
 
-/* pequeño tag de nivel o tipo en la esquina */
-.timeline-meta {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 10px;
-  font-style: italic;
+/* titulo */
+
+.roadmap-card a{
+text-decoration:none;
+font-weight:600;
+color:#1c1c1c;
+font-size:16px;
 }
 
-/* estados visuales (ej. completado) */
-.timeline-item.completed .timeline-marker {
-  background: linear-gradient(180deg,#2ecc71,#219150);
-  color: #0f1f12;
+.roadmap-card a:hover{
+color:#444444;
 }
 
-/* responsive: mover todo a una sola columna en pantallas pequeñas */
-@media (max-width: 950px) {
-  .roadmap { padding-left: 20px; }
-  .timeline::before { left: 12px; }
-  .timeline-item { margin-left: 40px; }
-  .timeline-marker { left: -36px; width:44px; height:44px; font-size:16px; }
+/* nivel */
+
+.roadmap-nivel{
+font-size:13px;
+padding:4px 10px;
+border-radius:6px;
+font-weight:600;
+align-self:flex-end;
+}
+
+.apprentice{
+background:#e8f5e9;
+color:#2e7d32;
+}
+
+.practitioner{
+background:#fff3e0;
+color:#ef6c00;
+}
+
+.expert{
+background:#ffebee;
+color:#c62828;
+}
+
+.roadmap-objetivo{
+margin-top:8px;
+font-size:14px;
+color:#555;
+line-height:1.5;
 }
