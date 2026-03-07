@@ -1,3 +1,7 @@
+html {
+scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -709,4 +713,102 @@ footer {
 
 .btn-exportar:active {
     transform: translateY(0);
+}
+
+
+/* =========================
+   ROADMAP / TIMELINE STYLES
+   Agregar al final de estilos.css
+   ========================= */
+
+.roadmap {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 10px 20px 60px 60px;
+}
+
+.timeline {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* línea central */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg,#1c1c1c, #444);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+/* cada item */
+.timeline-item {
+  position: relative;
+  margin: 30px 0 30px 70px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* marcador circular con número */
+.timeline-marker {
+  position: absolute;
+  left: -44px; /* lo coloca sobre la línea */
+  top: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1c1c1c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* contenido del bloque (usa estilo similar a .articulo-bloque) */
+.timeline-content {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  width: 100%;
+}
+
+/* título del lab dentro del content */
+.timeline-content h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  border-left: 4px solid #1c1c1c;
+  padding-left: 10px;
+}
+
+/* pequeño tag de nivel o tipo en la esquina */
+.timeline-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* estados visuales (ej. completado) */
+.timeline-item.completed .timeline-marker {
+  background: linear-gradient(180deg,#2ecc71,#219150);
+  color: #0f1f12;
+}
+
+/* responsive: mover todo a una sola columna en pantallas pequeñas */
+@media (max-width: 950px) {
+  .roadmap { padding-left: 20px; }
+  .timeline::before { left: 12px; }
+  .timeline-item { margin-left: 40px; }
+  .timeline-marker { left: -36px; width:44px; height:44px; font-size:16px; }
 }
