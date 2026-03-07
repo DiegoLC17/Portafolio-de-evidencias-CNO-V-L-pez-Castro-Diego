@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTHOF</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <style>
+        .sangria-francesa {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+    
+        pre.codigo {
+        background: #111;
+        color: #fff;
+        padding: 16px;
+        border-radius: 14px;
+        overflow-x: auto;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-top: 15px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+        }
+
+        .img-actividad {
+        margin-top: 18px;
+        text-align: center;
+        }
+
+        .img-actividad img {
+        width: 100%;
+        max-width: 850px;
+        border-radius: 16px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+        }
+
+        .img-actividad p {
+        margin-top: 10px;
+        font-size: 0.95rem;
+        opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../road_to_hall_of_fame.html" data-tooltip="ROAD TO HALL OF FAME">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="ROAD TO HALL OF FAME">
+                        </span>
+                        <span class="texto">ROAD TO HALL OF FAME</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 08</h1>
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="articulo-header">
+            <h1>ROAD TO HALL OF FAME</h1>
+            <p class="articulo-subtitulo">
+                SQL INJECTION
+            </p>
+        </div>
+
+         <article class="articulo-bloque">
+            <h2>Datos Generales</h2>
+
+            <p>
+                <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+                <b>Materia:</b> CNO V – Seguridad Informática <br>
+                <b>Equipo:</b><br>
+                    Ávalos Rangel Hazel Mario – 181801<br>
+                    Cabrera Meza Jorge Alejandro – 181591<br>
+                    González Delgado Ángel Josué – 182837<br>
+                    López Castro Diego – 182032<br>
+                    López Monsiváis Jorge Emmanuel – 179842<br>
+                <b>Profesor:</b> Mtro. Servando López Contreras <br>
+                <b>Fecha de entrega:</b> 30 – Enero – 2026
+            </p>
+        </article>
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>Introducción contextual</h2>
+            <p>
+                En el ecosistema actual de aplicaciones web y sistemas de información, donde la mayoría de los servicios dependen de bases de datos relacionales para almacenar y procesar datos críticos, la seguridad en la interacción entre la aplicación y el motor de base de datos se convierte en un elemento estratégico. Dentro de este contexto, SQL Injection (SQLi) destaca como una de las vulnerabilidades más peligrosas y persistentes. Se trata de una falla de tipo inyección que ocurre cuando las entradas proporcionadas por el usuario no son correctamente validadas ni parametrizadas, permitiendo que fragmentos de código SQL malicioso sean interpretados y ejecutados por el sistema gestor de bases de datos.<br>
+                Desde una perspectiva técnica, el núcleo del problema radica en la construcción dinámica de consultas SQL mediante concatenación directa de datos externos, lo que rompe el principio fundamental de separación entre código y datos. Esta debilidad puede alterar la lógica de autenticación, exponer información confidencial, modificar registros o incluso comprometer completamente la infraestructura del servidor. La gravedad de SQL Injection no solo reside en su impacto potencial sobre la confidencialidad, integridad y disponibilidad de la información, sino también en su frecuencia de aparición en aplicaciones que no implementan prácticas de desarrollo seguro.<br>
+                Analizar SQL Injection implica comprender tanto la arquitectura de las bases de datos relacionales como el funcionamiento interno del lenguaje SQL y los mecanismos de validación de entradas. Su estudio resulta esencial para diseñar sistemas robustos, identificar riesgos en fases tempranas del desarrollo y aplicar controles efectivos que mitiguen una de las amenazas más críticas dentro del panorama de la ciberseguridad actual.
+            </p>
+        </article>
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>Laboratorios SQL Injection</h2>
+        </article>
+
+        <article class="articulo-bloque" id="lab1">
+            <h2>Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</h2>
+            <p>
+                <b>Nivel</b><br>
+                APPRENTICE<br>
+                <b>Tipo de SQLi</b><br>
+                Esta vulnerabilidad se encuentra en la cláusula WHERE de la consulta SQL. Es un tipo de inyección que utiliza lógica booleana para alterar el filtrado de datos y recuperar registros que normalmente estarían restringidos para los usuarios.<br>
+                <b>Objetivo del laboratorio</b><br>
+                El objetivo es mostrar todos los productos de la base de datos, incluyendo aquellos que no han sido publicados. Normalmente, la aplicación filtra los productos para mostrar solo los de una categoría específica y que tengan un estado de "publicado".
+                SELECT * FROM products WHERE category = 'Gifts' AND released = 1<br>
+                <b>Explicación técnica de la vulnerabilidad</b><br>
+                Cuando el usuario selecciona una categoría, la aplicación ejecuta una consulta que incluye una condición como WHERE category = 'Gifts' AND released = 1. Al inyectar una condición que siempre resulta verdadera, como ' OR 1=1--, la lógica de la consulta se transforma. La base de datos evalúa 1=1 como verdadero para cada fila, lo que causa que el filtro de la categoría y el filtro de released = 1 sean ignorados, devolviendo así la totalidad de los datos contenidos en la tabla de productos.<br>
+                <b>Desarrollo del laboratorio</b><br>
+                El objetivo del laboratorio es encontrar vulnerabilidades mediante inyecciones de SQL con el fin de obtener información acerca de los productos no publicados por la página web.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <div class="articulo-imagen">
+                <img src="../img/lab1_cap1.png" alt="Descripción de la imagen">
+            </div>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Paso 1</h2>
+            <p>
+                El primer paso es ingresar al laboratorio, e ir investigando los diversos apartados de la página web. Investigando los apartados podemos ver que la información se está enviando a través de la URL, esto nos da la pista que utiliza un método GET.<br>
+                Así que procedemos a abrir Burpsuite para interceptar la información de la página web:
+            </p>
+
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap2.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Paso 2</h2>
+            <p>
+                Una vez interceptado el tráfico de la página web, tenemos que mandar al repeater la petición que nos interesa, en este caso es la petición GET que hace la página web para mostrar la categoría de Gifts.
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap3.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap4.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Paso 3</h2>
+            <p>
+                Una vez mandado al repeater la petición correcta, podemos realizar las distintas pruebas necesarias con el fin de obtener el requerimiento del laboratorio el cual es obtener la información oculta de la página web.<br>
+                Sabemos que realizan consultas SQL:
+                <pre class="codigo">
+                    SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+                </pre><br>
+                Lo cual nos dice que seleccionan todos los datos de la tabla de productos donde la categoría sea Gifts y estén “públicos”, utilizando un released=1. Esto es importante ya que sabemos que si queremos ver los datos que no están públicos debería ser un released=0.<br>
+                Observando en el repeater sabemos que se envía la siguiente petición en la cual vemos que solo se envia la categoría Gifts:
+                <pre class="codigo">
+                    GET /filter?category=Gifts HTTP/2
+                </pre><br>
+                Al tener esta información podemos modificar nuestra petición a la siguiente:<br>
+                <pre class="codigo">
+                    GET /filter?category=Gifts' OR 1=1-- HTTP/2
+                </pre><br>
+                Con esta nueva petición lo que hacemos es colocar una comilla simple, después de nuestra categoría elegida para que todo el texto escrito no lo tome como el valor de la variable, después procedemos a colocar una expresión lógica (OR) con la validación 1=1. Esto último es importante ya que nos sirve como una expresión que siempre sera verdadera. Finalmente colocamos “--” para comentar el resto del código el cual es vital para anular cualquier validación hecha por la página web.
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap5.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            Al realizar esta nueva petición podemos ver que es OK y al desplazarnos hacia abajo vemos todos los artículos de la categoría Gifts ya sean ocultos y no ocultos.<br>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap6.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="../img/lab1_cap7.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Explicación del payload</h2>
+            <p>
+                El payload utilizado es ' OR 1=1--. El proceso inicia inyectando una comilla simple (') para cerrar la cadena de texto que la consulta original asigna a la variable.. Posteriormente, se introduce el operador lógico OR seguido de 1=1, la cual siempre se evalúa como verdadera. Finalmente, se utiliza la secuencia de guiones (--) para comentar el resto de la consulta que está oculta. Como resultado, la condición WHERE se vuelve verdadera para absolutamente todas las filas de la tabla products, forzando a la base de datos a devolver todos los registros, sin importar su categoría o si están publicados o no.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Mitigación recomendada</h2>
+            <p>
+                Para evitar este tipo de ataques, es necesario utilizar consultas parametrizadas en el código fuente de la aplicación, lo que garantiza que las entradas del usuario sean tratadas estrictamente como datos literales y no como fragmentos de código SQL ejecutable. Adicionalmente, se debe implementar una validación estricta de entradas y restringir la exposición de errores del sistema que puedan revelar la estructura interna de la base de datos.
+            </p>
+        </article>
+
+        <article class="articulo-bloque" id="lab2">
+    <h2>Lab 2: SQL injection vulnerability allowing login bypass</h2>
+    <p>
+        <b>Nivel</b><br>
+        APPRENTICE<br>
+
+        <b>Tipo de SQLi</b><br>
+        Este laboratorio presenta una vulnerabilidad de inyección SQL de Login Bypass. El ataque consiste en manipular la lógica de la consulta de validación de credenciales para engañar a la aplicación y que esta conceda acceso sin una contraseña válida.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo es acceder a la aplicación con el perfil de "administrator". Sin conocer la contraseña del usuario; manipulando el campo de entrada del nombre de usuario para intentar anular cualquier tipo de seguridad.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        La aplicación utiliza una consulta SQL para verificar las credenciales, similar a: SELECT * FROM users WHERE username = 'USER' AND password = 'PASS'. Al ingresar una comilla simple seguida de un comentario ('--), se puede anular la cadena de texto y hacer que el resto de la consulta sea ignorada por la base de datos. Si se conoce el nombre de usuario, la base de datos devolverá el registro del usuario como coincidencia válida, permitiendo el acceso.<br>
+
+        <b>Desarrollo del laboratorio</b><br>
+        El objetivo del laboratorio es realizar un ataque SQL en la parte del login para poder entrar como administrador.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Para comenzar interceptamos la información de la página mediante burp suite, ingresamos a la parte de my account, esto para poder encontrar el login.<br><br>
+
+        Colocaremos valores aleatorios para saber como se manda la información. Dándonos como resultado información no tan valiosa o necesaria para ingresar.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab2_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        procedemos a intentar romper el login, utilizando el usuario de administrador y colocando comillas simples y comentando el resto de la consulta SQL. Todo esto con el fin de poder burlar las validaciones del formulario.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab2_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Finalmente logramos entrar como administrador al modificar la petición con el fin de que solo busque al usuario Administrator, para después omitir todas las validaciones extras simplemente ocultándolas como comentario.
+    </p>
+
+    <pre class="codigo">
+administrator'--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab2_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab2_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El payload que utilizamos en este caso es ‘administrator’--. El proceso inicia introduciendo el nombre de la cuenta a la que queremos acceder. Después, colocamos una comilla simple (') para poder cerrar la variable de texto dentro de la consulta original de la página. Finalmente, agregamos los guiones (--) para convertir todo el resto del código SQL  en un comentario. De esta forma, la base de datos ignora la validación del password y nos da acceso directo asumiendo que la consulta fue exitosa.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para evitar este tipo de ataques, es necesario utilizar consultas parametrizadas en el código fuente de la aplicación, lo que garantiza que las entradas del usuario sean tratadas estrictamente como datos literales y no como fragmentos de código SQL ejecutable. Además, se debe implementar una validación estricta de entradas y restringir la exposición de errores del sistema que puedan revelar la estructura interna de la base de datos.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab3">
+    <h2>Lab 3: SQL injection attack, querying the database type and version on Oracle</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Es una inyección SQL basada en UNION. Este método permite combinar el conjunto de resultados de la consulta original con los resultados de una consulta inyectada que apunta a tablas de la base de datos utilizada.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo consiste en extraer la información de la versión de la base de datos Oracle. Aprendiendo a utilizar la sintaxis necesaria ya que en este caso es una base de datos Oracle.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Al utilizar bases de datos del tipo Oracle, podemos saber que llas consultas SELECT deben incluir obligatoriamente FROM. Si se quiere hacer una consulta de prueba o de versión que no dependa de una tabla de usuario, se debe utilizar la tabla integrada llamada DUAL. Además, la información de la versión se obtiene con v$version.<br>
+
+        <b>Desarrollo del laboratorio</b><br>
+        El objetivo del laboratorio es realizar un ataque SQL con el fin de obtener la versión de la base de datos.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Para comenzar interceptamos la información de la página mediante burpsuite.<br><br>
+
+        Primeramente tenemos que saber la cantidad de tablas que utiliza, por lo tanto interceptamos la petición a una categoría para poder trabajar en base a ella.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab3_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab3_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Utilizaremos ORDER-BY, ya que tenemos que saber el número de columnas que tiene la tabla. Al ejecutar el comando e ir utilizando distintos valores, encontramos que el número de columnas es de 2 por que al colocar el valor de 3 la pagina ya muestra error lo que nos quiere decir que excedimos el número de columnas que la pagina tiene.
+    </p>
+
+    <pre class="codigo">
+ORDER BY 1
+ORDER BY 2
+ORDER BY 3
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab3_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Una vez teniendo el número de columnas e infiriendo que aceptan texto por lo visto en la página. Procedemos a modificar la consulta agregando lo siguiente:
+    </p>
+
+    <pre class="codigo">
+GET /filter?category=Tech+gifts' UNION SELECT banner, NULL FROM v$version-- HTTP/2
+    </pre>
+
+    <p>
+        La consulta selecciona la columna banner que es donde se almacena la versión y por el título del laboratorio podemos saber qué es Oracle, además colocamos un valor NULL, ya que debemos rellenar todas las columnas de la tabla que en este caso son dos. Por lo demás comentamos las validaciones posteriores.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab3_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab3_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El payload que utilizamos en este caso es ' UNION SELECT banner, NULL FROM v$version--. Primero colocamos una comilla simple (') para poder cerrar la cadena de texto de la categoría en la consulta original. Después usamos el operador UNION SELECT para unir los resultados de la página con nuestra propia consulta. Como sabemos que estamos atacando una base de datos Oracle y previamente descubrimos que la consulta original devuelve dos columnas, pedimos extraer la columna banner y rellenamos la segunda columna con un valor NULL para que coincida la cantidad de columnas y la base de datos no nos arroje un error. Finalmente, agregamos los guiones (--) para convertir en comentario cualquier otra validación o código que la página web intente ejecutar después de nuestra inyección.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para evitar que logren extraer información del sistema, se deben utilizar consultas parametrizadas en el código de la página web. Esto ayuda a garantizar que cualquier categoría o texto que se mande por la URL sea manejado como un dato y nunca como instrucciones SQL.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab4">
+    <h2>Lab 4: SQL injection attack, querying the database type and version on MySQL and Microsoft</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        En este laboratorio se utiliza una inyección SQL basada en UNION. El ataque se centra en el uso del operador UNION para ejecutar una consulta que extraiga metadatos del sistema de bases de datos, en un entorno MySQL y Microsoft SQL Server.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo es determinar la versión específica del software de la base de datos que está en el servidor. Se debe identificar el número de columnas y qué columna acepta datos de tipo cadena, para luego inyectar la función correspondiente que mostrará la versión de la base de datos.<br>
+
+        <b>Explicación técnica de la vulnerabilidad.</b><br>
+        La vulnerabilidad se localiza en el filtro de categorías de productos. Al ser un sistema de MySQL y Microsoft, se utiliza la constante global @@version. Además en MySQL se debe colocar un comentario de cierre -- o utilizar el carácter # para que la consulta sea válida y de la información correcta.<br>
+
+        <b>Procedimiento (paso a paso)</b><br>
+        El objetivo del laboratorio es encontrar la vulnerabilidad de inyección SQL, utilizando UNION.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Para comenzar interceptamos la información de la página mediante burpsuite.<br><br>
+
+        Primeramente tenemos que saber la cantidad de tablas que utiliza, por lo tanto interceptamos la petición a una categoría para poder trabajar en base a ella.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab4_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Obtendremos el valor de columnas de la tabla utilizando ORDER-BY.
+    </p>
+
+    <pre class="codigo">
+ORDER BY 1
+ORDER BY 2
+ORDER BY 3
+    </pre>
+
+    <p>
+        Al intentar utilizar (--) como comentario podemos ver que marca error, por lo tanto tenemos que buscar otra forma la cual es comentando usando (#). Una vez cambiado vemos que efectivamente ahora si fue exitoso realizando dicha modificación, eso nos quiere decir que es una base de datos MySQL, además de poder ver que es una tabla con 2 columnas.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab4_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab4_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Sabiendo que tiene 2 columnas la tabla, es MySQL y de Microsoft podemos utilizar la siguiente consulta:
+    </p>
+
+    <pre class="codigo">
+GET /filter?category=Food+%26+Drink' UNION SELECT @@version, NULL# HTTP/2
+    </pre>
+
+    <p>
+        El cual se utiliza para saber la versión en el caso de que sea una base de datos MySQL y colocando el valor null ya que la tabla contiene dos columnas.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab4_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab4_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El payload que utilizamos en este caso es ' UNION SELECT @@version, NULL#. Empezamos con una comilla simple (') para poder cerrar la cadena de texto de la consulta. Después usamos el operador UNION SELECT para unir los resultados con nuestra consulta modificada. Como ya nos dimos cuenta en los pasos previos de que la tabla tiene dos columnas, llamamos a la constante global @@version en el primer espacio para que nos devuelva la versión exacta del sistema, y rellenamos la segunda columna con un valor NULL para que coincida la cantidad y la base de datos no nos marque error. Finalmente, colocamos el símbolo de gato (#) para convertir en comentario el resto del código SQL, asegurándonos de que cualquier validación extra que tenga la página sea ignorada por el motor de MySQL.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para evitar que logren extraer la versión y el tipo de sistema de esta forma, utilizamos consultas parametrizadas en el código web. Asegurando que cualquier texto o categoría que se mande por la URL sea tratado estrictamente como un dato y no como un comando SQL que se deba ejecutar. Además, se debe configurar el servidor para que nunca devuelva mensajes de error detallados al usuario final.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab5">
+    <h2>Lab 5: SQL injection attack, listing the database contents on non-Oracle databases</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Este laboratorio corresponde a una inyección SQL basada en UNION (UNION-based SQL Injection). Este tipo de ataque consiste en manipular una consulta SQL legítima mediante el uso del operador UNION, con el propósito de combinar los resultados de la consulta original con los resultados de una consulta maliciosa adicional. De esta forma, el atacante puede recuperar información almacenada en otras tablas de la base de datos, siempre que ambas consultas tengan el mismo número de columnas y tipos de datos compatibles.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio será determinar el nombre de la tabla de la base de datos que contenga el nombre de los usuarios y sus contraseñas. Y para ello, será necesario determinar las columnas de interés o columnas relevantes.
+        Conociendo entonces el nombre de las columnas que necesitemos, será cuestión de mostrar esta información e iniciar sesión con el usuario de “administrador”.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Este laboratorio presenta una vulnerabilidad de inyección SQL en el filtro de categorías de productos. Los resultados de la consulta se devuelven en la respuesta de la aplicación, lo que permite usar un ataque UNION para recuperar datos de otras tablas.
+        La aplicación cuenta con una función de inicio de sesión y la base de datos contiene una tabla con nombres de usuario y contraseñas. Debe determinar el nombre de esta tabla y las columnas que contiene, y luego recuperar su contenido para obtener los nombres de usuario y las contraseñas de todos los usuarios.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        El laboratorio nos proporciona dos puntos a tener en cuenta, y es que está presente la vulnerabilidad de la categoría de los productos, además, la base de datos no es de tipo Oracle, por lo que se necesitarán probar las sentencias adecuadas para verificar de qué tipo de bases de datos se trata.
+
+        Entonces, lo primero es usar la herramienta Burpsuite para interceptar la URL de la página en donde se muestre la categoría y enviarla al repetidor para comenzar a inyectar el SQL para conocer la información que se necesita:
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Se necesita determinar la cantidad exacta de columnas que tiene la tabla. Para ello, se vale de la instrucción
+        ‘ order by 1—
+        En donde el número quiere decir el número de la columna en que se encuentra
+
+        Basado en lo que se ve en la página web, se puede asumir que la tabla cuenta con 2 columnas, una para el título y otra para el texto, sin embargo, se comprobará con la instrucción antes mencionada.
+    </p>
+
+    <pre class="codigo">
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+    </pre>
+
+    <p>
+        Al haber respondido con un error 500 Internal Server Error con la sentencia ‘ order by 3--, nos quiere decir que la tabla, efectivamente, se encuentra conformada por dos columnas.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        El siguiente paso es comprobar el tipo de dato que le corresponde a las respectivas columnas, es por ello que se utiliza la sentencia ‘ UNION select ‘a’, ‘a’—
+        Se insertan dos letras ‘a’ ya que, como se observó en la página, ambas columnas contenían texto, por lo que se intenta verificar si el tipo de dato corresponde con esa suposición.
+    </p>
+
+    <pre class="codigo">
+' UNION SELECT 'a','a'--
+    </pre>
+
+    <p>
+        Un “OK” fue respondido y se confirma que el tipo de dato de las columnas es texto.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Ahora, para conseguir el usuario y la contraseña del administrador, primero se necesita conocer el listado de tablas que conforman la base de datos. Sin embargo, no se sabe exactamente de qué tipo es y cuál es su versión, solo que no es Oracle. Por ello, usando la pista del laboratorio, se prueban las sentencias para saber la versión de la base de datos.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+
+    <p>
+        Se comprueba que el tipo de base de datos es PostgreSQL, además, se conocer su versión
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Se muestra el listado de tablas que conforman la base de datos, con el objetivo de encontrar la tabla que, posiblemente, contenga los usuarios y contraseñas para iniciar sesión. Esto usando la sentencia correspondiente a la versión de la base de datos.
+    </p>
+
+    <pre class="codigo">
+UNION SELECT table_name, NULL FROM information_schema.tables--
+    </pre>
+
+    <p>
+        Se reemplaza el carácter (*) de la sentencia y se coloca “table_name” para que solo se muestren los nombres de las tablas.
+        Y luego de observar la respuesta devuelta, se encuentra el nombre de una tabla de interés, ya que tiene algo que ver con los usuarios.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Ya que se conoce el nombre de la tabla, se necesita saber el nombre de las columnas que contiene, con el objetivo de mostrar la información solo de aquellas columnas de interés, como lo puede ser alguna que tenga que ver con “usernames” y “passwords”
+        Se utiliza entonces la sentencia correspondiente a la base de datos, colocando el nombre de la tabla que ya se conoce.
+    </p>
+
+    <pre class="codigo">
+UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users'--
+    </pre>
+
+    <p>
+        Al observar la respuesta devuelta, se encuentran dos nombres de columnas que coinciden con lo que se busca, es decir, nombres de usuarios y sus contraseñas, por lo que se toma como referencia y se ejecuta la sentencia adecuada para mostrar el contenido de dichas columnas
+    </p>
+
+    <pre class="codigo">
+UNION SELECT username, password FROM users--
+    </pre>
+
+    <p>
+        Ahora que se encontró el usuario administrador, y su respectiva contraseña, estas mismas serán usadas para iniciar sesión en la página.
+
+        Luego de ingresar los datos, se verifica que se inició sesión correctamente con el usuario administrador, concluyendo de forma exitosa con el laboratorio.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab5_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        Inicialmente, se utiliza la instrucción ' ORDER BY n-- para determinar el número de columnas que devuelve la consulta. Esta técnica provoca un error cuando el número especificado excede la cantidad real de columnas, lo que permite identificar el número exacto de columnas presentes en la consulta.
+        Posteriormente, se usa el payload ' UNION SELECT 'a','a'-- con el objetivo de verificar la compatibilidad de tipos de datos entre las columnas originales y los valores inyectados. Al introducir valores de tipo texto, se comprueba que ambas columnas aceptan datos de tipo cadena.
+        Una vez determinada la estructura de la consulta, se ejecutan consultas adicionales mediante UNION SELECT para interactuar con las tablas del sistema y recuperar metadatos de la base de datos PostgreSQL, como el nombre de las tablas (table_name) y posteriormente el nombre de las columnas. Finalmente, se construye un payload que recupera los datos almacenados en las columnas que contienen los nombres de usuario y las contraseñas, permitiendo obtener las credenciales del usuario administrador.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para prevenir este tipo de vulnerabilidad se recomienda utilizar consultas parametrizadas (prepared statements) y validar adecuadamente todas las entradas del usuario antes de incorporarlas en consultas SQL. Asimismo, es recomendable restringir los privilegios de la base de datos y evitar que los mensajes de error revelen información estructural del sistema.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab6">
+    <h2>Lab 6: SQL injection attack, listing the database contents on Oracle</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo SQLi</b><br>
+        Este laboratorio también corresponde a una inyección SQL basada en UNION (UNION-based SQL Injection), donde el atacante aprovecha el operador UNION para combinar la consulta original de la aplicación con consultas adicionales diseñadas para extraer información de la base de datos Oracle.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        Para el término exitoso del laboratorio se necesitará, primero, determinar la tabla de la base de datos que contiene la información necesaria para iniciar sesión, es decir, los usuarios y la contraseña, después, determinar los nombres de las columnas de una tabla, mostrar el contenido de la tabla de usuarios y sus contraseñas y finalmente iniciar sesión como el usuario “administrator”<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Este laboratorio presenta una vulnerabilidad de inyección SQL en el filtro de categorías de productos. Los resultados de la consulta se devuelven en la respuesta de la aplicación, lo que permite usar un ataque UNION para recuperar datos de otras tablas.
+        La aplicación cuenta con una función de inicio de sesión y la base de datos contiene una tabla con nombres de usuario y contraseñas. Debe determinar el nombre de esta tabla y las columnas que contiene, y luego recuperar su contenido para obtener los nombres de usuario y las contraseñas de todos los usuarios.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Lo primero es usar la herramienta Burpsuite para interceptar la URL de la página en donde se muestre la categoría y enviarla al repetidor para comenzar a inyectar el SQL para conocer la información que se necesita.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Determinar el número de columnas:
+    </p>
+
+    <pre class="codigo">
+‘ order by 1—
+category=Pets'+order+by+1-- = OK
+category=Pets'+order+by+2-- = OK
+category=Pets'+order+by+3-- = 500 Internal Server Error
+    </pre>
+
+    <p>
+        Por lo tanto, la tabla tiene 2 columnas
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Encontrar el tipo de datos de cada columna
+
+        Se observa que la primer y segunda columna contiene caracteres alfabéticos, por lo que se intenta probar como tipo texto
+    </p>
+
+    <pre class="codigo">
+‘ UNION select ‘a’, ‘a’--
+    </pre>
+
+    <p>
+        Al ejecutar dicha línea, devuelve una respuesta de 500 Internal Error Server, esto es porque Oracle necesita la clase “FROM”, por ello, la sentencia correcta para la base de datos Oracle sería:
+    </p>
+
+    <pre class="codigo">
+‘ UNION select ‘a’, ‘a’ from DUAL--
+    </pre>
+
+    <p>
+        Regresó OK
+
+        Y se mostró la información que se envió
+
+        Por lo que se concluye que, en efecto, es una base de datos Oracle y acepta datos de tipo texto
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Mostrar la lista de tablas de la base de datos Oracle
+
+        Entonces, primeramente, para saber el listado de tablas que conforman la base de datos Oracle, se usa la inyección:
+    </p>
+
+    <pre class="codigo">
+‘ UNION SELECT table_name, NULL FROM all_tables
+    </pre>
+
+    <p>
+        Nota: El parametron “table_name” se obtuvo de la documentación oficial de Oracle
+
+        Y se encuentra, lo que parece ser, el nombre de la tabla que nos interesa
+
+        Nombre de la tabla de interés: USERS_SQZOJL
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Mostrar el nombre de las columnas que conforman la tabla de interés (USERS_SQZOJL)
+
+        Para ello, observando nuevamente las sentencias correspondientes a la base de datos Oracle, se toma en cuenta la siguiente sentencia para devolver el nombre de las columnas:
+    </p>
+
+    <pre class="codigo">
+‘ UNION SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
+    </pre>
+
+    <p>
+        Se agrega el nombre de la tabla que ya conocemos y se utiliza el parámetro “column_name” para solo mostrar los nombres. Dicho parámetro se investigó a través de la documentación oficial de las bases de datos Oracle
+    </p>
+
+    <pre class="codigo">
+‘ UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = ' USERS_SQZOJL'
+    </pre>
+
+    <p>
+        Se observa en la respuesta la siguiente información de interés:
+
+        Nombre de la columna de interés (nombres de usuarios): USERNAME_UZFEPC
+        Nombre de la columna de interés (contraseñas de usuarios): PASSWORD_FFQTUA
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Mostrar la lista de usuarios y contraseñas
+    </p>
+
+    <pre class="codigo">
+‘ UNION select USERNAME_UZFEPC, PASSWORD_FFQTUA from USERS_SQZOJL--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 7</h2>
+    <p>
+        Iniciar sesión con las credenciales encontradas, concluyendo de forma exitosa con el laboratorio.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab6_cap7.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El proceso de explotación inicia con el uso de la instrucción ' ORDER BY n--, que permite identificar el número de columnas devueltas por la consulta original. Al incrementar progresivamente el valor de n, se identifica que la consulta contiene dos columnas.
+        Posteriormente, se utiliza el payload ' UNION SELECT 'a','a' FROM DUAL--. En el contexto de Oracle, toda consulta SELECT requiere la cláusula FROM, por lo que se emplea la tabla especial DUAL, utilizada comúnmente para ejecutar consultas que no dependen de tablas reales. Este payload permite verificar que ambas columnas aceptan valores de tipo texto.
+        Una vez validada la estructura de la consulta, se utilizan consultas sobre las tablas del diccionario de datos de Oracle, como all_tables, para enumerar las tablas existentes en la base de datos mediante el payload ' UNION SELECT table_name, NULL FROM all_tables--. Tras identificar la tabla de interés, se consulta la vista all_tab_columns para obtener los nombres de las columnas asociadas a dicha tabla.
+        Finalmente, se ejecuta el payload ' UNION SELECT USERNAME_UZFEPC, PASSWORD_FFQTUA FROM USERS_SQZOJL--, el cual permite recuperar directamente los nombres de usuario y contraseñas almacenados en la base de datos, posibilitando el acceso al sistema mediante la cuenta de administrador.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        La mitigación principal consiste en implementar consultas parametrizadas y mecanismos de validación de entrada, evitando concatenar directamente datos proporcionados por el usuario en consultas SQL. También se recomienda limitar el acceso a las vistas del diccionario de datos y aplicar el principio de mínimo privilegio en las cuentas de base de datos.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab7">
+    <h2>Lab 7: SQL injection UNION attack, determining the number of columns returned by the query</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Este laboratorio corresponde a una inyección SQL basada en UNION, específicamente enfocada en la fase de reconocimiento de la estructura de la consulta SQL original, cuyo objetivo es determinar el número de columnas devueltas por dicha consulta.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categorías de producto. Los resultados de la consulta se devuelven en la respuesta de la aplicación, por lo que se puede usar un ataque UNION para recuperar datos de otras tablas. El primer paso de este tipo de ataque es determinar el número de columnas que devuelve la consulta. Posteriormente, se utilizará esta técnica en laboratorios posteriores para construir el ataque completo.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Utilizar Burpsuite e interceptar la URL de la página en donde se encuentre el parámetro “Filter” o “Filtro” junto con su respectiva categoría, para después, enviarla al Repeater y trabajar con el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab7_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Determinar el número de columnas usando la instrucción ‘ order by x—, en donde “x” será el número de la columna en la que se encuentra. Mientras se ejecute dicha instrucción y se devuelva una respuesta afirmativa, significa que ese será el número de columnas que se tiene hasta ahora, y en cuanto devuelva un error 500 Internal Server Error, significa que ese número de columna no lo tiene:
+    </p>
+
+    <pre class="codigo">
+‘ order by 1--
+‘ order by 2--
+‘ order by 3--
+‘ order by 4--
+    </pre>
+
+    <p>
+        Hubo un error al intentar averiguar si había una cuarta columna, por lo que la tabla contiene 3 columnas. Lo que corresponde con la tabla que se puede observar desde la página web.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab7_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Se necesita que se devuelva una respuesta con valores nulos de cada columna, por lo que usando la sentencia ‘ UNION select NULL, NULL, NULL–. hará retornar estos mismos valores. Y así, finalmente, conseguimos terminar el laboratorio.
+    </p>
+
+    <pre class="codigo">
+‘ UNION select NULL, NULL, NULL--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab7_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El payload utilizado en este laboratorio consiste en la instrucción ' ORDER BY n--, donde el valor n representa el índice de una columna dentro de la consulta SQL original. Esta técnica permite identificar el número total de columnas mediante un proceso incremental. Mientras el valor de n corresponda a una columna válida, la consulta se ejecutará correctamente; sin embargo, cuando se exceda el número real de columnas, el servidor devolverá un error.
+
+        Una vez identificado que la consulta devuelve tres columnas, se utiliza el payload ' UNION SELECT NULL, NULL, NULL--. El uso de valores NULL permite generar una fila adicional compatible con la estructura de la consulta original sin provocar conflictos de tipo de datos. De esta forma, se confirma que el número de columnas es correcto y que el operador UNION puede emplearse para manipular la consulta.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Se recomienda implementar consultas preparadas y validación estricta de los parámetros de entrada, evitando que los valores proporcionados por el usuario sean interpretados como parte de la sintaxis SQL. Además, es recomendable ocultar los mensajes de error detallados del servidor.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Lab 8: SQL injection UNION attack, finding a column containing text</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Este laboratorio corresponde a una inyección SQL basada en UNION, orientada a identificar qué columnas de la consulta original aceptan datos de tipo texto, lo cual es necesario para insertar información arbitraria dentro de los resultados devueltos por la aplicación.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categorías de producto. Los resultados de la consulta se devuelven en la respuesta de la aplicación, por lo que se puede usar un ataque UNION para recuperar datos de otras tablas. Para construir este ataque, primero debe determinar el número de columnas devueltas por la consulta. Puede hacerlo utilizando una técnica que aprendió en un laboratorio anterior. El siguiente paso es identificar una columna compatible con datos de cadena.
+        El laboratorio proporcionará un valor aleatorio que debe aparecer en los resultados de la consulta. Para resolver el laboratorio, realice un ataque UNION de inyección SQL que devuelva una fila adicional con el valor proporcionado. Esta técnica le ayuda a determinar qué columnas son compatibles con datos de cadena.”
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Utilizar Burpsuite e interceptar la URL de la página en donde se encuentre el parámetro “Filter” o “Filtro” junto con su respectiva categoría, para después, enviarla al Repeater y trabajar con el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Determinar el número de columnas
+    </p>
+
+    <pre class="codigo">
+‘ order by 1—
+category=Pets'+order+by+1-- = OK
+category=Pets'+order+by+2-- = OK
+category=Pets'+order+by+3-- = OK
+category=Pets'+order+by+4-- = 500 Internal Server Error
+    </pre>
+
+    <p>
+        Por lo tanto, la table tiene 3 columnas
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Determinar cuál de las tres columnas de la tabla corresponde al tipo de dato texto
+    </p>
+
+    <pre class="codigo">
+‘ UNION select ‘a’, NULL, NULL— = 500 Internal Server Error
+‘ UNION select NULL, ‘a’, NULL— = OK
+‘ UNION select NULL, NULL, ‘a’— = 500 Internal Server Error
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Recuperar de la base de datos la cadena de texto que se muestra en el laboratorio en la columna correspondiente para el tipo de dato texto. Terminando así con el laboratorio.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El proceso inicia con la determinación del número de columnas de la consulta mediante la técnica ' ORDER BY n--, lo que permite establecer que la consulta devuelve tres columnas. Posteriormente, se utilizan distintos payloads basados en UNION SELECT para identificar cuál de las columnas acepta valores de tipo cadena.
+        Para ello, se realizan pruebas insertando un valor de texto ('a') en diferentes posiciones de la lista de columnas, mientras que las demás columnas reciben valores NULL. Por ejemplo, el payload ' UNION SELECT NULL, 'a', NULL-- introduce un valor textual únicamente en la segunda columna. Cuando la consulta se ejecuta sin errores, se concluye que dicha columna admite datos de tipo texto.
+        Una vez identificada la columna compatible con cadenas, se reemplaza el valor de prueba por la cadena específica proporcionada por el laboratorio, lo que permite que dicha cadena aparezca en los resultados de la consulta y completar el objetivo del ejercicio.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para evitar este tipo de ataques es fundamental emplear consultas parametrizadas, validación de entradas y mecanismos de filtrado de caracteres especiales, además de restringir la exposición de errores del sistema que puedan revelar información sobre la estructura de la base de datos.
+    </p>
+</article><article class="articulo-bloque" id="lab8">
+    <h2>Lab 8: SQL injection UNION attack, finding a column containing text</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Este laboratorio corresponde a una inyección SQL basada en UNION, orientada a identificar qué columnas de la consulta original aceptan datos de tipo texto, lo cual es necesario para insertar información arbitraria dentro de los resultados devueltos por la aplicación.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categorías de producto. Los resultados de la consulta se devuelven en la respuesta de la aplicación, por lo que se puede usar un ataque UNION para recuperar datos de otras tablas. Para construir este ataque, primero debe determinar el número de columnas devueltas por la consulta. Puede hacerlo utilizando una técnica que aprendió en un laboratorio anterior. El siguiente paso es identificar una columna compatible con datos de cadena.
+        El laboratorio proporcionará un valor aleatorio que debe aparecer en los resultados de la consulta. Para resolver el laboratorio, realice un ataque UNION de inyección SQL que devuelva una fila adicional con el valor proporcionado. Esta técnica le ayuda a determinar qué columnas son compatibles con datos de cadena.”
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Utilizar Burpsuite e interceptar la URL de la página en donde se encuentre el parámetro “Filter” o “Filtro” junto con su respectiva categoría, para después, enviarla al Repeater y trabajar con el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Determinar el número de columnas
+    </p>
+
+    <pre class="codigo">
+‘ order by 1—
+category=Pets'+order+by+1-- = OK
+category=Pets'+order+by+2-- = OK
+category=Pets'+order+by+3-- = OK
+category=Pets'+order+by+4-- = 500 Internal Server Error
+    </pre>
+
+    <p>
+        Por lo tanto, la table tiene 3 columnas
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Determinar cuál de las tres columnas de la tabla corresponde al tipo de dato texto
+    </p>
+
+    <pre class="codigo">
+‘ UNION select ‘a’, NULL, NULL— = 500 Internal Server Error
+‘ UNION select NULL, ‘a’, NULL— = OK
+‘ UNION select NULL, NULL, ‘a’— = 500 Internal Server Error
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Recuperar de la base de datos la cadena de texto que se muestra en el laboratorio en la columna correspondiente para el tipo de dato texto. Terminando así con el laboratorio.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab8_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El proceso inicia con la determinación del número de columnas de la consulta mediante la técnica ' ORDER BY n--, lo que permite establecer que la consulta devuelve tres columnas. Posteriormente, se utilizan distintos payloads basados en UNION SELECT para identificar cuál de las columnas acepta valores de tipo cadena.
+        Para ello, se realizan pruebas insertando un valor de texto ('a') en diferentes posiciones de la lista de columnas, mientras que las demás columnas reciben valores NULL. Por ejemplo, el payload ' UNION SELECT NULL, 'a', NULL-- introduce un valor textual únicamente en la segunda columna. Cuando la consulta se ejecuta sin errores, se concluye que dicha columna admite datos de tipo texto.
+        Una vez identificada la columna compatible con cadenas, se reemplaza el valor de prueba por la cadena específica proporcionada por el laboratorio, lo que permite que dicha cadena aparezca en los resultados de la consulta y completar el objetivo del ejercicio.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para evitar este tipo de ataques es fundamental emplear consultas parametrizadas, validación de entradas y mecanismos de filtrado de caracteres especiales, además de restringir la exposición de errores del sistema que puedan revelar información sobre la estructura de la base de datos.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab9">
+    <h2>Lab 9: SQL injection UNION attack, retrieving data from other tables</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Inyección SQL basada en UNION (UNION-based SQLi). Esta vulnerabilidad permite a un atacante interferir con las consultas que la aplicación realiza a la base de datos, utilizando el operador UNION para combinar los resultados de la consulta original con los resultados de una consulta inyectada, devolviendo datos de otras tablas.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        Aprovechar la inyección SQL en el filtro de categorías para realizar un ataque UNION que extraiga todos los nombres de usuario y contraseñas almacenados en la tabla users. Posteriormente, utilizar esta información para comprometer la cuenta del usuario administrator.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        La vulnerabilidad se encuentra en la forma en que la aplicación web procesa el parámetro filter (categorías de productos). Al no sanitizar correctamente la entrada del usuario antes de concatenarla en la consulta SQL, y dado que la aplicación muestra directamente los resultados de dicha consulta en la respuesta HTTP, es posible utilizar el operador UNION.
+        Para que un ataque UNION funcione, se deben cumplir dos reglas fundamentales: la consulta inyectada debe solicitar el mismo número de columnas que la consulta original, y los tipos de datos en cada columna deben ser compatibles entre ambas consultas. Al confirmar estas condiciones, el atacante puede instruir a la base de datos para que extraiga información de tablas completamente ajenas a la funcionalidad original (como la tabla users).
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Obtenemos la URL y, utilizando Burp Suite, interceptamos la petición hasta localizar el parámetro filter junto con su categoría correspondiente (gifts). Posteriormente, enviamos la solicitud al módulo Repeater para analizarla y manipularla utilizando el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab9_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Se agrega la cadena '+UNION+SELECT+'abc','def'-- al parámetro con el objetivo de comprobar si la consulta permite realizar una UNION SELECT. Esto permite determinar si la aplicación devuelve los valores enviados en la consulta y, por lo tanto, identificar si es posible extraer información adicional de la base de datos.
+    </p>
+
+    <pre class="codigo">
+'+UNION+SELECT+'abc','def'--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab9_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Una vez confirmado que es posible extraer información, se modifica nuevamente el parámetro de categorías para realizar una consulta UNION SELECT dirigida a las tablas y columnas conocidas. En este caso, se utiliza la cadena '+UNION+SELECT+username,+password+FROM+users-- con el objetivo de recuperar las credenciales almacenadas en la tabla users, específicamente los campos username y password.
+    </p>
+
+    <pre class="codigo">
+'+UNION+SELECT+username,+password+FROM+users--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab9_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Al ejecutar la consulta, la aplicación devuelve varios usuarios junto con sus respectivas contraseñas. Entre los resultados obtenidos, el usuario de mayor interés es administrator, cuya contraseña recuperada es c2cvkl8h9ze6jd1sy47x, ya que normalmente corresponde a una cuenta con privilegios elevados dentro del sistema.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab9_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Finalmente, se inicia sesión en la aplicación utilizando las credenciales obtenidas del usuario administrator. Al introducir el nombre de usuario y la contraseña recuperada, el acceso se realiza con éxito, confirmando que las credenciales extraídas de la base de datos son válidas.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab9_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El ataque consta de dos fases principales de inyección:
+        Reconocimiento de columnas y tipos de datos: '+UNION+SELECT+'abc','def'--
+        La comilla simple (') cierra la consulta original del desarrollador.
+        UNION SELECT introduce la nueva consulta.
+        Los literales de cadena 'abc','def' se inyectan para comprobar si la consulta original devuelve exactamente dos columnas y si ambas aceptan y reflejan datos de tipo texto en la interfaz web de la aplicación.
+        Los guiones (--) comentan el resto de la consulta original para evitar errores de sintaxis.
+
+        Extracción de credenciales (Explotación): '+UNION+SELECT+username,+password+FROM+users--
+        Una vez confirmada la estructura, se reemplazan las cadenas de prueba por los nombres de las columnas objetivo (username y password).
+        FROM users indica a la base de datos la tabla desde la cual se extraerán estos registros.
+        Al enviar este payload, la base de datos adjunta el listado completo de usuarios y contraseñas (incluyendo administrator y su contraseña c2cvkl8h9ze6jd1sy47x) directamente en la tabla de productos de la página web.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        La solución más efectiva para erradicar este tipo de inyección SQL es la implementación sistemática de consultas parametrizadas (Prepared Statements) en el código de la aplicación. Este enfoque obliga a la base de datos a tratar el contenido del parámetro filter estrictamente como una variable de datos y no como parte de la estructura ejecutable de la consulta SQL, neutralizando por completo el intento de añadir operadores como UNION. Asimismo, se recomienda auditar y restringir los permisos del usuario de la base de datos que utiliza la aplicación, limitando su acceso solo a las tablas estrictamente necesarias.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab10">
+    <h2>Lab 10: SQL injection UNION attack, retrieving multiple values in a single column</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Inyección SQL basada en UNION (UNION-based SQLi). Esta vulnerabilidad permite a un atacante extender los resultados devueltos por la consulta original añadiendo los resultados de consultas adicionales mediante el operador UNION.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo es recuperar todos los nombres de usuario y contraseñas almacenados en la tabla users de la base de datos y utilizar estas credenciales para iniciar sesión exitosamente en la cuenta del usuario administrator.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        La vulnerabilidad radica en el filtro de categorías de productos (parámetro filter). Debido a que la aplicación concatena la entrada del usuario directamente en la consulta SQL y devuelve los resultados en la respuesta HTTP, es posible utilizar el operador UNION.
+        Para que un ataque UNION sea exitoso, la consulta inyectada debe devolver el mismo número de columnas que la original y los tipos de datos deben coincidir. En este escenario, la aplicación solo tiene una columna útil que refleja texto en la pantalla. Para superar esta limitación y extraer dos piezas de información distintas (usuario y contraseña) simultáneamente, el atacante debe concatenar ambos valores en un solo campo de texto antes de que la base de datos devuelva la respuesta.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Obtenemos la URL y, utilizando Burp Suite, interceptamos la petición hasta localizar el parámetro filter junto con su categoría correspondiente (Pets). Posteriormente, enviamos la solicitud al módulo Repeater para analizarla y manipularla utilizando el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab10_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Se agrega la cadena '+UNION+SELECT+NULL,'abc'-- al parámetro con el objetivo de comprobar si la consulta permite realizar una UNION SELECT. Esto permite determinar si la aplicación devuelve los valores enviados en la consulta y, por lo tanto, identificar si es posible extraer información adicional de la base de datos.
+    </p>
+
+    <pre class="codigo">
+'+UNION+SELECT+NULL,'abc'--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab10_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Una vez confirmado que es posible extraer información, se modifica nuevamente el parámetro de categorías para realizar una consulta UNION SELECT dirigida a las tablas y columnas conocidas. En este caso, se utiliza la cadena '+UNION+SELECT+NULL,username||'~'||password+FROM+users– con el objetivo de recuperar las credenciales almacenadas en la tabla users, específicamente los campos username y password en una sola columna.
+    </p>
+
+    <pre class="codigo">
+'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab10_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Al ejecutar la consulta, la aplicación devuelve varios usuarios en una sola columna junto con sus respectivas contraseñas. Entre los resultados obtenidos, el usuario de mayor interés es administrator, cuya contraseña recuperada es h53jnnf8tgmeqak8p2nb, ya que normalmente corresponde a una cuenta con privilegios elevados dentro del sistema.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab10_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Finalmente, se inicia sesión en la aplicación utilizando las credenciales obtenidas del usuario administrator. Al introducir el nombre de usuario y la contraseña recuperada, el acceso se realiza con éxito, confirmando que las credenciales extraídas de la base de datos son válidas. Se termina el laboratorio exitosamente.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab10_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El ataque se divide en dos fases con sus respectivos payloads:
+
+        Comprobación de columnas y tipos de datos: '+UNION+SELECT+NULL,'abc'--
+        La comilla simple (') cierra la cadena de la consulta original.
+        Se utiliza UNION SELECT para inyectar una nueva consulta.
+        Se inyecta NULL en la primera columna para rellenar el espacio y 'abc' en la segunda para confirmar que dicha columna acepta y muestra texto en la respuesta web.
+        Los guiones (--) comentan el resto de la consulta original.
+
+        Extracción de datos (Explotación): '+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+        Una vez confirmada la columna de texto, se sustituye el valor 'abc' por username||'~'||password.
+        El operador || se encarga de concatenar el contenido de la columna username, el separador literal '~' (para que sea legible por el atacante) y la columna password en una sola cadena continua.
+        FROM users le indica a la base de datos de dónde extraer la información.
+        El resultado devuelto en la interfaz web para el usuario objetivo tiene el formato: administrator~h53jnnf8tgmeqak8p2nb.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para prevenir esta vulnerabilidad, la principal y más efectiva medida es el uso de consultas parametrizadas (Prepared Statements) en todo el código fuente. Esto garantiza que el motor de la base de datos trate cualquier entrada del parámetro de categoría estrictamente como un valor de datos literales, imposibilitando que secuencias como UNION SELECT se interpreten como código SQL ejecutable.
+        Adicionalmente, se recomienda aplicar el principio de mínimo privilegio en el gestor de bases de datos, de modo que el usuario utilizado por la aplicación web para consultar los productos no tenga permisos de acceso a la tabla users.
+    </p>
+</article>
+
+<article class="articulo-bloque" id="lab11">
+    <h2>Lab 11: Blind SQL injection with conditional responses</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+
+        <b>Tipo de SQLi</b><br>
+        Inyección SQL Ciega basada en respuestas booleanas (Boolean-based Blind SQLi). En este tipo de ataque, la base de datos no devuelve los datos solicitados en la interfaz de usuario ni arroja errores visibles. En su lugar, el atacante infiere la información realizando preguntas lógicas de "verdadero o falso" y observando cambios sutiles en la respuesta de la aplicación.<br>
+
+        <b>Objetivo del laboratorio</b><br>
+        Aprovechar la vulnerabilidad de inyección SQL ciega en el procesamiento de la cookie de seguimiento (TrackingId) para inferir y reconstruir, carácter por carácter, la contraseña del usuario administrator, logrando posteriormente iniciar sesión en el sistema con dichas credenciales.<br>
+
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        La vulnerabilidad reside en cómo la aplicación procesa el valor de la cookie TrackingId. La aplicación ejecuta una consulta SQL en el backend para verificar el identificador. Aunque los resultados de esta consulta no se reflejan en el código fuente de la página, la aplicación altera su comportamiento: si la consulta devuelve al menos una fila (resultado TRUE), se renderiza el texto "Welcome back" en pantalla. Si no devuelve filas (resultado FALSE), el mensaje se omite.
+        Este comportamiento actúa como un oráculo booleano. Permite inyectar condiciones lógicas arbitrarias; si la condición inyectada es cierta, la página mostrará el mensaje de bienvenida, revelando así la validez de la estructura interna de la base de datos y sus registros sin verlos directamente.
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Obtenemos la URL y, utilizando Burp Suite, interceptamos la petición y nos colocamos en el login para visualizar mejor el Welcome back. Posteriormente, enviamos la solicitud al módulo Repeater para analizarla y manipularla utilizando el método GET.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap1.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Se localiza la cookie de la sesión y se modifica el valor del parámetro TrackingId, agregando la condición ' AND '1'='1. Posteriormente, se envía la solicitud y se observa la respuesta del servidor. Si aparece el mensaje “Welcome back”, se interpreta como un resultado verdadero (true); en caso contrario, se considera falso (false). Este comportamiento se utiliza como indicador booleano para evaluar las condiciones enviadas en la consulta.
+    </p>
+
+    <pre class="codigo">
+' AND '1'='1
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Se realiza una nueva modificación en el parámetro TrackingId, añadiendo la condición ' AND '1'='2. En este caso, el mensaje “Welcome back” ya no aparece en la respuesta del servidor, debido a que la condición evaluada es falsa. Esto confirma que el mensaje funciona como un indicador booleano, permitiendo distinguir cuándo una condición enviada en la consulta es verdadera o falsa.
+    </p>
+
+    <pre class="codigo">
+' AND '1'='2
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Con base en lo anterior, se vuelve a modificar el parámetro TrackingId, agregando la condición ' AND (SELECT 'a' FROM users LIMIT 1)='a. El objetivo de esta prueba es verificar si existe una tabla llamada users en la base de datos.
+    </p>
+
+    <pre class="codigo">
+' AND (SELECT 'a' FROM users LIMIT 1)='a
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Con la existencia de la tabla confirmada, se realiza otra modificación al parámetro TrackingId, agregando la condición ' AND (SELECT 'a' FROM users WHERE username='administrator')='a. El propósito de esta consulta es comprobar si existe un usuario llamado administrator dentro de la tabla users.
+    </p>
+
+    <pre class="codigo">
+' AND (SELECT 'a' FROM users WHERE username='administrator')='a
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Una vez confirmada la existencia del usuario administrator, el siguiente paso consiste en determinar la longitud de su contraseña. Para ello, se modifica nuevamente el parámetro TrackingId, agregando la condición ' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a.
+        Posteriormente, se va incrementando progresivamente el valor de la condición LENGTH(password)>n. Mientras el mensaje “Welcome back” continúe apareciendo, la condición será verdadera. Cuando el mensaje deje de mostrarse, se habrá alcanzado un valor mayor que la longitud real de la contraseña, lo que permite deducir su tamaño.
+    </p>
+
+    <pre class="codigo">
+' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 7</h2>
+    <p>
+        Una vez determinada la longitud de la contraseña (20 caracteres), se cambia de la herramienta Repeater al módulo Intruder en Burp Suite, ya que para obtener la contraseña completa es necesario realizar múltiples solicitudes automatizadas.
+        Posteriormente, se modifica nuevamente el parámetro TrackingId, agregando la condición ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a (a este último carácter se le agrega § para que cambia su valor), con el objetivo de comprobar el primer carácter de la contraseña del usuario administrator.
+        Por último, se configura Intruder para realizar múltiples peticiones cambiando el carácter final de la condición, permitiendo probar diferentes valores hasta encontrar el que haga que el mensaje “Welcome back” aparezca, lo cual indica que el carácter probado es correcto. De esta forma, se pueden ir descubriendo los caracteres de la contraseña uno por uno.
+    </p>
+
+    <pre class="codigo">
+' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§'
+    </pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap7.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 8</h2>
+    <p>
+        Una vez aplicada la configuración en Burp Suite, se inicia el ataque utilizando Intruder para enviar múltiples solicitudes de manera automatizada. Tras analizar las respuestas del servidor, se logra identificar el primer carácter de la contraseña del usuario administrator. Durante el proceso se observa que se prueban 36 posibles combinaciones por cada carácter (letras minúsculas y números), lo que permite determinar correctamente cada posición de la contraseña analizando cuándo vuelve a aparecer el mensaje “Welcome back”, indicando que el carácter evaluado es el correcto.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap8.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 9</h2>
+    <p>
+        Una vez obtenido el primer carácter, se continúa con la extracción de los siguientes caracteres de la contraseña. Para ello, se modifica el valor del parámetro en la función SUBSTRING, cambiando la posición (password,n,1) dentro de la condición para evaluar cada carácter de forma individual.
+        De esta manera, el valor n se va incrementando progresivamente (2, 3, 4, …) hasta llegar al carácter 20, repitiendo el mismo proceso de prueba con múltiples solicitudes en Burp Suite. Así se logra reconstruir la contraseña completa del usuario administrator, obteniendo cada carácter uno por uno.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap9.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 10</h2>
+    <p>
+        Después de realizar el ataque mediante múltiples peticiones automatizadas en Burp Suite, se logra reconstruir completamente la contraseña del usuario administrator, obteniendo el valor eyzkeiz2no77ql8ri93x. Finalmente, se utilizan estas credenciales para iniciar sesión en la aplicación y el acceso se realiza correctamente, con lo cual se completa el laboratorio de manera exitosa.
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab11_cap10.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El ataque se ejecuta de forma progresiva utilizando la lógica booleana. Este flujo de trabajo iterativo es fundamental en cualquier práctica de pentesting, donde se pasa de la evaluación manual de la vulnerabilidad a la automatización de la extracción:<br>
+
+        Confirmación de la vulnerabilidad:<br>
+        ' AND '1'='1 (Condición Verdadera): La consulta global es cierta y devuelve "Welcome back".<br>
+        ' AND '1'='2 (Condición Falsa): La consulta es falsa y no devuelve "Welcome back".<br>
+
+        Verificación de estructura (Tabla y Usuario):<br>
+        ' AND (SELECT 'a' FROM users WHERE username='administrator')='a<br>
+        Comprueba si la tabla users existe y si contiene al usuario objetivo. Un resultado verdadero confirma ambas condiciones.<br>
+
+        Determinación de la longitud de la contraseña:<br>
+        ' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a<br>
+        Se incrementa el número iterativamente hasta que el mensaje desaparece, revelando que la longitud exacta es de 20 caracteres.<br>
+
+        Extracción de la contraseña (Automatización):<br>
+        ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a<br>
+        Para la extracción, se aísla cada posición de la contraseña usando SUBSTRING(password, n, 1). Se itera la posición n (del 1 al 20) y se utiliza una herramienta de automatización para probar caracteres alfanuméricos en la variable de comparación (='§a§'). Cada vez que la petición genera una respuesta con el texto "Welcome back", se confirma que el carácter inyectado es el correcto para esa posición.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        Para prevenir esta vulnerabilidad a nivel de código, especialmente al construir y asegurar backends robustos con tecnologías como Laravel y PostgreSQL, la medida definitiva es el uso estricto de consultas parametrizadas (Prepared Statements). Al emplear este tipo de frameworks, aprovechar sus sistemas ORM (como Eloquent) garantiza por defecto que las entradas de los usuarios ya sea en cookies, cabeceras o parámetros de URL se traten siempre como valores literales y no como fragmentos de código ejecutable. Adicionalmente, es recomendable evitar el diseño de lógicas de negocio que revelen el éxito o fracaso de una consulta interna de manera tan evidente y predecible a través de la interfaz.
+    </p>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab12">
+    <h2>Lab 12: Blind SQL injection with conditional errors</h2>
+    <p>
+        <b>Nivel</b><br>
+        PRACTITIONER<br>
+        <b>Tipo de SQLi</b><br>
+        Inyección SQL Ciega basada en errores condicionales (Conditional Error-based Blind SQLi). En este escenario, la aplicación no devuelve datos de la base de datos ni presenta diferencias en su respuesta base si una consulta es verdadera o falsa. Sin embargo, permite deducir información forzando condicionalmente un error en la base de datos (lo que resulta en un código de estado HTTP 500 o un mensaje de error personalizado) únicamente cuando la condición inyectada se evalúa como verdadera.<br>
+        <b>Objetivo del laboratorio</b><br>
+        Explotar una vulnerabilidad de inyección SQL ciega en la cookie de seguimiento (TrackingId) forzando errores condicionales para inferir la longitud y extraer, carácter por carácter, la contraseña del usuario administrator, logrando finalmente iniciar sesión con dichas credenciales.<br>
+        <b>Explicación técnica de la vulnerabilidad</b><br>
+        La aplicación toma el valor de la cookie TrackingId y lo inserta directamente en una consulta SQL. Al inyectar una simple comilla ('), la sintaxis SQL se rompe y el servidor devuelve un error, lo que indica que la entrada no está sanitizada.<br>
+        El ataque se basa en utilizar la sentencia CASE de SQL para evaluar una condición lógica. Si la condición es cierta (por ejemplo, "el primer carácter de la contraseña es la letra 'a'"), se fuerza a la base de datos a realizar una operación matemática inválida, como dividir por cero (1/0). Esto provoca que la base de datos falle y la aplicación web devuelva un error (como un HTTP 500). Si la condición es falsa, la consulta se ejecuta sin problemas y la aplicación responde normalmente. Esta diferencia de comportamiento permite al atacante extraer datos a ciegas.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Obtenemos la URL y, utilizando Burp Suite, interceptamos la petición y nos colocamos en el login. Posteriormente, enviamos la solicitud al módulo Repeater para analizarla y manipularla utilizando el método GET.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab12_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Se localiza la cookie de la sesión y se modifica el valor del parámetro TrackingId, agregando comilla simple (‘). Posteriormente, se envía la solicitud y se observa la respuesta del servidor.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab12_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Al modificar el parámetro TrackingId agregando una sola comilla simple (TrackingId=IMoYMeppgNiPyiHd'), la aplicación devuelve un error. Posteriormente, se prueba añadiendo dos comillas simples, observando que el error desaparece. Esto indica que el problema se debía a un error de sintaxis en la consulta SQL, lo que sugiere que la entrada proporcionada está siendo interpretada directamente dentro de la consulta de la base de datos.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab12_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Para confirmar que el servidor interpreta la inyección como una consulta SQL, se envía primero:
+    </p>
+
+<pre class="codigo">
+'||(SELECT '')||'
+</pre>
+
+<p>
+        La respuesta sigue mostrando un error, por lo que se prueba nuevamente con:
+</p>
+
+<pre class="codigo">
+'||(SELECT '' FROM dual)||'
+</pre>
+
+<p>
+        Al desaparecer el error, se concluye que la base de datos utilizada probablemente es Oracle Database, ya que este sistema requiere especificar una tabla en las consultas SELECT, utilizando comúnmente la tabla dual.<br>
+</p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap5.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Para comprobar que el servidor realmente procesa la inyección como una consulta SQL, primero se envía:
+    </p>
+
+<pre class="codigo">
+'||(SELECT '' FROM not-a-real-table)||'
+</pre>
+
+<p>
+        Esta solicitud devuelve un error, lo que indica que la consulta intenta acceder a una tabla inexistente. Posteriormente, se prueba con:
+</p>
+
+<pre class="codigo">
+'||(SELECT '' FROM users WHERE ROWNUM = 1)||'
+</pre>
+
+<p>
+        Al no generarse ningún error, se puede inferir que la tabla users existe en la base de datos. La condición ROWNUM = 1 se utiliza para asegurar que la consulta devuelva solo una fila y evitar errores en la concatenación.<br>
+</p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap6.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Aprovechando el comportamiento de los errores, se envía la consulta:
+    </p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'
+</pre>
+
+<p>
+        la cual genera un error debido a la división entre cero. Posteriormente, se prueba con:
+    </p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN (1=2) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'
+</pre>
+
+<p>
+        y se observa que el error desaparece. Esto demuestra que es posible provocar errores de forma condicional.<br>
+</p>
+
+<p>
+        Utilizando este mismo método, se envía:
+</p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<p>
+        Al aparecer nuevamente el error, se confirma que existe un usuario llamado administrator en la tabla users dentro de la base de datos Oracle Database.<br>
+</p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap7.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 7</h2>
+    <p>
+        El siguiente paso consiste en determinar la longitud de la contraseña del usuario administrator. Para ello, se envía la consulta:
+    </p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN LENGTH(password)>1 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<p>
+        Si se genera un error, significa que la condición es verdadera y que la contraseña tiene más de un carácter.<br>
+        Posteriormente, se envían múltiples solicitudes aumentando el valor de la condición, por ejemplo:<br>
+</p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN LENGTH(password)>5 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN LENGTH(password)>10 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<p>
+        y así sucesivamente, hasta encontrar el punto en el que el error desaparece, lo que permite deducir la longitud real de la contraseña en la base de datos Oracle Database.<br>
+</p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap8.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 8</h2>
+    <p>
+        Una vez determinada la longitud de la contraseña (20 caracteres), se cambia de la herramienta Repeater al módulo Intruder en Burp Suite, ya que para obtener la contraseña completa es necesario realizar múltiples solicitudes automatizadas.<br>
+        Posteriormente, se modifica nuevamente el parámetro TrackingId, agregando la condición:
+    </p>
+
+<pre class="codigo">
+' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
+</pre>
+
+<p>
+        (al carácter a se le agrega § para que cambia su valor), con el objetivo de comprobar el primer carácter de la contraseña del usuario administrator.<br>
+        Por último, se configura Intruder para realizar múltiples peticiones cambiando el carácter a de la condición, permitiendo probar diferentes valores hasta encontrar el código 500, lo cual indica que el carácter probado es correcto. De esta forma, se pueden ir descubriendo los caracteres de la contraseña uno por uno.<br>
+    </p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap9.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 9</h2>
+    <p>
+        Una vez aplicada la configuración en Burp Suite, se inicia el ataque utilizando Intruder para enviar múltiples solicitudes de manera automatizada. Tras analizar las respuestas del servidor, se logra identificar el primer carácter de la contraseña del usuario administrator. Durante el proceso se observa que se prueban 36 posibles combinaciones por cada carácter (letras minúsculas y números), lo que permite determinar correctamente cada posición de la contraseña analizando cuándo vuelve a aparecer código 500, indicando que el carácter evaluado es el correcto.<br>
+    </p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap10.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 10</h2>
+    <p>
+        Una vez obtenido el primer carácter, se continúa con la extracción de los siguientes caracteres de la contraseña. Para ello, se modifica el valor del parámetro en la función SUBSTRING, cambiando la posición (password,n,1) dentro de la condición para evaluar cada carácter de forma individual.<br>
+        De esta manera, el valor n se va incrementando progresivamente (2, 3, 4, …) hasta llegar al carácter 20, repitiendo el mismo proceso de prueba con múltiples solicitudes en Burp Suite. Así se logra reconstruir la contraseña completa del usuario administrator, obteniendo cada carácter uno por uno.<br>
+    </p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap11.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 11</h2>
+    <p>
+        Después de realizar el ataque mediante múltiples peticiones automatizadas en Burp Suite, se logra reconstruir completamente la contraseña del usuario administrator, obteniendo el valor bbku696au2pw951g22it. Finalmente, se utilizan estas credenciales para iniciar sesión en la aplicación y el acceso se realiza correctamente, con lo cual se completa el laboratorio de manera exitosa.<br>
+    </p>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab12_cap12.png" alt="Descripción de la imagen">
+    </div>
+</article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El ataque se divide en fases lógicas de descubrimiento y explotación:<br>
+        Confirmación de inyección y motor de base de datos:<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=xyz'
+TrackingId=xyz''
+'||(SELECT '' FROM dual)||'
+</pre>
+
+<p>
+        Verificación de estructura (Oráculo de errores):<br>
+</p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'
+'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<p>
+        Determinación de la longitud de la contraseña:<br>
+</p>
+
+<pre class="codigo">
+'||(SELECT CASE WHEN LENGTH(password)>n THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+</pre>
+
+<p>
+        Extracción de la contraseña (Automatización):<br>
+        Se inyecta una condición que evalúa cada carácter individualmente usando funciones de subcadena (como SUBSTR o SUBSTRING dependiendo de la sintaxis exacta enviada).<br>
+        La lógica a probar en herramientas automatizadas como Burp Suite Intruder evalúa si un carácter específico coincide:<br>
+</p>
+
+<pre class="codigo">
+CASE WHEN SUBSTR(password, n, 1)='§a§' THEN TO_CHAR(1/0)
+</pre>
+
+<p>
+        Al configurar el Intruder, se prueban las 36 combinaciones posibles (letras y números) por cada posición de la 1 a la 20. Cada vez que el servidor devuelve un código de error (como un HTTP 500), se confirma que el carácter probado (§a§) es el correcto.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        La defensa principal es la implementación de consultas parametrizadas (Prepared Statements) en todo el código que interactúe con la base de datos, asegurando que las cookies u otras entradas de usuario se traten siempre como datos y no como código ejecutable. Adicionalmente, es crítico implementar un manejo de errores genérico (Error Handling) a nivel del servidor web y de la aplicación, evitando exponer códigos de estado 500 o mensajes detallados por fallos en la base de datos, devolviendo en su lugar mensajes genéricos inofensivos para el usuario.<br>
+    </p>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab13">
+    <h2>Lab 13: Visible error-based SQL injection</h2>
+    <p>
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio es extraer la contraseña del usuario “administrator” almacenada en la base de datos y usarla para iniciar sesión en la aplicación, explotando la vulnerabilidad de SQL Injection que existe en el parámetro de la cookie TrackingId. Para resolver el laboratorio es necesario utilizar consultas SQL que generan errores visibles cuando se cumple una condición específica, lo que permite descubrir caracteres de la contraseña uno por uno.<br>
+        <b>Explicación de la vulnerabilidad</b><br>
+        La vulnerabilidad ocurre porque la aplicación web construye consultas SQL utilizando directamente el valor de la cookie TrackingId sin validación ni sanitización adecuada. Cuando el servidor ejecuta la consulta SQL, cualquier código SQL inyectado por el atacante se ejecuta también.<br>
+        <b>Instrucciones</b><br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab13_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Abrimos Burpsuite e interceptamos cualquier metodo GET de la página, la mandamos al repetidor y ahí en el repetidor vamos a buscar la variable de TrackingId.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Agregamos una comilla simple al final, por ejemplo TrackingId=xyz' y envías la petición al servidor. Si aparece un error en la página, significa que la consulta SQL se rompió por la comilla y que la entrada del usuario se está insertando directamente en la consulta. El propósito de este paso es verificar que realmente existe una vulnerabilidad de SQL injection, ya que un error visible indica que el servidor está devolviendo errores de la base de datos.<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=xyz'
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Después de comprobar que la comilla provoca un error, intentaremos inyectar una subconsulta válida para ver si el servidor ejecuta SQL dentro del valor de la cookie. El objetivo de este paso es confirmar que se puede manipular la consulta que ejecuta la base de datos y no solo causar errores aleatorios. Si el error cambia dependiendo de lo que inyectamos, significa que estamos listos para controlar parte de la consulta SQL del servidor, en este caso ingresamos los siguiente ‘--.<br>
+    </p>
+
+<pre class="codigo">
+'--
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Ahora debemos utilizar una técnica llamada “conditional error”, este error consiste en provocar un error de base de datos solo cuando una condición sea verdadera. En bases de datos como Oracle se puede usar algo como dividir entre cero. El propósito de este paso es crear un mecanismo que permita saber si una condición es verdadera o falsa observando si aparece un error en la respuesta, para esto utilizamos la condición de CAST.<br>
+    </p>
+
+<pre class="codigo">
+CAST()
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        Con el mecanismo de error condicional listo, probamos una o varias condiciónes que consulten la tabla users y el usuario administrator. Si la respuesta del servidor muestra el error, significa que las condiciones fueron verdaderas. El objetivo de este paso es confirmar que la tabla users y el registro del administrador realmente están en la base de datos.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Utilizando el mecanismo de error condicional probando con el usuario administrador vamos a utilizar la siguiente consulta sabiendo que existe un usuario administrador, esto con el fin de tronar la base de datos y conseguir la contraseña.<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap7.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 7</h2>
+    <p>
+        Una vez con la contraseña descubierta iniciamos sesión como administrador, en el apartado de login de la página y queda el laboratorio resuelto.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab13_cap8.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab14">
+    <h2>Lab 14: Blind SQL injection with time delays</h2>
+    <p>
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para provocar un retraso de 10 segundos en la respuesta del servidor, demostrando que la aplicación es vulnerable a una inyección SQL ciega basada en tiempo. En este caso no es necesario extraer datos de la base de datos; únicamente se debe comprobar que es posible ejecutar código SQL en el servidor causando una demora controlada en la respuesta.<br>
+        <b>Explicación de la vulnerabilidad</b><br>
+        La vulnerabilidad existe porque la aplicación utiliza una cookie llamada TrackingId para realizar funciones de analítica o seguimiento, y el valor de esta cookie se inserta directamente dentro de una consulta SQL en el servidor. El problema es que el valor de la cookie no se valida ni se sanitiza correctamente antes de ser usado en la consulta. Debido a esto, un atacante puede modificar el valor de la cookie e insertar instrucciones SQL maliciosas.<br>
+        <b>Instrucciones</b><br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab14_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Abrimos Burpsuite e interceptamos cualquier metodo GET de la página, la mandamos al repetidor y ahí en el repetidor vamos a buscar la variable de TrackingId.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab14_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Ahora modificamos el valor de la cookie para que ejecute una función de tiempo en la base de datos, utilizamos el siguiente comando:<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=x'||pg_sleep(10)--
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab14_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Después de enviar la petición modificada, observamos cuánto tarda en responder el servidor. Si aproximadamente llega a tardar 10 segundos en lugar de responder inmediatamente, significa que la base de datos ejecutó la función pg_sleep. El objetivo de este paso es confirmar que existe una vulnerabilidad de SQL injection tipo blind time-based, donde no hay errores ni resultados visibles, pero se puede inferir información midiendo el tiempo de respuesta.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab14_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab15">
+    <h2>Lab 15: Blind SQL injection with time delays and information retrieval</h2>
+    <p>
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para descubrir la contraseña del usuario “administrator” almacenada en la base de datos y utilizarla para iniciar sesión en la aplicación. La base de datos contiene una tabla llamada users con las columnas username y password.<br>
+        <b>Explicación de la vulnerabilidad</b><br>
+        La vulnerabilidad ocurre porque la aplicación utiliza una cookie llamada TrackingId para realizar funciones de seguimiento o analítica. El valor de esta cookie se inserta directamente dentro de una consulta SQL sin ningún tipo de validación o sanitización. Como resultado, un atacante puede modificar el valor de la cookie e insertar código SQL malicioso que se ejecutará en la base de datos.<br>
+        <b>Instrucciones</b><br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab15_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Abrimos Burpsuite e interceptamos cualquier metodo GET de la página, la mandamos al repetidor y ahí en el repetidor vamos a buscar la variable de TrackingId.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Ahora debemos modificar el valor de la cookie en Burp Repeater para probar si se pueden ejecutar funciones SQL que retrasen la respuesta, para esto utilizamos el siguiente comando.<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Después debemos probar que el retraso ocurre solo cuando una condición es verdadera. Para eso cambiamos la condición del payload a una falsa y luego a una verdadera.<br>
+    </p>
+
+<pre class="codigo">
+TrackingId=x'%3BSELECT+CASE+WHEN+(1=2)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END–
+TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        ​​Ahora utilizamos esta misma técnica para consultar la tabla users. El objetivo es comprobar que existe el usuario administrator. Si la respuesta tarda 10 segundos, significa que el usuario administrador sí existe en la base de datos. Esto demuestra que ya puedes hacer consultas reales dentro de la base de datos usando la inyección SQL.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        El siguiente paso es descubrir cuántos caracteres tiene la contraseña del administrador. Para hacerlo se usa la función LENGTH(password) dentro de una condición, para esto vamos a utilizar el Burp Intruder, mandamos el mismo método GET y lo agregamos la condición, seguido de esto vamos a configurar el Intruder con una lista simple y agregar de configuración que se repita con los patrones a-z y 0-9, esto con la finalidad que encuentre la contraseña.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Debido a que suele ser un proceso muy largo tenemos que configurar el tiempo de respuesta que toma el ataque para cada carácter, para esto nos vamos a la zona de resource pool y configuramos el apartado de Maximum concurrent requests a 1 y lo ejecutamos. Sin la versión Pro de Burp esto se vuelve mucho más lento, porque tendrías que probar cada carácter manualmente con Repeater.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap7.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 7</h2>
+    <p>
+        Cuando logramos reconstruir todos los caracteres de la contraseña, nos vamos a la página de login del laboratorio e ingresamos el usuario administrator con la contraseña obtenida y el laboratorio queda completado.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab15_cap8.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab16">
+    <h2>Lab 16: Blind SQL injection with out-of-band interaction</h2>
+    <p>
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para provocar una interacción externa (por ejemplo una consulta DNS) hacia un servidor de Burp Collaborator, demostrando que la base de datos ejecuta el código SQL inyectado.<br>
+        <b>Explicación de la vulnerabilidad</b><br>
+        La vulnerabilidad existe porque la aplicación utiliza una cookie llamada TrackingId para realizar funciones de analítica o seguimiento de usuarios. El valor de esta cookie se inserta directamente dentro de una consulta SQL en el servidor sin ningún tipo de validación o sanitización. Como resultado, un atacante puede modificar el valor de la cookie y añadir instrucciones SQL maliciosas.<br>
+        <b>Instrucciones</b><br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab16_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Abrimos Burpsuite e interceptamos cualquier método GET de la página, la mandamos al repetidor y ahí en el repetidor vamos a buscar la variable de TrackingId.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab16_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        En este laboratorio no se pueden usar técnicas como errores visibles o retrasos de tiempo porque la consulta SQL se ejecuta en segundo plano y no afecta la respuesta de la página. Por esta razón se utiliza una técnica llamada out-of-band, que consiste en hacer que la base de datos realice una conexión externa hacia un dominio controlado por el atacante. Para lograr esto normalmente se genera un dominio único utilizando la herramienta Burp Collaborator.<br>
+        Una vez generado el dominio de Burp Collaborator, se modifica el valor de la cookie TrackingId para incluir un payload SQL que obligue a la base de datos a realizar una consulta DNS hacia ese dominio. Luego se envía la petición desde Burp Repeater. Si el servidor ejecuta el código SQL, intentará resolver el dominio proporcionado, generando una interacción externa.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab16_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        El último paso consiste en revisar en Burp Collaborator si se recibió una interacción DNS o HTTP desde el servidor vulnerable, lo cual confirma la explotación de la vulnerabilidad. Sin embargo, este laboratorio no se pudo completar porque la herramienta Burp Collaborator solo está disponible en Burp Suite Professional, por lo que no fue posible generar ni monitorear el dominio necesario para detectar la interacción externa del servidor.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab16_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab17">
+    <h2>Lab 17: Blind SQL injection with out-of-band data exfiltration.</h2>
+    <p>
+        <b>Nivel:</b><br>
+        Practitioner<br>
+        <b>Tipo de SQLi:</b><br>
+        El laboratorio corresponde a una Blind SQL Injection con exfiltración de datos fuera de banda (Out-of-Band, OAST). Es una inyección ciega porque la aplicación no muestra resultados ni errores en la respuesta HTTP, pero permite provocar interacciones externas (DNS/HTTP) hacia un servidor controlado por el atacante, en este caso mediante Burp Collaborator.<br>
+        <b>Objetivo del laboratorio:</b><br>
+        El objetivo es explotar la vulnerabilidad presente en la cookie TrackingId para extraer la contraseña del usuario administrator almacenada en la tabla users. Debido a que la consulta se ejecuta de forma asíncrona y no refleja resultados en la respuesta, se debe utilizar una técnica de exfiltración fuera de banda para obtener la contraseña y posteriormente iniciar sesión como administrador.<br>
+        <b>Explicación de la vulnerabilidad:</b><br>
+        La vulnerabilidad existe porque la aplicación toma el valor de la cookie TrackingId y lo incorpora directamente en una consulta SQL sin validación ni parametrización. Aunque la consulta no afecta la respuesta visible del usuario y no devuelve errores (lo que la hace “ciega”), el motor de base de datos sí ejecuta la instrucción internamente. Esto permite al atacante inyectar código SQL que genere interacciones externas, como consultas DNS o solicitudes HTTP hacia un dominio controlado por él. La ejecución asíncrona no elimina la vulnerabilidad, solo impide la extracción directa por medios tradicionales como UNION o mensajes de error.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Identificación del punto de inyección</h2>
+    <p>
+        Primero se accede a la página principal de la aplicación y se intercepta la petición HTTP utilizando Burp Suite. Al analizar la solicitud, se identifica que la aplicación envía una cookie llamada TrackingId, la cual es procesada por el servidor dentro de una consulta SQL. Esto sugiere que puede ser un punto vulnerable a inyección.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Prueba inicial de inyección</h2>
+    <p>
+        Se modifica manualmente el valor de la cookie TrackingId agregando caracteres como una comilla simple (') para observar si se produce algún comportamiento inusual. Aunque la aplicación no muestra errores ni cambios en la respuesta (lo que confirma que se trata de una inyección ciega), el hecho de que el valor sea procesado por el servidor indica que puede estar siendo ejecutado dentro de una consulta SQL.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Confirmación del tipo de vulnerabilidad (Blind SQLi)</h2>
+    <p>
+        Dado que la consulta se ejecuta de forma asíncrona y no afecta la respuesta visible, se determina que se trata de una Blind SQL Injection. En estos casos, la extracción de información no puede realizarse mediante UNION SELECT tradicional ni por mensajes de error, sino mediante técnicas alternativas como inferencia booleana, temporización o exfiltración fuera de banda.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Preparación del payload de exfiltración Out-of-Band (OAST)</h2>
+    <p>
+        La solución propuesta consiste en inyectar un payload que combine SQL Injection con técnicas de XXE para forzar al servidor a realizar una solicitud externa hacia un dominio controlado por el atacante. El payload incluiría una subconsulta que obtiene la contraseña del usuario administrator desde la tabla users y la inserta como parte de un subdominio en una solicitud DNS o HTTP.<br><br>
+        En un entorno con Burp Suite Professional, se utilizaría la opción “Insert Collaborator payload” para generar automáticamente un subdominio único de Burp Collaborator, el cual registraría cualquier interacción proveniente del servidor vulnerable.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Envío del payload modificado</h2>
+    <p>
+        Se reemplaza el valor original de la cookie TrackingId por el payload diseñado y se envía la petición al servidor. Debido a que la consulta SQL se ejecuta de manera asíncrona, la interacción externa podría tardar algunos segundos en registrarse.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Verificación en Burp Collaborator (solo versión Professional)</h2>
+    <p>
+        En la pestaña “Collaborator”, se utilizaría la opción “Poll now” para verificar si el servidor realizó una solicitud DNS o HTTP hacia el dominio generado. Si la explotación fue exitosa, la contraseña del usuario administrator aparecería incrustada en el subdominio de la interacción registrada.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Inicio de sesión como administrador</h2>
+    <p>
+        Una vez obtenida la contraseña desde Burp Collaborator, se ingresaría al apartado de login de la aplicación y se autenticaría con el usuario administrator, completando así el laboratorio.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Aclaración importante</h2>
+    <p>
+        En este caso específico, al estar utilizando Burp Suite Community Edition, no se cuenta con acceso a Burp Collaborator, que es una característica exclusiva de la versión Professional. Por lo tanto, aunque el análisis técnico confirma que la vulnerabilidad es explotable mediante exfiltración fuera de banda, no fue posible comprobar empíricamente la interacción DNS/HTTP ni recuperar la contraseña dentro del entorno de práctica. Sin embargo, el procedimiento descrito corresponde a la metodología correcta y técnicamente viable para resolver el laboratorio en un entorno que disponga de las herramientas necesarias.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Explicación del payload</h2>
+    <p>
+        El payload modifica la cookie TrackingId para cerrar la cadena original e inyectar una instrucción UNION SELECT que utiliza funciones XML del motor de base de datos (por ejemplo, EXTRACTVALUE y xmltype). Dentro del XML se define una entidad externa que realiza una petición a un dominio controlado por Burp Collaborator. El dominio incluye dinámicamente el resultado de una subconsulta que obtiene la contraseña del usuario administrator. Cuando el servidor ejecuta la consulta SQL, intenta resolver la entidad externa, lo que provoca una solicitud DNS/HTTP hacia el dominio del Collaborator, incluyendo la contraseña como parte del subdominio. De esta manera, aunque la aplicación no muestre la información en pantalla, el atacante puede recuperarla observando las interacciones registradas en Burp Collaborator.<br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Mitigación recomendada</h2>
+    <p>
+        La mitigación principal consiste en utilizar consultas parametrizadas o prepared statements para evitar que el valor de la cookie sea interpretado como código SQL. Además, se debe validar estrictamente el formato de las cookies y evitar que datos de analítica sean procesados directamente por la base de datos sin saneamiento. Es recomendable deshabilitar o restringir funciones peligrosas del motor de base de datos, como la resolución de entidades externas o la capacidad de realizar solicitudes de red desde el servidor SQL. También se debe aplicar el principio de mínimo privilegio en la cuenta de base de datos y segmentar la red para impedir que el servidor pueda realizar conexiones salientes arbitrarias.<br>
+    </p>
+</article>
+
+<!-- INTRODUCCIÓN -->
+<article class="articulo-bloque" id="lab18">
+    <h2>Lab 18: SQL injection with filter bypass via XML encoding</h2>
+    <p>
+        <b>Objetivo del laboratorio</b><br>
+        El objetivo del laboratorio es explotar la vulnerabilidad presente en la funcionalidad de verificación de stock para extraer las credenciales almacenadas en la tabla <b>users</b>, particularmente las del usuario <b>administrator</b>, y posteriormente iniciar sesión con esas credenciales para completar el laboratorio.<br>
+        <b>Explicación de la vulnerabilidad</b><br>
+        La vulnerabilidad ocurre porque la aplicación recibe el parámetro <b>storeId</b> en formato XML y lo inserta directamente dentro de una consulta SQL sin validación adecuada ni uso de consultas parametrizadas. Esto permite que el valor ingresado por el usuario sea interpretado como parte del código SQL y no solo como un dato. Aunque existe un Web Application Firewall (WAF) que intenta bloquear patrones evidentes como <b>UNION SELECT</b>, el filtro se basa en firmas detectables y no en una protección estructural real, por lo que puede ser evadido mediante técnicas de codificación.<br>
+        <b>Instrucciones</b><br>
+    </p>
+</article>
+
+<article class="articulo-bloque">
+    <div class="articulo-imagen">
+        <img src="../img/lab18_cap1.png" alt="Descripción de la imagen">
+    </div>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 1</h2>
+    <p>
+        Abrimos Burp Suite e interceptamos una petición relacionada con la verificación de stock dentro de la página del laboratorio. Esta petición contiene datos en formato XML. Posteriormente enviamos la solicitud al <b>Repeater</b> para poder modificarla y analizar cómo responde el servidor ante diferentes valores.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap2.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 2</h2>
+    <p>
+        Dentro del Repeater identificamos el parámetro <b>storeId</b> dentro del XML enviado al servidor. En este punto comenzamos a probar si es posible modificar este valor para introducir código SQL. Sin embargo, al intentar introducir directamente una consulta SQL observamos que el servidor detecta el ataque y lo bloquea debido al filtro de seguridad.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap3.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 3</h2>
+    <p>
+        Para evitar que el ataque sea detectado por el WAF, utilizamos la herramienta <b>Hackvertor</b> incluida en Burp Suite. Esta herramienta permite codificar el payload utilizando entidades XML, lo cual oculta palabras clave como <b>UNION</b> o <b>SELECT</b> ante el sistema de filtrado.<br>
+    </p>
+
+<pre class="codigo">
+<storeId>
+1 UNION SELECT username || '~' || password FROM users
+</storeId>
+</pre>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap4.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 4</h2>
+    <p>
+        Después de codificar el payload utilizando entidades XML, enviamos nuevamente la petición desde Burp Repeater. En esta ocasión el filtro no detecta el ataque y la consulta SQL es ejecutada por la base de datos, devolviendo los datos almacenados en la tabla <b>users</b>.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap5.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 5</h2>
+    <p>
+        En la respuesta del servidor observamos que se muestran los valores de <b>username</b> y <b>password</b> concatenados en una sola columna utilizando el separador <b>~</b>. De esta manera podemos identificar las credenciales del usuario <b>administrator</b> almacenadas en la base de datos.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap6.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+<article class="articulo-bloque">
+    <h2>Paso 6</h2>
+    <p>
+        Finalmente nos dirigimos a la página de inicio de sesión del laboratorio e ingresamos las credenciales obtenidas para el usuario <b>administrator</b>. Una vez autenticados correctamente, el laboratorio queda completado.<br>
+    </p>
+
+    <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/lab18_cap7.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+</article>
+
+</section>
+
+        <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf">
+        <a href="pdf/Act08-Equipo02.pdf" target="_blank" class="btn-exportar">
+            Exportar PDF
+        </a>
+    </div>
+</main>
+
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Crear contenedor timeline
+  const roadmap = document.createElement('section');
+  roadmap.className = 'roadmap';
+  const ol = document.createElement('ol');
+  ol.className = 'timeline';
+
+  // Buscar bloques de artículo que parezcan labs
+  const bloques = Array.from(document.querySelectorAll('.articulo-bloque'));
+  bloques.forEach(b => {
+    const h2 = b.querySelector('h2');
+    if (!h2) return;
+    // solo transformar aquellos que tengan "Lab" (insensible a mayúsculas)
+    const match = h2.textContent.match(/Lab\s*(\d+)/i);
+    if (!match) return;
+
+    const numero = match[1] || '';
+    const li = document.createElement('li');
+    li.className = 'timeline-item';
+
+    // si quieres marcar algunos como completados por fecha, se podría añadir li.classList.add('completed')
+
+    const marker = document.createElement('div');
+    marker.className = 'timeline-marker';
+    marker.textContent = numero;
+
+    const content = document.createElement('div');
+    content.className = 'timeline-content';
+    content.innerHTML = b.innerHTML; // reusa el contenido HTML del artículo
+
+    // opcional: extraer un subtítulo corto como meta
+    const firstP = content.querySelector('p');
+    if (firstP) {
+      const meta = document.createElement('div');
+      meta.className = 'timeline-meta';
+      // extraer los primeros 80 caracteres como vista previa (o asigna tu propio texto)
+      meta.textContent = firstP.textContent.slice(0, 100).trim() + '…';
+      content.insertBefore(meta, content.firstChild);
+    }
+
+    li.appendChild(marker);
+    li.appendChild(content);
+    ol.appendChild(li);
+
+    // quitar el artículo original del DOM para evitar duplicados
+    b.remove();
+  });
+
+  // solo añadir si hay items
+  if (ol.children.length) {
+    roadmap.appendChild(ol);
+    // Insertar roadmap justo después del encabezado principal del artículo
+    const main = document.querySelector('.contenido-principal');
+    if (main) main.insertBefore(roadmap, main.querySelector('.articulo-tecnico'));
+    else document.body.appendChild(roadmap);
+  }
+});
+</script>
+
+</body>
+
+</html>
