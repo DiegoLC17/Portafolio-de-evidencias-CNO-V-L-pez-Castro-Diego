@@ -45,6 +45,7 @@
         }
     </style>
 </head>
+</head>
 <body>
 
 <header>
@@ -191,7 +192,262 @@
             <h2>Laboratorios SQL Injection</h2>
         </article>
 
-        <article class="articulo-bloque">
+<section class="roadmap-labs">
+
+    <h2 class="seccion-titulo">Roadmap de Laboratorios</h2>
+
+    <div class="roadmap-contenedor">
+        <div class="roadmap-item">
+            <span class="roadmap-numero">01</span>
+        <div class="roadmap-card">
+
+        <a href="#lab1">SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</a>
+        <span class="roadmap-nivel apprentice">Apprentice</span>
+
+        <p class="roadmap-objetivo">
+        El objetivo es mostrar todos los productos de la base de datos, incluyendo aquellos que no han sido publicados. Normalmente, la aplicación filtra los productos para mostrar solo los de una categoría específica y que tengan un estado de "publicado".
+        </p>
+
+        </div>
+    </div>
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">02</span>
+        <div class="roadmap-card">
+            <a href="#lab2">SQL injection vulnerability allowing login bypass</a>
+            <span class="roadmap-nivel apprentice">Apprentice</span>
+            <p class="roadmap-objetivo">
+            El objetivo es acceder a la aplicación con el perfil de "administrator". Sin conocer la contraseña del usuario; manipulando el campo de entrada del nombre de usuario para intentar anular cualquier tipo de seguridad.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">03</span>
+        <div class="roadmap-card">
+            <a href="#lab3">SQL injection attack, querying the database type and version on Oracle</a>
+            <span class="roadmap-nivel practitioner">Practitioner</span>
+            <p class="roadmap-objetivo">
+            El objetivo consiste en extraer la información de la versión de la base de datos Oracle. Aprendiendo a utilizar la sintaxis necesaria ya que en este caso es una base de datos Oracle.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">04</span>
+            <div class="roadmap-card">
+
+            <a href="#lab4">SQL injection attack, querying the database type and version on MySQL and Microsoft</a>
+            <span class="roadmap-nivel practitioner">Practitioner</span>
+
+            <p class="roadmap-objetivo">
+            El objetivo es determinar la versión específica del software de la base de datos que está en el servidor. Se debe identificar el número de columnas y qué columna acepta datos de tipo cadena, para luego inyectar la función correspondiente que mostrará la versión de la base de datos.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">05</span>
+            <div class="roadmap-card">
+
+                <a href="#lab5">SQL injection attack, listing the database contents on non-Oracle databases</a>
+                <span class="roadmap-nivel practitioner">Practitioner</span>
+
+                <p class="roadmap-objetivo">
+                El objetivo del laboratorio será determinar el nombre de la tabla de la base de datos que contenga el nombre de los usuarios y sus contraseñas. Y para ello, será necesario determinar las columnas de interés o columnas relevantes.
+                </p>
+            </div>
+    </div>
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">06</span>
+            <div class="roadmap-card">
+
+                <a href="#lab6">SQL injection attack, listing the database contents on Oracle</a>
+                <span class="roadmap-nivel practitioner">Practitioner</span>
+
+                <p class="roadmap-objetivo">
+                Para el término exitoso del laboratorio se necesitará, primero, determinar la tabla de la base de datos que contiene la información necesaria para iniciar sesión, es decir, los usuarios y la contraseña, después, determinar los nombres de las columnas de una tabla, mostrar el contenido de la tabla de usuarios y sus contraseñas y finalmente iniciar sesión como el usuario “administrator”
+
+                </p>
+            </div>
+    </div>
+
+    <div class="roadmap-item">
+        <span class="roadmap-numero">07</span>
+            <div class="roadmap-card">
+
+                <a href="#lab6">SQL injection UNION attack, determining the number of columns returned by the query</a>
+                <span class="roadmap-nivel practitioner">Practitioner</span>
+
+                <p class="roadmap-objetivo">
+                El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.
+
+                </p>
+            </div>
+    </div>
+
+    <div class="roadmap-item">
+<span class="roadmap-numero">08</span>
+<div class="roadmap-card">
+
+<a href="#lab8">SQL injection UNION attack, finding a column containing text</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">09</span>
+<div class="roadmap-card">
+
+<a href="#lab9">SQL injection UNION attack, retrieving data from other tables</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+Aprovechar la inyección SQL en el filtro de categorías para realizar un ataque UNION que extraiga todos los nombres de usuario y contraseñas almacenados en la tabla users. Posteriormente, utilizar esta información para comprometer la cuenta del usuario administrator.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">10</span>
+<div class="roadmap-card">
+
+<a href="#lab10">SQL injection UNION attack, retrieving multiple values in a single column</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo es recuperar todos los nombres de usuario y contraseñas almacenados en la tabla users de la base de datos y utilizar estas credenciales para iniciar sesión exitosamente en la cuenta del usuario administrator.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">11</span>
+<div class="roadmap-card">
+
+<a href="#lab11">Blind SQL injection with conditional responses</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+Aprovechar la vulnerabilidad de inyección SQL ciega en el procesamiento de la cookie de seguimiento (TrackingId) para inferir y reconstruir, carácter por carácter, la contraseña del usuario administrator, logrando posteriormente iniciar sesión en el sistema con dichas credenciales.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">12</span>
+<div class="roadmap-card">
+
+<a href="#lab12">Blind SQL injection with conditional errors</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+Explotar una vulnerabilidad de inyección SQL ciega en la cookie de seguimiento (TrackingId) forzando errores condicionales para inferir la longitud y extraer, carácter por carácter, la contraseña del usuario administrator, logrando finalmente iniciar sesión con dichas credenciales.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">13</span>
+<div class="roadmap-card">
+
+<a href="#lab13">Visible error-based SQL injection</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio es extraer la contraseña del usuario “administrator” almacenada en la base de datos y usarla para iniciar sesión en la aplicación, explotando la vulnerabilidad de SQL Injection que existe en el parámetro de la cookie TrackingId.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">14</span>
+<div class="roadmap-card">
+
+<a href="#lab14">Blind SQL injection with time delays</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para provocar un retraso de 10 segundos en la respuesta del servidor, demostrando que la aplicación es vulnerable a una inyección SQL ciega basada en tiempo. 
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">15</span>
+<div class="roadmap-card">
+
+<a href="#lab15">Blind SQL injection with time delays and information retrieval</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para descubrir la contraseña del usuario “administrator” almacenada en la base de datos y utilizarla para iniciar sesión en la aplicación. La base de datos contiene una tabla llamada users con las columnas username y password.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">16</span>
+<div class="roadmap-card">
+
+<a href="#lab16">Blind SQL injection with out-of-band interaction</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio es explotar la vulnerabilidad de SQL Injection para provocar una interacción externa (por ejemplo una consulta DNS) hacia un servidor de Burp Collaborator, demostrando que la base de datos ejecuta el código SQL inyectado.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">17</span>
+<div class="roadmap-card">
+
+<a href="#lab17">Blind SQL injection with out-of-band data exfiltration</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo es explotar la vulnerabilidad presente en la cookie TrackingId para extraer la contraseña del usuario administrator almacenada en la tabla users.
+</p>
+
+</div>
+</div>
+
+<div class="roadmap-item">
+<span class="roadmap-numero">18</span>
+<div class="roadmap-card">
+
+<a href="#lab18">SQL injection with filter bypass via XML encoding</a>
+<span class="roadmap-nivel practitioner">Practitioner</span>
+
+<p class="roadmap-objetivo">
+El objetivo del laboratorio es explotar la vulnerabilidad presente en la funcionalidad de verificación de stock para extraer las credenciales almacenadas en la tabla users, particularmente las del usuario administrator, y posteriormente iniciar sesión con esas credenciales para completar el laboratorio.
+</p>
+
+</div>
+</div>
+
+</div>
+    </section>
+
+        <article class="articulo-bloque" id="lab1">
             <h2>Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</h2>
             <p>
                 <b>Nivel</b><br>
@@ -296,7 +552,7 @@
             </p>
         </article>
 
-        <article class="articulo-bloque">
+        <article class="articulo-bloque" id="lab2">
     <h2>Lab 2: SQL injection vulnerability allowing login bypass</h2>
     <p>
         <b>Nivel</b><br>
@@ -381,7 +637,7 @@ administrator'--
     </p>
 </article>
 
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab3">
     <h2>Lab 3: SQL injection attack, querying the database type and version on Oracle</h2>
     <p>
         <b>Nivel</b><br>
@@ -482,7 +738,7 @@ GET /filter?category=Tech+gifts' UNION SELECT banner, NULL FROM v$version-- HTTP
     </p>
 </article>
 
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab4">
     <h2>Lab 4: SQL injection attack, querying the database type and version on MySQL and Microsoft</h2>
     <p>
         <b>Nivel</b><br>
@@ -587,7 +843,7 @@ GET /filter?category=Food+%26+Drink' UNION SELECT @@version, NULL# HTTP/2
     </p>
 </article>
 
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab5">
     <h2>Lab 5: SQL injection attack, listing the database contents on non-Oracle databases</h2>
     <p>
         <b>Nivel</b><br>
@@ -757,7 +1013,7 @@ UNION SELECT username, password FROM users--
     </p>
 </article>
 
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab6">
     <h2>Lab 6: SQL injection attack, listing the database contents on Oracle</h2>
     <p>
         <b>Nivel</b><br>
@@ -1688,7 +1944,7 @@ category=Pets'+order+by+4-- = 500 Internal Server Error
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab12">
+<article class="articulo-bloque">
     <h2>Lab 12: Blind SQL injection with conditional errors</h2>
     <p>
         <b>Nivel</b><br>
@@ -1997,7 +2253,7 @@ CASE WHEN SUBSTR(password, n, 1)='§a§' THEN TO_CHAR(1/0)
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab13">
+<article class="articulo-bloque">
     <h2>Lab 13: Visible error-based SQL injection</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2122,7 +2378,7 @@ TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab14">
+<article class="articulo-bloque">
     <h2>Lab 14: Blind SQL injection with time delays</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2183,7 +2439,7 @@ TrackingId=x'||pg_sleep(10)--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab15">
+<article class="articulo-bloque">
     <h2>Lab 15: Blind SQL injection with time delays and information retrieval</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2301,7 +2557,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab16">
+<article class="articulo-bloque">
     <h2>Lab 16: Blind SQL injection with out-of-band interaction</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2359,7 +2615,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab17">
+<article class="articulo-bloque">
     <h2>Lab 17: Blind SQL injection with out-of-band data exfiltration.</h2>
     <p>
         <b>Nivel:</b><br>
@@ -2445,7 +2701,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque" id="lab18">
+<article class="articulo-bloque">
     <h2>Lab 18: SQL injection with filter bypass via XML encoding</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2574,67 +2830,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </footer>
 
 <script src="../js/funciones.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Crear contenedor timeline
-  const roadmap = document.createElement('section');
-  roadmap.className = 'roadmap';
-  const ol = document.createElement('ol');
-  ol.className = 'timeline';
-
-  // Buscar bloques de artículo que parezcan labs
-  const bloques = Array.from(document.querySelectorAll('.articulo-bloque'));
-  bloques.forEach(b => {
-    const h2 = b.querySelector('h2');
-    if (!h2) return;
-    // solo transformar aquellos que tengan "Lab" (insensible a mayúsculas)
-    const match = h2.textContent.match(/Lab\s*(\d+)/i);
-    if (!match) return;
-
-    const numero = match[1] || '';
-    const li = document.createElement('li');
-    li.className = 'timeline-item';
-
-    // si quieres marcar algunos como completados por fecha, se podría añadir li.classList.add('completed')
-
-    const marker = document.createElement('div');
-    marker.className = 'timeline-marker';
-    marker.textContent = numero;
-
-    const content = document.createElement('div');
-    content.className = 'timeline-content';
-    content.innerHTML = b.innerHTML; // reusa el contenido HTML del artículo
-
-    // opcional: extraer un subtítulo corto como meta
-    const firstP = content.querySelector('p');
-    if (firstP) {
-      const meta = document.createElement('div');
-      meta.className = 'timeline-meta';
-      // extraer los primeros 80 caracteres como vista previa (o asigna tu propio texto)
-      meta.textContent = firstP.textContent.slice(0, 100).trim() + '…';
-      content.insertBefore(meta, content.firstChild);
-    }
-
-    li.appendChild(marker);
-    li.appendChild(content);
-    ol.appendChild(li);
-
-    // quitar el artículo original del DOM para evitar duplicados
-    b.remove();
-  });
-
-  // solo añadir si hay items
-  if (ol.children.length) {
-    roadmap.appendChild(ol);
-    // Insertar roadmap justo después del encabezado principal del artículo
-    const main = document.querySelector('.contenido-principal');
-    if (main) main.insertBefore(roadmap, main.querySelector('.articulo-tecnico'));
-    else document.body.appendChild(roadmap);
-  }
-});
-</script>
 
 </body>
-
 
 </html>
