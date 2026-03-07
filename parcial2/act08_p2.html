@@ -1298,109 +1298,7 @@ category=Pets'+order+by+3-- = 500 Internal Server Error
     </p>
 </article>
 
-<article class="articulo-bloque">
-    <h2>Lab 8: SQL injection UNION attack, finding a column containing text</h2>
-    <p>
-        <b>Nivel</b><br>
-        PRACTITIONER<br>
-
-        <b>Tipo de SQLi</b><br>
-        Este laboratorio corresponde a una inyección SQL basada en UNION, orientada a identificar qué columnas de la consulta original aceptan datos de tipo texto, lo cual es necesario para insertar información arbitraria dentro de los resultados devueltos por la aplicación.<br>
-
-        <b>Objetivo del laboratorio</b><br>
-        El objetivo del laboratorio será, como en los anteriores dos laboratorios, explotar la vulnerabilidad que se encuentra en el filtro de la página para utilizar una inyección SQL. Así mismo, será necesario determinar el número de columnas para, de esta forma, hacer que se devuelvan valores nulos.<br>
-
-        <b>Explicación técnica de la vulnerabilidad</b><br>
-        Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categorías de producto. Los resultados de la consulta se devuelven en la respuesta de la aplicación, por lo que se puede usar un ataque UNION para recuperar datos de otras tablas. Para construir este ataque, primero debe determinar el número de columnas devueltas por la consulta. Puede hacerlo utilizando una técnica que aprendió en un laboratorio anterior. El siguiente paso es identificar una columna compatible con datos de cadena.
-        El laboratorio proporcionará un valor aleatorio que debe aparecer en los resultados de la consulta. Para resolver el laboratorio, realice un ataque UNION de inyección SQL que devuelva una fila adicional con el valor proporcionado. Esta técnica le ayuda a determinar qué columnas son compatibles con datos de cadena.”
-    </p>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Paso 1</h2>
-    <p>
-        Utilizar Burpsuite e interceptar la URL de la página en donde se encuentre el parámetro “Filter” o “Filtro” junto con su respectiva categoría, para después, enviarla al Repeater y trabajar con el método GET.
-    </p>
-
-    <article class="articulo-bloque">
-        <div class="articulo-imagen">
-            <img src="../img/lab8_cap1.png" alt="Descripción de la imagen">
-        </div>
-    </article>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Paso 2</h2>
-    <p>
-        Determinar el número de columnas
-    </p>
-
-    <pre class="codigo">
-‘ order by 1—
-category=Pets'+order+by+1-- = OK
-category=Pets'+order+by+2-- = OK
-category=Pets'+order+by+3-- = OK
-category=Pets'+order+by+4-- = 500 Internal Server Error
-    </pre>
-
-    <p>
-        Por lo tanto, la table tiene 3 columnas
-    </p>
-
-    <article class="articulo-bloque">
-        <div class="articulo-imagen">
-            <img src="../img/lab8_cap2.png" alt="Descripción de la imagen">
-        </div>
-    </article>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Paso 3</h2>
-    <p>
-        Determinar cuál de las tres columnas de la tabla corresponde al tipo de dato texto
-    </p>
-
-    <pre class="codigo">
-‘ UNION select ‘a’, NULL, NULL— = 500 Internal Server Error
-‘ UNION select NULL, ‘a’, NULL— = OK
-‘ UNION select NULL, NULL, ‘a’— = 500 Internal Server Error
-    </pre>
-
-    <article class="articulo-bloque">
-        <div class="articulo-imagen">
-            <img src="../img/lab8_cap3.png" alt="Descripción de la imagen">
-        </div>
-    </article>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Paso 4</h2>
-    <p>
-        Recuperar de la base de datos la cadena de texto que se muestra en el laboratorio en la columna correspondiente para el tipo de dato texto. Terminando así con el laboratorio.
-    </p>
-
-    <article class="articulo-bloque">
-        <div class="articulo-imagen">
-            <img src="../img/lab8_cap4.png" alt="Descripción de la imagen">
-        </div>
-    </article>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Explicación del payload</h2>
-    <p>
-        El proceso inicia con la determinación del número de columnas de la consulta mediante la técnica ' ORDER BY n--, lo que permite establecer que la consulta devuelve tres columnas. Posteriormente, se utilizan distintos payloads basados en UNION SELECT para identificar cuál de las columnas acepta valores de tipo cadena.
-        Para ello, se realizan pruebas insertando un valor de texto ('a') en diferentes posiciones de la lista de columnas, mientras que las demás columnas reciben valores NULL. Por ejemplo, el payload ' UNION SELECT NULL, 'a', NULL-- introduce un valor textual únicamente en la segunda columna. Cuando la consulta se ejecuta sin errores, se concluye que dicha columna admite datos de tipo texto.
-        Una vez identificada la columna compatible con cadenas, se reemplaza el valor de prueba por la cadena específica proporcionada por el laboratorio, lo que permite que dicha cadena aparezca en los resultados de la consulta y completar el objetivo del ejercicio.
-    </p>
-</article>
-
-<article class="articulo-bloque">
-    <h2>Mitigación recomendada</h2>
-    <p>
-        Para evitar este tipo de ataques es fundamental emplear consultas parametrizadas, validación de entradas y mecanismos de filtrado de caracteres especiales, además de restringir la exposición de errores del sistema que puedan revelar información sobre la estructura de la base de datos.
-    </p>
-</article><article class="articulo-bloque" id="lab8">
+<article class="articulo-bloque" id="lab8">
     <h2>Lab 8: SQL injection UNION attack, finding a column containing text</h2>
     <p>
         <b>Nivel</b><br>
@@ -1737,7 +1635,7 @@ category=Pets'+order+by+4-- = 500 Internal Server Error
     </p>
 </article>
 
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab11">
     <h2>Lab 11: Blind SQL injection with conditional responses</h2>
     <p>
         <b>Nivel</b><br>
@@ -1944,7 +1842,7 @@ category=Pets'+order+by+4-- = 500 Internal Server Error
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab12">
     <h2>Lab 12: Blind SQL injection with conditional errors</h2>
     <p>
         <b>Nivel</b><br>
@@ -2253,7 +2151,7 @@ CASE WHEN SUBSTR(password, n, 1)='§a§' THEN TO_CHAR(1/0)
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab13">
     <h2>Lab 13: Visible error-based SQL injection</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2378,7 +2276,7 @@ TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab14">
     <h2>Lab 14: Blind SQL injection with time delays</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2439,7 +2337,7 @@ TrackingId=x'||pg_sleep(10)--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab15">
     <h2>Lab 15: Blind SQL injection with time delays and information retrieval</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2557,7 +2455,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab16">
     <h2>Lab 16: Blind SQL injection with out-of-band interaction</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2615,7 +2513,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab17">
     <h2>Lab 17: Blind SQL injection with out-of-band data exfiltration.</h2>
     <p>
         <b>Nivel:</b><br>
@@ -2701,7 +2599,7 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </article>
 
 <!-- INTRODUCCIÓN -->
-<article class="articulo-bloque">
+<article class="articulo-bloque" id="lab18">
     <h2>Lab 18: SQL injection with filter bypass via XML encoding</h2>
     <p>
         <b>Objetivo del laboratorio</b><br>
@@ -2834,3 +2732,4 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </body>
 
 </html>
+
