@@ -94,6 +94,14 @@
                         <span class="texto">CERTIFICACIONES</span>
                     </a>
                 </li>
+                <li>
+                    <a href="road_to_hall_of_fame.html" data-tooltip="ROAD TO HALL OF FAME">
+                        <span class="icono">
+                            <img src="img/certificaciones.png" alt="ROAD TO HALL OF FAME">
+                        </span>
+                        <span class="texto">ROAD TO HALL OF FAME</span>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -105,14 +113,32 @@
     <section class="seccion">
         <h1 class="seccion-titulo">PROYECTOS</h1>
 
-        <div class="seccion-contenido izquierda seccion-centrada">
-            <div class="seccion-texto">
-                <p>
-                    <b>CONTENIDO</b><br>
-                    En este apartado se mostrarán las actividades correspondientes a dicha sección.
-                </p>
+        <div class="acordeon-actividades">
+
+            <!-- ================= PARCIAL 1 ================= -->
+            <div class="acordeon-item">
+                <button class="acordeon-titulo">PR02: El eslabón más débil: diseño ético de una campaña de ingeniería social</button>
+                <div class="acordeon-contenido">
+
+                    <div class="actividad-card">
+                        <a href="parcial2/PR02-1.html">
+                            PR02 - 1: Investigación comparativa
+                        </a>
+                    </div>
+
+                    <div class="actividad-card">
+                        <a href="#">
+                            PR02 - 2: Phishing Quiz 
+                        </a>
+                    </div>
+
+                    <div class="actividad-card">
+                        <a href="#">
+                            PR02 - 3: Incorporación de sistema
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
 </main>
 
@@ -133,6 +159,37 @@
 </footer>
 
 <script src="js/funciones.js"></script>
+<script src="js/funciones.js"></script>
+<script>
+    const acordeonTitulos = document.querySelectorAll(".acordeon-titulo");
+
+    acordeonTitulos.forEach(titulo => {
+        titulo.addEventListener("click", function () {
+
+            const contenido = this.nextElementSibling;
+
+            if (contenido.classList.contains("activo")) {
+                contenido.style.maxHeight = null;
+                contenido.classList.remove("activo");
+            } else {
+
+                // Cerrar otros parciales si quieres comportamiento tipo acordeón clásico
+                document.querySelectorAll(".acordeon-contenido").forEach(item => {
+                    item.style.maxHeight = null;
+                    item.classList.remove("activo");
+                });
+
+                contenido.classList.add("activo");
+                contenido.style.maxHeight = contenido.scrollHeight + "px";
+            }
+        });
+    });
+    window.addEventListener("resize", function () {
+        document.querySelectorAll(".acordeon-contenido.activo").forEach(contenido => {
+            contenido.style.maxHeight = contenido.scrollHeight + "px";
+        });
+    });
+</script>
 
 </body>
 </html>
