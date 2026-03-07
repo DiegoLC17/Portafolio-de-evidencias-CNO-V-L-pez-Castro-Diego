@@ -2700,6 +2700,34 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
     </article>
 </article>
 
+       <article class="articulo-bloque">
+            <h2>Conclusión</h2>
+            <p>
+                Al realizar los laboratorios se pudo concluir de forma práctica lo vulnerables que pueden ser las aplicaciones web cuando no se validan adecuadamente las entradas del usuario. A través de distintas técnicas, como alterar la lógica en las cláusulas WHERE, utilizar Login Bypass y usar ataques basados en UNION, se puede lograr evadir la seguridad para acceder como administradores y extraer las versiones exactas de distintos tipos de bases de datos como Oracle, MySQL y Microsoft SQL Server. Los laboratorios nos permiten ver que un campo de texto o la modificación de parámetros en la URL es suficiente para extraer información si el código construye las consultas concatenando texto. Por último nos ayuda a saber que tenemos que proteger para poder evitar estos tipos de ataques como lo puede ser el implementar consultas parametrizadas desde el diseño de la página web, validar todos los datos que ingresan y aplicar el principio de menor privilegio en la base de datos con el fin de hacer lo más protegida posible nuestras páginas web.
+            </p>
+        </article>
+        
+        <!-- REFERENCIAS -->
+        <article class="articulo-bloque">
+            <h2>Referencias técnicas</h2>
+            <p class="sangria-francesa">
+                Oracle Corporation. (n.d.). Oracle Database SQL language reference. https://docs.oracle.com/en/database/oracle/oracle-database/
+
+            </p>
+
+            <p class="sangria-francesa">
+                Elmasri, R., & Navathe, S. B. (2016). Fundamentals of database systems (7th ed.). Pearson.
+            </p>
+
+            <p class="sangria-francesa">
+                OWASP Foundation. (2021). OWASP Top 10: The ten most critical web application security risks. https://owasp.org/Top10/
+            </p>
+
+            <p class="sangria-francesa">
+                National Institute of Standards and Technology. (2020). Security and privacy controls for information systems and organizations (SP 800-53 Rev. 5). U.S. Department of Commerce. https://doi.org/10.6028/NIST.SP.800-53r5
+            </p>
+        </article>
+
 </section>
 
         <!-- BOTÓN EXPORTAR PDF -->
@@ -2732,4 +2760,5 @@ TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END--
 </body>
 
 </html>
+
 
