@@ -838,3 +838,159 @@ font-size:14px;
 color:#555;
 line-height:1.5;
 }
+
+#phishing-quiz-root .btn-inline,
+#phishing-quiz-root .btn-exportar,
+#phishing-quiz-root a.btn-exportar {
+  background: #000 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+#phishing-quiz-root .btn-inline:hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+
+#phishing-quiz-root .quiz-counter-inline {
+  background: transparent !important;
+  color: #1c1c1c !important;
+  box-shadow: none !important;
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  position: absolute !important;
+  top: 12px !important;
+  right: 14px !important;
+  z-index: 50 !important;
+}
+
+#phishing-quiz-root .fake-link {
+  color: #1a73e8;
+  text-decoration: underline;
+  cursor: default;
+}
+
+#phishing-quiz-root .user-info-banner{
+  background: linear-gradient(90deg, #f6f9ff, #ffffff);
+  border: 1px solid #e6eefb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display:flex;
+  gap:16px;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+  font-size:0.95rem;
+  color:#0f1720;
+}
+
+.sender-avatar{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#111827,#1f2937);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:18px;
+  flex-shrink:0;
+  box-shadow:0 6px 18px rgba(17,24,39,0.12);
+}
+.sender-avatar.small{
+  width:32px;
+  height:32px;
+  font-size:14px;
+  border-radius:8px;
+}
+
+
+.email-header .from-line { font-weight:700; font-size:0.95rem; color:#111827; }
+.email-header .from-email { font-weight:600; color:#4b5563; font-size:0.86rem; margin-left:6px; }
+.email-header .reply-to { font-size:0.82rem; color:#6b7280; margin-top:4px; }
+
+.email-body .email-text { margin-top:10px; font-size:0.95rem; color:#111827; line-height:1.5; }
+
+.browser-bar { display:flex; align-items:center; gap:12px; padding:10px; background:#f8fafc; border-bottom:1px solid #e6eef6; }
+.browser-controls .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; }
+.browser-controls .red{ background:#ef4444 }
+.browser-controls .amber{ background:#f59e0b }
+.browser-controls .green{ background:#10b981 }
+.browser-url { font-family: monospace; padding:6px 10px; border-radius:8px; background:#ffffff; border:1px solid #e6eef6; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+.url-sub { color:#6b7280; font-family: monospace; opacity:0.95; }
+.url-main { color:#0f1720; font-weight:700; font-family: monospace; margin-left:4px; }
+.url-path { color:#4b5563; font-family: monospace; font-size:0.92rem; margin-left:6px; }
+
+.sms-phone { max-width:360px; margin:0 auto; border-radius:14px; padding:12px; background:#0b1220; color:#fff; }
+.sms-top { display:flex; justify-content:space-between; align-items:center; color:#c7d2fe; font-weight:700; margin-bottom:8px; font-size:0.9rem; }
+.sms-screen { background:#e6eefc; border-radius:12px; padding:10px; color:#0f1720; }
+
+.call-ui { background:linear-gradient(180deg,#0b1220,#071028); color:#fff; padding:18px; border-radius:12px; }
+
+.social-ui { border:1px solid #e6eefb; padding:12px; border-radius:10px; background:#fff; }
+
+.link-details-panel{
+  position:relative;
+  max-width:780px;
+  margin:12px auto 0 auto;
+  background:#ffffff;
+  border-radius:10px;
+  border:1px solid #e6eef6;
+  padding:12px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.06);
+  font-size:0.95rem;
+}
+.link-details-header { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px; }
+.link-details-header button.close-link-details{ background:transparent; border:0; font-size:16px; cursor:pointer; }
+.link-details-body .url-code{ display:inline-block; background:#f3f4f6; padding:6px 8px; border-radius:6px; font-family:monospace; font-size:0.9rem; color:#0f1720; }
+
+.link-details-body .indicator{ display:inline-block; background:#fff3cd; color:#92400e; padding:4px 8px; border-radius:6px; margin-right:6px; font-weight:700; font-size:0.82rem; }
+
+.link-details-body .eval.safe{ background:#e8f5e9; color:#1b5e20; padding:6px 10px; border-radius:8px; }
+.link-details-body .eval.suspicious{ background:#ffebee; color:#a80000; padding:6px 10px; border-radius:8px; }
+
+.feedback-correct{ background:#e8f5e9; border-left:4px solid #1b5e20; padding:14px; border-radius:8px; }
+.feedback-wrong{ background:#ffebee; border-left:4px solid #a80000; padding:14px; border-radius:8px; }
+
+#phishing-quiz-root .btn-inline { background:#000; color:#fff; padding:8px 12px; border-radius:8px; font-weight:700; border:0; cursor:pointer; }
+#phishing-quiz-root .btn-inline:hover { filter:brightness(0.95); transform:translateY(-1px); }
+
+@media (max-width:640px){
+  .browser-url{ font-size:0.82rem; }
+  .link-details-panel{ padding:10px; margin:10px 8px; }
+  .sender-avatar{ display:none; }
+}
+
+.quiz-card.enhanced { margin-bottom:22px; }
+.scenario-title{ font-size:1.15rem; margin-bottom:6px; color:#0f1720; }
+.scenario-meta{ display:flex; gap:12px; font-size:0.9rem; color:#4b5563; margin-bottom:8px; justify-content:space-between; align-items:center; }
+
+#phishing-quiz-root .fake-link {
+  color: #1a73e8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#phishing-quiz-root .url-code {
+  background: #f3f4f6;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.92rem;
+  display: inline-block;
+}
+
+#phishing-quiz-root .link-analysis ul {
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
