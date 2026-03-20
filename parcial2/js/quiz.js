@@ -496,6 +496,7 @@
         <div class="results-actions">
           <button id="btn-restart" class="btn-inline">REINICIAR</button>
           <button id="btn-summary" class="btn-inline" style="background:#e0e0e0; color:#111;">VER EXPLICACIONES</button>
+          <a href="#" id="btn-ranking" class="btn-inline" style="text-decoration:none;">IR AL RANKING</a>
         </div>
 
         <div id="full-explanations" style="display:none; margin-top:16px;"></div>
@@ -514,6 +515,13 @@
       clearTimer();
       renderScenario();
     });
+
+    const rankingBtn = document.getElementById('btn-ranking');
+    if(rankingBtn){
+      rankingBtn.addEventListener('click', () => {
+        console.log("Ir al ranking próximamente...");
+      });
+    }
 
     const summary = document.getElementById('btn-summary');
     if(summary) summary.addEventListener('click', () => {
