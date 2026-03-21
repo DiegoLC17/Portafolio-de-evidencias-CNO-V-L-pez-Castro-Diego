@@ -1567,3 +1567,126 @@ line-height:1.5;
   font-weight: 700;
   color: #4b5563;
 }
+
+#feedback-area,
+.feedback-correct,
+.feedback-wrong {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+#feedback-area p,
+.feedback-correct p,
+.feedback-wrong p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+#phishing-quiz-root .analysis-section {
+  margin-top: 14px;
+}
+
+#phishing-quiz-root .analysis-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #111827;
+}
+
+#phishing-quiz-root .link-analysis-card {
+  margin-top: 10px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 5px solid #111827;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+#phishing-quiz-root .link-analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#phishing-quiz-root .link-analysis-title {
+  font-weight: 800;
+  color: #111827;
+  font-size: 1rem;
+}
+
+#phishing-quiz-root .link-analysis-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#phishing-quiz-root .link-analysis-row {
+  margin-top: 8px;
+  line-height: 1.45;
+  color: #111827;
+}
+
+#phishing-quiz-root .url-code {
+  display: inline-block;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.92rem;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+#phishing-quiz-root .link-indicators {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#phishing-quiz-root .indicator-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+#phishing-quiz-root .indicator-chip.neutral {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+#phishing-quiz-root .eval {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-weight: 800;
+}
+
+#phishing-quiz-root .eval::before {
+  content: "⚠";
+  margin-right: 6px;
+}
