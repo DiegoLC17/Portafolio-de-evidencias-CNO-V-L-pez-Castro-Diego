@@ -1,15 +1,15 @@
 (function(){
   const scenarios = [
-    { id:'mfa', key:'mfa', title:'Intento de autenticación — MFA', type:'notification', isPhishing:true, tipo:'Bypass de MFA / Push bombing', explicacion:'Push bombing o solicitudes no solicitadas: nunca apruebes si no iniciaste sesión.' },
-    { id:'subdominio', key:'subdominio', title:'Correo con subdominio sospechoso', type:'email', isPhishing:true, tipo:'Spoofing de URL / subdominio', explicacion:'El dominio principal no es paypal.com; el atacante usa subdominios para parecer legítimo.' , link:{ text:'Acceder a tu cuenta', url:'https://paypal.seguro-verificacion.com/login' } },
-    { id:'adjunto', key:'adjunto', title:'Correo con adjunto malicioso', type:'email-attachment', isPhishing:true, tipo:'Adjunto malicioso (macro/ejecutable)', explicacion:'Archivos .xlsm/ejecutables adjuntos pueden contener malware. No abrir sin verificar.' },
-    { id:'urgencia', key:'urgencia', title:'Correo que genera urgencia', type:'email', isPhishing:true, tipo:'Phishing por urgencia', explicacion:'Presión temporal para ocultar análisis. Verifica por canales oficiales.', link:{ text:'actualiza-tu-pass.example.com', url:'https://actualiza-tu-pass.example.com/reset?token=abc123' } },
-    { id:'smishing', key:'smishing', title:'Smishing (SMS)', type:'sms', isPhishing:true, tipo:'Smishing', explicacion:'Revisa el remitente y no sigas enlaces en SMS sospechosos; usa la app/portal oficial.', link:{ text:'http://dhl-envio-reprogramado.com', url:'http://dhl-envio-reprogramado.com' } },
-    { id:'vishing', key:'vishing', title:'Llamada (vishing)', type:'call', isPhishing:true, tipo:'Vishing', explicacion:'Nunca facilites números de tarjeta o códigos por teléfono; cuelga y llama al número oficial.' },
-    { id:'clone', key:'clone', title:'Clone phishing (correo clonado)', type:'email-attachment', isPhishing:true, tipo:'Clone phishing', explicacion:'Correo clonado con enlace/adjunto reemplazado. Confirma con el remitente por otro canal.', link:{ text:'Descargar documento', url:'https://drive.example.com/descarga/fichero_corregido.exe' } },
-    { id:'angler', key:'angler', title:'Angler phishing en redes sociales', type:'social', isPhishing:true, tipo:'Angler phishing', explicacion:'Soporte falso en redes; busca cuentas verificadas e identifica dominios sospechosos.', link:{ text:'https://netflix-support.verif-center.com', url:'https://netflix-support.verif-center.com' } },
-    { id:'pharming', key:'pharming', title:'Pharming (redirección a sitio falso)', type:'browser', isPhishing:true, tipo:'Pharming', explicacion:'Certificado inválido o URL diferente: no ingreses credenciales; usa marcadores o escribe la URL exacta.', link:{ text:'Acceder a mi cuenta', url:'https://tubanco-falso.com/login' } },
-    { id:'real', key:'real', title:'Comunicación institucional legítima', type:'email', isPhishing:false, tipo:'Comunicación legítima', explicacion:'Dominio institucional y remitente coinciden; aun así confirmar si hay duda.', link:{ text:'Descargar calendario', url:'https://universidad.edu.mx/calendario-2026.pdf' } }
+    { id:'mfa', key:'mfa', title:'Intento de autenticación — MFA', type:'notification', isPhishing:true, tipo:'Bypass de MFA / Push bombing', explicacion:'Se produce una omisión de la autenticación multifactor (MFA) cuando un atacante explota las vulnerabilidades de los controles de seguridad de MFA para obtener acceso no autorizado a una cuenta. En otras palabras, el atacante elude los pasos de verificación diseñados para proteger la identidad de los usuarios. Nunca apruebes si no iniciaste sesión.' },
+    { id:'subdominio', key:'subdominio', title:'Correo con subdominio sospechoso', type:'email', isPhishing:true, tipo:'Spoofing de URL / subdominio', explicacion:'El secuestro de subdominios permite a los atacantes tomar el control de subdominios legítimos a través de registros DNS abandonados. Esto puede causar ataques de phishing y robo de credenciales. Para evitarlo, las empresas deben auditar sus registros DNS, eliminar entradas antiguas y reforzar la seguridad en la nube. El dominio principal no es paypal.com; el atacante usa subdominios para parecer legítimo.' , link:{ text:'Acceder a tu cuenta', url:'https://paypal.seguro-verificacion.com/login' } },
+    { id:'adjunto', key:'adjunto', title:'Correo con adjunto malicioso', type:'email-attachment', isPhishing:true, tipo:'Adjunto malicioso (macro/ejecutable)', explicacion:'Estos correos electrónicos suelen contener un mensaje que le anima a descargar el archivo adjunto para verlo o imprimirlo. Esto intenta engañarle para que abra el archivo malicioso, infectando su ordenador con malware (como el ransomware). Archivos .xlsm/ejecutables adjuntos pueden contener malware. No abrir sin verificar.' },
+    { id:'urgencia', key:'urgencia', title:'Correo que genera urgencia', type:'email', isPhishing:true, tipo:'Phishing por urgencia', explicacion:'Táctica de ingeniería social en la que los ciberdelincuentes crean una falsa sensación de crisis o inmediatez para manipular a la víctima. El objetivo es lograr que actúe rápido sin pensar, haciendo clic en enlaces maliciosos, descargando archivos adjuntos o compartiendo información confidencial. Presión temporal para ocultar análisis. Verifica por canales oficiales.', link:{ text:'actualiza-tu-pass.example.com', url:'https://actualiza-tu-pass.example.com/reset?token=abc123' } },
+    { id:'smishing', key:'smishing', title:'Smishing (SMS)', type:'sms', isPhishing:true, tipo:'Smishing', explicacion:'Smishing es un ataque de ingeniería social que utiliza mensajes de texto móviles falsos para engañar a las personas a que descarguen malware, compartan información confidencial o envíen dinero a delincuentes cibernéticos. Revisa el remitente y no sigas enlaces en SMS sospechosos; usa la app/portal oficial.', link:{ text:'http://dhl-envio-reprogramado.com', url:'http://dhl-envio-reprogramado.com' } },
+    { id:'vishing', key:'vishing', title:'Llamada (vishing)', type:'call', isPhishing:true, tipo:'Vishing', explicacion:'Es un sistema de robo de datos bancarios realizado por medio de llamadas telefónicas, en donde los ciberdelincuentes utilizan una voz automatizada que simula ser de las empleadas por los bancos. Nunca facilites números de tarjeta o códigos por teléfono; cuelga y llama al número oficial.' },
+    { id:'clone', key:'clone', title:'Clone phishing (correo clonado)', type:'email-attachment', isPhishing:true, tipo:'Clone phishing', explicacion:'Los atacantes clonan un mensaje de correo electrónico real con archivos adjuntos y lo reenvían haciéndose pasar por el remitente original. Los archivos adjuntos se sustituyen por malware, pero tienen el mismo aspecto que los documentos originales. Correo clonado con enlace/adjunto reemplazado. Confirma con el remitente por otro canal.', link:{ text:'Descargar documento', url:'https://drive.example.com/descarga/fichero_corregido.exe' } },
+    { id:'angler', key:'angler', title:'Angler phishing en redes sociales', type:'social', isPhishing:true, tipo:'Angler phishing', explicacion:'El phishing de tipo "angler" es un ataque de ingeniería social en el que los ciberdelincuentes se hacen pasar por representantes legítimos de atención al cliente en las redes sociales. En lugar de utilizar correos electrónicos de phishing tradicionales, estos atacantes crean cuentas de soporte falsas , monitorean las quejas de los clientes y "responden" ofreciendo ayuda. Busca cuentas verificadas e identifica dominios sospechosos.', link:{ text:'https://netflix-support.verif-center.com', url:'https://netflix-support.verif-center.com' } },
+    { id:'pharming', key:'pharming', title:'Pharming (redirección a sitio falso)', type:'browser', isPhishing:true, tipo:'Pharming', explicacion:'Este es un tipo de ciberataque de ingeniería social en el que los delincuentes redirigen a los internautas que intentan acceder a un sitio web específico a un sitio diferente y falso. No ingreses credenciales; usa marcadores o escribe la URL exacta.', link:{ text:'Acceder a mi cuenta', url:'https://tubanco-falso.com/login' } },
+    { id:'real', key:'real', title:'Comunicación institucional legítima', type:'email', isPhishing:false, tipo:'Comunicación legítima', explicacion:'Dominio institucional y remitente coinciden. Aun así confirmar si hay duda.', link:{ text:'Descargar calendario', url:'https://universidad.edu.mx/calendario-2026.pdf' } }
   ];
 
   const startBtn = document.getElementById('start-quiz-btn');
@@ -239,6 +239,28 @@
     return a;
   }
 
+  function buildLinkAnalysisCard(index, visible, real, analysed){
+    const indicatorsHtml = analysed.indicators.length
+      ? '<div class="link-indicators">' + analysed.indicators.map(it => `<span class="indicator-chip">${esc(it)}</span>`).join('') + '</div>'
+      : '<span class="indicator-chip neutral">Ningún indicador evidente</span>';
+
+    return `
+      <div class="link-analysis-card">
+        <div class="link-analysis-header">
+          <div class="link-analysis-title">Enlace ${index}</div>
+          <span class="link-analysis-badge">Revisión rápida</span>
+        </div>
+
+        <div class="link-analysis-row"><strong>Texto visible:</strong> ${esc(visible)}</div>
+        <div class="link-analysis-row"><strong>URL real:</strong> <code class="url-code">${esc(real)}</code></div>
+        <div class="link-analysis-row"><strong>Indicadores:</strong> ${indicatorsHtml}</div>
+        <div class="link-analysis-row">
+          <strong>Evaluación:</strong> <span class="eval">Probablemente Phishing</span>
+        </div>
+      </div>
+    `;
+  }
+
   function renderScenario(){
     const s = scenarios[state.index];
     container.innerHTML = '';
@@ -384,15 +406,7 @@
         const visible = (a.textContent || '').trim();
         const real = a.getAttribute('data-real-href') || a.title || '';
         const analysed = real ? analyseUrl(real) : { indicators:['No se encontró URL real'], suspicious:true };
-        linksAnalysisHtml += `
-          <div class="link-analysis-card ${analysed.suspicious ? 'suspicious' : 'safe'}">
-            <div class="link-analysis-title">Enlace ${idx + 1}</div>
-            <div class="link-analysis-row"><strong>Texto visible:</strong> ${esc(visible)}</div>
-            <div class="link-analysis-row"><strong>URL real:</strong> <code class="url-code">${esc(real)}</code></div>
-            <div class="link-analysis-row"><strong>Indicadores:</strong> ${analysed.indicators.length ? '<div class="link-indicators">' + analysed.indicators.map(it => `<span class="indicator-chip">${esc(it)}</span>`).join('') + '</div>' : '<span class="indicator-chip neutral">Ninguno evidente</span>'}</div>
-            <div class="link-analysis-row"><strong>Evaluación:</strong> <span class="eval ${analysed.suspicious ? 'suspicious' : 'safe'}">${analysed.suspicious ? 'Probablemente Phishing' : 'Parece legítimo'}</span></div>
-          </div>
-        `;
+        linksAnalysisHtml += buildLinkAnalysisCard(idx + 1, visible, real, analysed);
       });
       linksAnalysisHtml += `</div>`;
     }
