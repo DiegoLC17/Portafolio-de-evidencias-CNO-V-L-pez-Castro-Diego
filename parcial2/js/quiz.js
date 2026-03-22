@@ -1,4 +1,367 @@
 (function(){
+  //Configuración
+  const firebaseConfig = {
+    apiKey: "AIzaSyAPzm4fsGsbDyTm_xKwwXsaBTXFY4dX6-c",
+    authDomain: "phishing-quiz-4c603.firebaseapp.com",
+    projectId: "phishing-quiz-4c603",
+    storageBucket: "phishing-quiz-4c603.firebasestorage.app",
+    messagingSenderId: "446534627558",
+    appId: "1:446534627558:web:2feb36cfd136737db70b27",
+    measurementId: "G-04S6SMSKS7"
+  };
+
+  let db = null;
+  let auth = null;
+  let firebaseInitialized = false;
+  let isAuthenticated = false;
+
+  async function initFirebase() {
+    if (firebaseInitialized) return true;
+    try {
+      const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js");
+      const { getFirestore } = await import("https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js");
+      const { getAuth, signInAnonymously } = await import("https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js");
+      
+      const app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      auth = getAuth(app);
+      
+      await signInAnonymously(auth);
+      isAuthenticated = true;
+      console.log("Firebase autenticado anónimamente, UID:", auth.currentUser?.uid);
+      
+      firebaseInitialized = true;
+      return true;
+    } catch (error) {
+      console.error("Error al inicializar Firebase:", error);
+      return false;
+    }
+  }
+
+  async function saveQuizResult(name, score, totalQuestions, totalTimeMs) {
+    if (!firebaseInitialized) {
+      const ok = await initFirebase();
+      if (!ok) return false;
+    }
+    if (!db || !isAuthenticated) {
+      console.warn("Firestore no disponible o no autenticado");
+      return false;
+    }
+
+    try {
+      const { collection, addDoc, Timestamp } = await import("https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js");
+      
+      const result = {
+        name: name,
+        score: score,
+        totalQuestions: totalQuestions,
+        percentage: Math.round((score / totalQuestions) * 100),
+        totalTimeMs: totalTimeMs,
+        totalTimeFormatted: formatDuration(totalTimeMs),
+        timestamp: Timestamp.now(),
+        createdAt: new Date().toISOString()
+      };
+      
+      await addDoc(collection(db, "quiz_results"), result);
+      console.log("Resultado guardado correctamente");
+      return true;
+    } catch (error) {
+      console.error("Error al guardar resultado:", error);
+      return false;
+    }
+  }
+
+  async function getRanking() {
+    if (!firebaseInitialized) {
+      await initFirebase();
+    }
+    if (!db) {
+      console.warn("Firestore no disponible");
+      return [];
+    }
+
+    try {
+      const { collection, query, orderBy, getDocs, limit } = await import("https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js");
+      
+      const q = query(
+        collection(db, "quiz_results"),
+        orderBy("percentage", "desc"),
+        orderBy("totalTimeMs", "asc"),
+        limit(50)
+      );
+      
+      const querySnapshot = await getDocs(q);
+      const rankings = [];
+      querySnapshot.forEach((doc) => {
+        rankings.push({ id: doc.id, ...doc.data() });
+      });
+      console.log("Ranking obtenido, entradas:", rankings.length);
+      return rankings;
+    } catch (error) {
+      console.error("Error al obtener ranking:", error);
+      return [];
+    }
+  }
+
+  async function showRanking() {
+    const rankings = await getRanking();
+    
+    let modal = document.getElementById('ranking-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'ranking-modal';
+      modal.className = 'ranking-modal';
+      document.body.appendChild(modal);
+    }
+    
+    if (!document.getElementById('ranking-modal-styles')) {
+      const style = document.createElement('style');
+      style.id = 'ranking-modal-styles';
+      style.textContent = `
+        .ranking-modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+        }
+        .ranking-modal.active {
+          opacity: 1;
+          visibility: visible;
+        }
+        .ranking-content {
+          background: #ffffff;
+          border-radius: 20px;
+          max-width: 90%;
+          width: 800px;
+          max-height: 85vh;
+          overflow-y: auto;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          animation: rankingSlideIn 0.3s ease;
+        }
+        @keyframes rankingSlideIn {
+          from { transform: translateY(-30px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .ranking-header {
+          background: linear-gradient(135deg, #111111, #2a2a2a);
+          color: #ffffff;
+          padding: 20px 24px;
+          border-radius: 20px 20px 0 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+        .ranking-header h2 {
+          margin: 0;
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .ranking-header h2::before {
+          content: "";
+          font-size: 1.6rem;
+        }
+        .ranking-close {
+          background: rgba(255, 255, 255, 0.2);
+          border: none;
+          color: #ffffff;
+          font-size: 24px;
+          cursor: pointer;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+        }
+        .ranking-close:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.05);
+        }
+        .ranking-stats {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 24px;
+          background: #f8fafc;
+          border-bottom: 1px solid #e5e7eb;
+        }
+        .ranking-stat-item {
+          text-align: center;
+          flex: 1;
+        }
+        .ranking-stat-label {
+          font-size: 0.85rem;
+          color: #6b7280;
+          margin-bottom: 4px;
+        }
+        .ranking-stat-value {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #111827;
+        }
+        .ranking-table-container {
+          padding: 20px 24px;
+          overflow-x: auto;
+        }
+        .ranking-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.9rem;
+        }
+        .ranking-table th {
+          text-align: left;
+          padding: 12px 16px;
+          background: #f3f4f6;
+          color: #374151;
+          font-weight: 700;
+          border-bottom: 2px solid #e5e7eb;
+        }
+        .ranking-table td {
+          padding: 12px 16px;
+          border-bottom: 1px solid #f0f0f0;
+          color: #1f2937;
+        }
+        .ranking-table tr:hover {
+          background: #f9fafb;
+        }
+        .ranking-rank {
+          font-weight: 700;
+          width: 60px;
+        }
+        .rank-1 { color: #f59e0b; font-size: 1.1rem; }
+        .rank-2 { color: #6b7280; }
+        .rank-3 { color: #b45309; }
+        .ranking-name { font-weight: 600; }
+        .ranking-score { font-weight: 700; color: #059669; text-align: center; }
+        .ranking-time { color: #6b7280; text-align: right; }
+        .empty-ranking {
+          text-align: center;
+          padding: 40px;
+          color: #9ca3af;
+        }
+        .empty-ranking-icon {
+          font-size: 3rem;
+          margin-bottom: 12px;
+        }
+        @media (max-width: 640px) {
+          .ranking-content { width: 95%; }
+          .ranking-table th, .ranking-table td { padding: 8px 10px; font-size: 0.8rem; }
+          .ranking-stats { flex-direction: column; gap: 12px; }
+          .ranking-stat-item { text-align: left; }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+    
+    const totalParticipants = rankings.length;
+    const avgScore = rankings.length > 0 
+      ? Math.round(rankings.reduce((sum, r) => sum + r.percentage, 0) / rankings.length)
+      : 0;
+    
+    let tableHtml = '';
+    if (rankings.length === 0) {
+      tableHtml = `
+        <div class="empty-ranking">
+          <div class="empty-ranking-icon">📊</div>
+          <p>Aún no hay participantes en el ranking</p>
+          <p style="font-size: 0.85rem;">¡Sé el primero en completar el quiz!</p>
+        </div>
+      `;
+    } else {
+      tableHtml = `
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Participante</th>
+              <th style="text-align: center">Puntaje</th>
+              <th style="text-align: right">Tiempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rankings.map((r, idx) => `
+              <tr>
+                <td class="ranking-rank ${idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : ''}">
+                  ${idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : idx + 1}
+                </td>
+                <td class="ranking-name">${escapeHtml(r.name)}</td>
+                <td class="ranking-score">${r.score}/${r.totalQuestions} (${r.percentage}%)</td>
+                <td class="ranking-time">${r.totalTimeFormatted || formatDuration(r.totalTimeMs)}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+    
+    modal.innerHTML = `
+      <div class="ranking-content">
+        <div class="ranking-header">
+          <h2>Ranking de Participantes</h2>
+          <button class="ranking-close" id="ranking-close-btn">✕</button>
+        </div>
+        <div class="ranking-stats">
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Participantes</div>
+            <div class="ranking-stat-value">${totalParticipants}</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Promedio general</div>
+            <div class="ranking-stat-value">${avgScore}%</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Mejor puntaje</div>
+            <div class="ranking-stat-value">${rankings[0] ? `${rankings[0].score}/${rankings[0].totalQuestions}` : '--'}</div>
+          </div>
+        </div>
+        <div class="ranking-table-container">
+          ${tableHtml}
+        </div>
+      </div>
+    `;
+    
+    modal.classList.add('active');
+    
+    const closeBtn = modal.querySelector('#ranking-close-btn');
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+  }
+
+  const externalRankingBtn = document.getElementById('ver-ranking-btn');
+  if (externalRankingBtn) {
+      externalRankingBtn.addEventListener('click', () => {
+          showRanking();
+      });
+  }
+  
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+  
   const scenarios = [
     { id:'mfa', key:'mfa', title:'Intento de autenticación — MFA', type:'notification', isPhishing:true, tipo:'Bypass de MFA / Push bombing', explicacion:'Se produce una omisión de la autenticación multifactor (MFA) cuando un atacante explota las vulnerabilidades de los controles de seguridad de MFA para obtener acceso no autorizado a una cuenta. En otras palabras, el atacante elude los pasos de verificación diseñados para proteger la identidad de los usuarios. Nunca apruebes si no iniciaste sesión.' },
     { id:'subdominio', key:'subdominio', title:'Correo con subdominio sospechoso', type:'email', isPhishing:true, tipo:'Spoofing de URL / subdominio', explicacion:'El secuestro de subdominios permite a los atacantes tomar el control de subdominios legítimos a través de registros DNS abandonados. Esto puede causar ataques de phishing y robo de credenciales. Para evitarlo, las empresas deben auditar sus registros DNS, eliminar entradas antiguas y reforzar la seguridad en la nube. El dominio principal no es paypal.com; el atacante usa subdominios para parecer legítimo.' , link:{ text:'Acceder a tu cuenta', url:'https://paypal.seguro-verificacion.com/login' } },
@@ -26,7 +389,8 @@
     scenarioStart: 0,
     totalStart: 0,
     totalEnd: 0,
-    timerId: null
+    timerId: null,
+    totalTimeMs: 0
   };
 
   function esc(s){
@@ -37,7 +401,7 @@
     const totalSeconds = Math.max(0, ms) / 1000;
     if (totalSeconds < 60) return `${totalSeconds.toFixed(1)} s`;
     const minutes = Math.floor(totalSeconds / 60);
-    const seconds = (totalSeconds % 60).toFixed(1).padStart(4, '0');
+    const seconds = (totalSeconds % 60).toFixed(1);
     return `${minutes} min ${seconds} s`;
   }
 
@@ -443,14 +807,18 @@
     });
   }
 
-  function showResults(){
+  async function showResults(){
     clearTimer();
     state.totalEnd = Date.now();
     const totalTime = state.totalEnd - state.totalStart;
+    state.totalTimeMs = totalTime;
+    
     if (quizCounter) quizCounter.style.display = 'none';
 
     const percent = Math.round((state.correct / scenarios.length) * 100);
     const avgTime = totalTime / scenarios.length;
+
+    await saveQuizResult(state.name, state.correct, scenarios.length, totalTime);
 
     container.innerHTML = `
       <div class="quiz-results-shell">
@@ -510,7 +878,8 @@
         <div class="results-actions">
           <button id="btn-restart" class="btn-inline">REINICIAR</button>
           <button id="btn-summary" class="btn-inline" style="background:#e0e0e0; color:#111;">VER EXPLICACIONES</button>
-          <a href="#" id="btn-ranking" class="btn-inline" style="text-decoration:none;">IR AL RANKING</a>
+          <button id="btn-ranking" class="btn-inline" style="text-decoration:none;">VER RANKING</button>
+          <button id="btn-exit" class="btn-inline" style="background:#a80000; color:#fff;">SALIR</button>
         </div>
 
         <div id="full-explanations" style="display:none; margin-top:16px;"></div>
@@ -533,7 +902,7 @@
     const rankingBtn = document.getElementById('btn-ranking');
     if(rankingBtn){
       rankingBtn.addEventListener('click', () => {
-        console.log("Ir al ranking próximamente...");
+        showRanking();
       });
     }
 
@@ -549,6 +918,14 @@
         </div>
       `).join('');
     });
+
+    const exitBtn = document.getElementById('btn-exit');
+    if (exitBtn) {
+        exitBtn.addEventListener('click', () => {
+            window.location.reload();
+        });
+    }
+    
   }
 
   function showConsentForm(){
@@ -591,6 +968,9 @@
       container.style.display = 'none';
       container.innerHTML = '';
       if(startBtn) startBtn.style.display = 'inline-block';
+      
+      const externalRankingBtn = document.getElementById('ver-ranking-btn');
+      if (externalRankingBtn) externalRankingBtn.style.display = ''; // o 'inline-block' según tu CSS
     });
 
     if(initBtn) initBtn.addEventListener('click', () => {
@@ -612,6 +992,8 @@
   }
 
   function startSimulation(){
+    const externalRankingBtn = document.getElementById('ver-ranking-btn');
+    if (externalRankingBtn) externalRankingBtn.style.display = 'none';
     state.index = 0;
     state.correct = 0;
     state.answered = 0;
@@ -623,6 +1005,8 @@
     if (quizCounter) quizCounter.style.display = 'none';
     renderScenario();
   }
+
+  initFirebase().catch(console.error);
 
   if(startBtn){
     startBtn.addEventListener('click', function(e){
