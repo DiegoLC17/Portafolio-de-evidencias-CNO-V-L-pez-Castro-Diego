@@ -1,5 +1,4 @@
 (function(){
-  //Configuración
   const firebaseConfig = {
     apiKey: "AIzaSyAPzm4fsGsbDyTm_xKwwXsaBTXFY4dX6-c",
     authDomain: "phishing-quiz-4c603.firebaseapp.com",
@@ -15,6 +14,7 @@
   let firebaseInitialized = false;
   let isAuthenticated = false;
 
+  
   async function initFirebase() {
     if (firebaseInitialized) return true;
     try {
@@ -38,6 +38,7 @@
     }
   }
 
+  
   async function saveQuizResult(name, score, totalQuestions, totalTimeMs) {
     if (!firebaseInitialized) {
       const ok = await initFirebase();
@@ -71,6 +72,7 @@
     }
   }
 
+  
   async function getRanking() {
     if (!firebaseInitialized) {
       await initFirebase();
@@ -113,6 +115,7 @@
       modal.className = 'ranking-modal';
       document.body.appendChild(modal);
     }
+    
     
     if (!document.getElementById('ranking-modal-styles')) {
       const style = document.createElement('style');
@@ -171,7 +174,7 @@
           gap: 10px;
         }
         .ranking-header h2::before {
-          content: "";
+          content: "🏆";
           font-size: 1.6rem;
         }
         .ranking-close {
@@ -198,10 +201,13 @@
           padding: 16px 24px;
           background: #f8fafc;
           border-bottom: 1px solid #e5e7eb;
+          flex-wrap: wrap;
+          gap: 12px;
         }
         .ranking-stat-item {
           text-align: center;
           flex: 1;
+          min-width: 100px;
         }
         .ranking-stat-label {
           font-size: 0.85rem;
@@ -260,16 +266,28 @@
         @media (max-width: 640px) {
           .ranking-content { width: 95%; }
           .ranking-table th, .ranking-table td { padding: 8px 10px; font-size: 0.8rem; }
-          .ranking-stats { flex-direction: column; gap: 12px; }
+          .ranking-stats { flex-direction: column; }
           .ranking-stat-item { text-align: left; }
         }
       `;
       document.head.appendChild(style);
     }
     
+    // Calcular estadísticas globales
     const totalParticipants = rankings.length;
     const avgScore = rankings.length > 0 
       ? Math.round(rankings.reduce((sum, r) => sum + r.percentage, 0) / rankings.length)
+      : 0;
+
+    // Estadísticas de tiempo
+    const avgTotalTime = rankings.length > 0
+      ? rankings.reduce((sum, r) => sum + r.totalTimeMs, 0) / rankings.length
+      : 0;
+    const fastestTime = rankings.length > 0
+      ? Math.min(...rankings.map(r => r.totalTimeMs))
+      : 0;
+    const slowestTime = rankings.length > 0
+      ? Math.max(...rankings.map(r => r.totalTimeMs))
       : 0;
     
     let tableHtml = '';
@@ -327,6 +345,18 @@
             <div class="ranking-stat-label">Mejor puntaje</div>
             <div class="ranking-stat-value">${rankings[0] ? `${rankings[0].score}/${rankings[0].totalQuestions}` : '--'}</div>
           </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Tiempo promedio</div>
+            <div class="ranking-stat-value">${formatDuration(avgTotalTime)}</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Tiempo más rápido</div>
+            <div class="ranking-stat-value">${formatDuration(fastestTime)}</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Tiempo más lento</div>
+            <div class="ranking-stat-value">${formatDuration(slowestTime)}</div>
+          </div>
         </div>
         <div class="ranking-table-container">
           ${tableHtml}
@@ -345,13 +375,6 @@
     });
   }
 
-  const externalRankingBtn = document.getElementById('ver-ranking-btn');
-  if (externalRankingBtn) {
-      externalRankingBtn.addEventListener('click', () => {
-          showRanking();
-      });
-  }
-  
   function escapeHtml(str) {
     if (!str) return '';
     return str.replace(/[&<>]/g, function(m) {
@@ -925,7 +948,6 @@
             window.location.reload();
         });
     }
-    
   }
 
   function showConsentForm(){
@@ -970,7 +992,7 @@
       if(startBtn) startBtn.style.display = 'inline-block';
       
       const externalRankingBtn = document.getElementById('ver-ranking-btn');
-      if (externalRankingBtn) externalRankingBtn.style.display = ''; // o 'inline-block' según tu CSS
+      if (externalRankingBtn) externalRankingBtn.style.display = '';
     });
 
     if(initBtn) initBtn.addEventListener('click', () => {
@@ -1016,5 +1038,12 @@
     });
   } else {
     showConsentForm();
+  }
+
+  const externalRankingBtn = document.getElementById('ver-ranking-btn');
+  if (externalRankingBtn) {
+    externalRankingBtn.addEventListener('click', () => {
+      showRanking();
+    });
   }
 })();
