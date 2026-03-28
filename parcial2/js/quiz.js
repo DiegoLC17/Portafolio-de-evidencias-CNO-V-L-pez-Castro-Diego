@@ -14,7 +14,6 @@
   let firebaseInitialized = false;
   let isAuthenticated = false;
 
-  
   async function initFirebase() {
     if (firebaseInitialized) return true;
     try {
@@ -38,8 +37,7 @@
     }
   }
 
-  
-  async function saveQuizResult(name, score, totalQuestions, totalTimeMs) {
+  async function saveQuizResult(name, score, totalQuestions, totalTimeMs, scenarioTimes) {
     if (!firebaseInitialized) {
       const ok = await initFirebase();
       if (!ok) return false;
@@ -59,6 +57,7 @@
         percentage: Math.round((score / totalQuestions) * 100),
         totalTimeMs: totalTimeMs,
         totalTimeFormatted: formatDuration(totalTimeMs),
+        scenarioTimes: scenarioTimes,
         timestamp: Timestamp.now(),
         createdAt: new Date().toISOString()
       };
@@ -72,7 +71,6 @@
     }
   }
 
-  
   async function getRanking() {
     if (!firebaseInitialized) {
       await initFirebase();
@@ -115,7 +113,6 @@
       modal.className = 'ranking-modal';
       document.body.appendChild(modal);
     }
-    
     
     if (!document.getElementById('ranking-modal-styles')) {
       const style = document.createElement('style');
@@ -197,17 +194,17 @@
         }
         .ranking-stats {
           display: flex;
+          flex-wrap: wrap;
           justify-content: space-between;
           padding: 16px 24px;
           background: #f8fafc;
           border-bottom: 1px solid #e5e7eb;
-          flex-wrap: wrap;
           gap: 12px;
         }
         .ranking-stat-item {
           text-align: center;
           flex: 1;
-          min-width: 100px;
+          min-width: 140px;
         }
         .ranking-stat-label {
           font-size: 0.85rem;
@@ -215,9 +212,12 @@
           margin-bottom: 4px;
         }
         .ranking-stat-value {
-          font-size: 1.25rem;
+          font-size: 1rem;
           font-weight: 700;
           color: #111827;
+        }
+        .ranking-stat-value.small {
+          font-size: 0.9rem;
         }
         .ranking-table-container {
           padding: 20px 24px;
@@ -273,13 +273,11 @@
       document.head.appendChild(style);
     }
     
-    // Calcular estadísticas globales
     const totalParticipants = rankings.length;
     const avgScore = rankings.length > 0 
       ? Math.round(rankings.reduce((sum, r) => sum + r.percentage, 0) / rankings.length)
       : 0;
-
-    // Estadísticas de tiempo
+    
     const avgTotalTime = rankings.length > 0
       ? rankings.reduce((sum, r) => sum + r.totalTimeMs, 0) / rankings.length
       : 0;
@@ -289,6 +287,37 @@
     const slowestTime = rankings.length > 0
       ? Math.max(...rankings.map(r => r.totalTimeMs))
       : 0;
+    
+    let scenarioStats = {};
+    let scenarioCount = 0;
+    
+    if (rankings.length > 0) {
+      rankings.forEach(r => {
+        if (r.scenarioTimes && Array.isArray(r.scenarioTimes)) {
+          r.scenarioTimes.forEach(s => {
+            if (!scenarioStats[s.title]) {
+              scenarioStats[s.title] = { total: 0, correct: 0 };
+            }
+            scenarioStats[s.title].total++;
+            if (s.correct) scenarioStats[s.title].correct++;
+          });
+          if (r.scenarioTimes.length > scenarioCount) scenarioCount = r.scenarioTimes.length;
+        }
+      });
+    }
+    
+    let mostFailed = { title: null, percentage: 100 };
+    let mostSuccessful = { title: null, percentage: 0 };
+    
+    for (const [title, stats] of Object.entries(scenarioStats)) {
+      const percentCorrect = (stats.correct / stats.total) * 100;
+      if (percentCorrect < mostFailed.percentage) {
+        mostFailed = { title, percentage: percentCorrect };
+      }
+      if (percentCorrect > mostSuccessful.percentage) {
+        mostSuccessful = { title, percentage: percentCorrect };
+      }
+    }
     
     let tableHtml = '';
     if (rankings.length === 0) {
@@ -308,8 +337,7 @@
               <th>Participante</th>
               <th style="text-align: center">Puntaje</th>
               <th style="text-align: right">Tiempo</th>
-            </tr>
-          </thead>
+            </thead>
           <tbody>
             ${rankings.map((r, idx) => `
               <tr>
@@ -356,6 +384,14 @@
           <div class="ranking-stat-item">
             <div class="ranking-stat-label">Tiempo más lento</div>
             <div class="ranking-stat-value">${formatDuration(slowestTime)}</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Escenario más fallado</div>
+            <div class="ranking-stat-value small">${mostFailed.title ? `${escapeHtml(mostFailed.title)} (${Math.round(mostFailed.percentage)}% aciertos)` : '---'}</div>
+          </div>
+          <div class="ranking-stat-item">
+            <div class="ranking-stat-label">Escenario mejor acertado</div>
+            <div class="ranking-stat-value small">${mostSuccessful.title ? `${escapeHtml(mostSuccessful.title)} (${Math.round(mostSuccessful.percentage)}% aciertos)` : '---'}</div>
           </div>
         </div>
         <div class="ranking-table-container">
@@ -841,7 +877,7 @@
     const percent = Math.round((state.correct / scenarios.length) * 100);
     const avgTime = totalTime / scenarios.length;
 
-    await saveQuizResult(state.name, state.correct, scenarios.length, totalTime);
+    await saveQuizResult(state.name, state.correct, scenarios.length, totalTime, state.scenarioTimes);
 
     container.innerHTML = `
       <div class="quiz-results-shell">
