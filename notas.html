@@ -113,14 +113,20 @@
     <section class="seccion">
         <h1 class="seccion-titulo">NOTAS</h1>
 
-        <div class="seccion-contenido izquierda seccion-centrada">
-            <div class="seccion-texto">
-                <p>
-                    <b>CONTENIDO</b><br>
-                    En este apartado se mostrarán las actividades correspondientes a dicha sección.
-                </p>
+        <div class="acordeon-actividades">
+            <div class="acordeon-item">
+                <button class="acordeon-titulo">PR03 - Post-explotación y reportes de seguridad</button>
+                <div class="acordeon-contenido">
+
+                    <div class="actividad-card">
+                        <a href="parcial3/ransomware_p3.html">
+                            PR01: Anatomía del ransomware
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
     </section>
 </main>
 
@@ -141,7 +147,38 @@
 </footer>
 
 <script src="js/funciones.js"></script>
+<script src="js/funciones.js"></script>
+<script src="js/funciones.js"></script>
+<script>
+    const acordeonTitulos = document.querySelectorAll(".acordeon-titulo");
 
+    acordeonTitulos.forEach(titulo => {
+        titulo.addEventListener("click", function () {
+
+            const contenido = this.nextElementSibling;
+
+            if (contenido.classList.contains("activo")) {
+                contenido.style.maxHeight = null;
+                contenido.classList.remove("activo");
+            } else {
+
+                // Cerrar otros parciales si quieres comportamiento tipo acordeón clásico
+                document.querySelectorAll(".acordeon-contenido").forEach(item => {
+                    item.style.maxHeight = null;
+                    item.classList.remove("activo");
+                });
+
+                contenido.classList.add("activo");
+                contenido.style.maxHeight = contenido.scrollHeight + "px";
+            }
+        });
+    });
+    window.addEventListener("resize", function () {
+        document.querySelectorAll(".acordeon-contenido.activo").forEach(contenido => {
+            contenido.style.maxHeight = contenido.scrollHeight + "px";
+        });
+    });
+</script>
 </body>
 </html>
 

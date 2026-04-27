@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomía de un ransomware</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="icon" type="image/png" href="../img/icono.png">
+
+  <style>
+    .sangria-francesa {
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+
+    pre.codigo {
+      background: #111;
+      color: #fff;
+      padding: 16px;
+      border-radius: 14px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-top: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+    }
+
+    .img-actividad {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .img-actividad img {
+      width: 100%;
+      max-width: 850px;
+      border-radius: 16px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.20);
+    }
+
+    .img-actividad p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../road_to_hall_of_fame.html" data-tooltip="ROAD TO HALL OF FAME">
+                        <span class="icono">
+                            <img src="../img/rthof.png" alt="ROAD TO HALL OF FAME">
+                        </span>
+                        <span class="texto">ROAD TO HALL OF FAME</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+  <section class="articulo-tecnico">
+
+    <h1 class="seccion-titulo">ACTIVIDAD 00</h1>
+
+    <div class="articulo-header">
+      <h1>Anatomía de un ransomware</h1>
+      <p class="articulo-subtitulo">
+        Notas
+      </p>
+    </div>
+
+
+    <article class="articulo-bloque">
+      <h2>Datos Generales</h2>
+
+      <p>
+        <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+        <b>Materia:</b> CNO V – Seguridad Informática <br>
+        <b>Estudiante:</b> López Castro Diego – 182032 <br>
+        <b>Profesor:</b> Mtro. Servando López Contreras <br>
+        <b>Fecha de entrega:</b> 01 – Mayo – 2026
+      </p>
+    </article>
+
+
+    <article class="articulo-bloque">
+      <h2>¿Qué es un <b>ransomware</b>?</h2>
+      <p>
+        Es un tipo de malware que está diseñado para mantener
+        cautivo un sistema computacional o los datos
+        que contiene hasta que se realice un pago. El
+        ransomware generalmente funciona
+        <b>cifrando sus datos</b> para que no pueda
+        acceder a ellos.<br>
+        Algunas otras versiones de ransomware
+        pueden aprovechar vulnerabilidades
+        específicas del sistema para bloquearlo. El
+        ransomware a menudo se propaga a través
+        de correos electrónicos de phishing que lo
+        alientan a descargar un archivo adjunto
+        malicioso o a través de una vulnerabilidad.
+      </p><br>
+
+    </article>
+
+    <article class="articulo-bloque">
+      <h2>Anatomía de un <b>ransomware</b></h2>
+
+      <h3>01. Punto de entrada</h3>
+      <p>
+        Es la parte donde inicia el programa: importa librerías,
+        define variables globales y llama a la función principal.
+      </p><br>
+
+      <article class="articulo-bloque">
+        <div class="articulo-imagen">
+            <img src="../img/librerias.png" alt="Descripción de la imagen">
+        </div>
+    </article>
+      
+      <h3>02. Configuración inicial</h3>
+      <p>
+        Suelen declararse rutas, extensiones objetivo, nombres de archivo, notas de rescate, exclusiones o banderas internas.
+      </p><br>
+
+      <pre class="codigo">
+        CONFIG = {
+                "target_extensiones": [
+                  ".mp3", ".WAV", ".AIFF", ".FLAC", ".ALAC", ".APE", ".OGG", ".WMA", ".OPUS",".M4A", ".acc", ".amr" ".au", ".snd", ".mid", ".midi", ".ra", ".rm", ".3gp", ".caf"
+                ],
+                "excluded_paths": [
+                  "C:\Users\[NombreDeUsuario]\Music",
+                  "C:\Users\[NombreDeUsuario]\Albums",
+                  "C:\Users\[NombreDeUsuario]\Artist",
+                  "C:\Users\[NombreDeUsuario]\New_releases",
+                  "/Users/[NombreDeUsuario]/Music",
+                  "/Users/[NombreDeUsuario]/Albums",
+                  "/Users/[NombreDeUsuario]/Artist",
+                  "/Users/[NombreDeUsuario]/New_releases",
+                  "/home/[NombreDeUsuario]/Music",
+                  "/home/[NombreDeUsuario]/Artist",
+                  "/home/[NombreDeUsuario]/Artist",
+                  "/storage/emulated/0/Music",
+                  "/storage/emulated/0/Artist",
+                  "/storage/emulated/0/New_releases",
+                ],
+                "note_name": "Zabójca Starych Dam",
+                "marker": "start tidal://"
+              }
+      </pre><br>
+
+      <h3>03. Validación del entorno</h3>
+      <p>
+        Muchos códigos maliciosos revisan si están
+        siendo analizados o si el entorno no les
+        conviene.
+      </p><br>
+      <pre class="codigo">
+        def check_enviroment():
+          Imports Microsoft.Win32
+
+          Module StartupModule
+            Sub SetStartup(ByVal enable As Boolean)
+              ' Abrir la llave del registro para el usuario actual
+              Dim rk As RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True)
+
+              If enable Then
+                ' "MiAppVB" es el nombre que verá el sistema
+                ' Application.ExecutablePath obtiene la ruta del .exe actual
+                rk.SetValue("MiAppVB", Application.ExecutablePath)
+              Else
+                ' Eliminar la entrada si el usuario decide desactivarlo
+                rk.DeleteValue("MiAppVB", False)
+              End If
+            End Sub
+          End Module
+      </pre><br>
+
+      <h3>04. Persistencia</h3>
+      <p>
+        Bloque destinado a que el programa sobreviva a reinicios o vuelva a ejecutarse.
+      </p><br>
+      <pre class="codigo">
+        def establish_persistence():
+          <'warning:modificar_inicio_automatico'>
+          <'warning:copiarse_a_ruta_persistente'>
+          <'warning:crear_tarea_programada'>
+      </pre><br>
+
+      <h3>05. Descubrimiento de archivos y rutas</h3>
+      <p>
+        El ransomware necesita localizar los archivos que le interesan.
+      </p><br>
+      <pre class="codigo">
+        def discover_files(base_path):
+            files_found = []
+            for item in <'warning:recorrer_directorios>:
+              if <'warning:extension_objetivo> and not <'warning:ruta_excluida>:
+                files_found.append(item)
+            return files_found
+      </pre><br>
+
+      <h3>06. Preparación criptográfica</h3>
+      <p>
+        Cómo genera, obtiene o maneja claves.
+      </p><br>
+      <pre class="codigo">
+        def setup_crypto():
+            <'warning:generar_clave>
+            <'warning:proteger_clave>
+            <'warning:almacenar_o_transmitir_material_criptografico>
+      </pre><br>
+
+      <h3>07. Encriptación</h3>
+      <pre class="codigo">
+        def process_file(file_path, crypto_context):
+            data = <'warning:leer_archivo>
+            tranformed_data = <'warning:aplicar_transformacion_criptografia>
+            <'warning:sobrescribir_o_guardar_nueva_version>
+            <'warning:renombrar_archivo_en_disco>
+      </pre><br>
+
+      <h3>08. Manejo de nombres y extensiones</h3>
+      <pre class="codigo">
+        def rename_artifact(file_path):
+            new_name = file_path + "<'warning:nueva_extension>"
+            <'warning:renombrar_archivo_en_disco>
+      </pre><br>
+    </article>
+
+    <!-- VIDEO YOUTUBE -->
+      <article class="articulo-bloque">
+          <h2>Video</h2>
+
+          <div class="video-responsive">
+              <iframe width="1356" height="763" src="https://www.youtube.com/watch?v=RQA2mxkfXis" title="La CAÍDA del MAYOR TRAFICANTE de la Dark Web | OxyMonster" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </article>
+
+    <article class="articulo-bloque">
+      <h2>Referencias</h2>
+
+      <p class="sangria-francesa">
+        Lord Draugr. (02 de mayo de 2024). <i>La CAÍDA del MAYOR TRAFICANTE de la Dark Web | OxyMonster</i>. Obtenido de YouTube: <a href="https://www.youtube.com/watch?v=RQA2mxkfXis" target="_blank">https://www.youtube.com/watch?v=RQA2mxkfXis</a>
+      </p>
+    </article>
+
+  </section>
+
+  <div style="margin-top: 35px; text-align: center;">
+    <a href="Notas/anatomía_ransomware.txt" class="btn-exportar" target="_blank">
+      Exportar TXT
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>© 2026 Diego López Castro</p>
+      <p>Portafolio de evidencias</p>
+    </div>
+
+    <div class="footer-right">
+      <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+</html>
