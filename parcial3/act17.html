@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 17</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <style>
+        .sangria-francesa {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .vector-cvss {
+            background-color: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-left: 4px solid #4caf50;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 17px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="header-titulos">
+
+            <div class="header-imagen">
+                <img src="../img/foto.png" alt="Imagen del portafolio">
+            </div>
+
+            <div class="header-textos">
+                <div class="header-fijo">
+                    <h1>Diego López Castro<br><b>A.K.A. NotOctopus</b></h1>
+                </div>
+
+                <div class="header-animaciones">
+
+                    <div class="header-texto activo">
+                        <h2>CNO V – Seguridad Informática</h2>
+                        <h3>Universidad Politécnica de San Luis Potosí</h3>
+                        <h4>Octavo semestre | Primavera 2026</h4>
+                    </div>
+
+                    <div class="header-texto">
+                        <h2>Portafolio de Evidencias</h2>
+                        <h3>182032@upslp.edu.mx</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html" data-tooltip="Inicio">
+                        <span class="icono">
+                            <img src="../img/inicio.png" alt="Inicio">
+                        </span>
+                        <span class="texto">INICIO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../notas.html" data-tooltip="Notas">
+                        <span class="icono">
+                            <img src="../img/notas.png" alt="Notas">
+                        </span>
+                        <span class="texto">NOTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../actividades.html" data-tooltip="Actividades">
+                        <span class="icono">
+                            <img src="../img/actividades.png" alt="Actividades">
+                        </span>
+                        <span class="texto">ACTIVIDADES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../herramientas.html" data-tooltip="Herramientas">
+                        <span class="icono">
+                            <img src="../img/herramientas.png" alt="Herramientas">
+                        </span>
+                        <span class="texto">HERRAMIENTAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../proyectos.html" data-tooltip="Proyectos">
+                        <span class="icono">
+                            <img src="../img/proyectos.png" alt="Proyectos">
+                        </span>
+                        <span class="texto">PROYECTOS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../certificaciones.html" data-tooltip="Certificaciones">
+                        <span class="icono">
+                            <img src="../img/certificaciones.png" alt="Certificaciones">
+                        </span>
+                        <span class="texto">CERTIFICACIONES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../road_to_hall_of_fame.html" data-tooltip="ROAD TO HALL OF FAME">
+                        <span class="icono">
+                            <img src="../img/rthof.png" alt="ROAD TO HALL OF FAME">
+                        </span>
+                        <span class="texto">ROAD TO HALL OF FAME</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="contenido-principal">
+
+    <section class="articulo-tecnico">
+        <h1 class="seccion-titulo">ACTIVIDAD 17</h1>
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="articulo-header">
+            <h1>Evaluación de Vulnerabilidades con CVSS v3.1.</h1>
+        </div>
+
+         <article class="articulo-bloque">
+            <h2>Datos Generales</h2>
+
+            <p>
+                <b>Institución:</b> Universidad Politécnica de San Luis Potosí <br>
+                <b>Materia:</b> CNO V – Seguridad Informática <br>
+                <b>Equipo:</b><br>
+                    Ávalos Rangel Hazel Mario – 181801<br>
+                    Cabrera Meza Jorge Alejandro – 181591<br>
+                    González Delgado Ángel Josué – 182837<br>
+                    López Castro Diego – 182032<br>
+                    López Monsiváis Jorge Emmanuel – 179842<br>
+                <b>Profesor:</b> Mtro. Servando López Contreras <br>
+                <b>Fecha de entrega:</b> 15 – Mayo – 2026
+            </p>
+        </article>
+
+        <!-- INTRODUCCIÓN -->
+        <article class="articulo-bloque">
+            <h2>Introducción</h2>
+            <p>
+                La evaluación de vulnerabilidades es una actividad esencial dentro de la gestión de
+                riesgos, ya que permite traducir hallazgos técnicos en criterios claros de prioridad
+                para la toma de decisiones. En ese proceso, el Common Vulnerability Scoring
+                System versión 3.1 (CVSS v3.1) funciona como un marco estandarizado para
+                describir la severidad de una vulnerabilidad mediante métricas comparables entre
+                distintos productos, entornos y organizaciones. Su principal valor consiste en
+                ofrecer una puntuación base reproducible y una representación compacta en forma
+                de vector.<br>
+                A diferencia de una valoración meramente intuitiva, CVSS v3.1 separa las
+                características intrínsecas de la vulnerabilidad en tres grupos de métricas: Base,
+                Temporal y Ambiental. Para esta actividad se trabaja principalmente con el grupo
+                Base, porque el escenario proporciona la información necesaria para construir el
+                vector y obtener la puntuación inicial. A partir de esa puntuación es posible
+                interpretar la gravedad del caso, ubicarlo en una categoría cualitativa y justificar qué
+                tan urgente debe ser su mitigación dentro de una organización.
+            </p>
+        </article>
+
+        <!-- CONTEXTO -->
+        <article class="articulo-bloque">
+            <h2>Marco Teórico</h2>
+            <p>
+                <h3>2.1 CVSS v3.1 como marco de evaluación</h3><br>
+                CVSS es un marco abierto para comunicar las características y la severidad de
+                vulnerabilidades de software, hardware y firmware. De acuerdo con la especificación
+                oficial, su diseño se basa en tres grupos de métricas: Base, Temporal y Ambiental.
+                El grupo Base refleja las cualidades intrínsecas de la vulnerabilidad y permanece
+                constante en el tiempo y entre distintos entornos; el grupo Temporal ajusta la
+                severidad conforme cambian factores como la disponibilidad de código de
+                explotación; y el grupo Ambiental adapta la valoración al contexto específico de una
+                organización.<br>
+                La utilidad de CVSS no se limita a generar una cifra. También permite representar
+                la evaluación mediante una cadena vector, que resume en formato compacto los
+                valores asignados a cada métrica. Este enfoque facilita la comunicación técnica, la
+                comparación entre vulnerabilidades y la priorización de acciones correctivas,
+                especialmente cuando varias debilidades compiten por atención.<br><br>
+                
+                <h3>2.2 Métricas base utilizadas en la actividad</h3><br>
+                <b>Attack Vector (AV):</b> AV:N indica que la vulnerabilidad puede explotarse a través de
+                la red, sin requerir acceso físico al equipo vulnerable.<br>
+                <b>Attack Complexity (AC):</b> AC:L significa que la explotación no exige condiciones
+                especiales o pasos excepcionales; el ataque es relativamente sencillo de ejecutar.<br>
+                <b>Privileges Required (PR):</b> PR:H indica que el atacante necesita privilegios
+                elevados antes de explotar la vulnerabilidad, lo que reduce la facilidad del ataque.<br>
+                <b>User Interaction (UI):</b> UI:N señala que no se requiere interacción del usuario para
+                que la explotación tenga éxito.<br>
+                <b>Scope (S):</b> S:U indica que el impacto permanece dentro del mismo ámbito de
+                seguridad del componente vulnerable, sin cruzar a una autoridad de seguridad
+                distinta.
+                <b>Confidentiality, Integrity and Availability (C/I/A):</b> C:L, I:L y A:L representan
+                impactos bajos sobre confidencialidad, integridad y disponibilidad, respectivamente.<br><br>
+
+                <h3>2.3 Vector y escala cualitativa</h3><br>
+                La combinación de las métricas base produce una cadena vector, que en este caso
+                queda expresada como CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L. La
+                especificación oficial establece que la puntuación base oscila entre 0 y 10, y que
+                puede traducirse a una escala cualitativa: Low (0.1 - 3.9), Medium (4.0 - 6.9), High
+                (7.0 - 8.9) y Critical (9.0 - 10.0). Esta clasificación es útil para priorizar la atención
+                operativa, aunque siempre debe complementarse con el contexto organizacional.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>Actividad</h2>
+            <p>
+                <h3>Escenario</h3><br>
+                Una organización detecta una vulnerabilidad en un sistema web interno con las
+                siguientes características:<br>
+                1. Puede explotarse a través de la red.<br>
+                2. La explotación requiere baja complejidad.<br>
+                3. Se necesitan privilegios elevados.<br>
+                4. No requiere interacción del usuario.<br>
+                5. No cambia el alcance.<br>
+                6. El impacto en:<br><br>
+                <p style="text-indent: 30px;">
+                    1. Confidencialidad: Bajo.<br>
+                </p>
+                <p style="text-indent: 30px;">
+                    2. Integridad: Bajo.<br>
+                </p>
+                <p style="text-indent: 30px;">
+                    3. Disponibilidad: Bajo.<br>
+                </p>
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>01. Construcción del Vector CVSS</h2>
+            <p>
+                Con base en las características del escenario, se construyó el siguiente vector CVSS:<br>
+            </p>
+            <p>
+                <b>01.1 Puede explotarse a través de la red.</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_01.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            <br><br>
+
+            <p>
+                <b>01.02 La explotación requiere baja complejidad.</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_02.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+
+            <p>
+                <b>01.03 Se necesitan privilegios elevados</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_03.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+
+            <p>
+                <b>01.04 No requiere interacción del usuario</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_04.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+
+            <p>
+                <b>01.5 No cambia el alcance</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_05.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+
+            <p>
+                <b>01.6 El impacto en:</b><br><br>
+            </p>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_06.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_07.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_08.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+            
+            <p>
+               La Cadena/vector construida en base a la información y con ayuda a la calculadora oficial:</b><br><br>
+            </p>
+            <div class="vector-cvss">
+                CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+            </div>
+        </article>
+        
+        <article class="articulo-bloque">
+            <h2>02. Interpretación técnica</h2>
+            <p>
+                A pesar de que la vulnerabilidad requiere privilegios elevados (PR:H), continúa
+                siendo relevante porque puede explotarse remotamente a través de la red (AV:N) y
+                con baja complejidad (AC:L), lo que significa que un atacante que ya haya obtenido
+                acceso privilegiado mediante robo de credenciales, escalamiento previo o cuentas
+                comprometidas podría explotarla fácilmente sin necesidad de interacción del
+                usuario (UI:N). Esto incrementa el riesgo dentro de entornos corporativos donde
+                existen múltiples cuentas administrativas o donde un atacante ya logró una intrusión
+                inicial. El tipo de atacante que podría explotarla corresponde principalmente a un
+                actor con conocimientos técnicos intermedios o avanzados, como ciberdelincuentes
+                organizados, insiders maliciosos o grupos APT que ya posean acceso privilegiado
+                dentro de la infraestructura. El hecho de que el alcance permanezca sin cambios
+                (S:U) indica que la vulnerabilidad sólo afecta recursos dentro del mismo ámbito de
+                seguridad comprometido y no permite expandir privilegios hacia otros dominios o
+                sistemas externos. Finalmente, que el impacto en confidencialidad, integridad y
+                disponibilidad sea bajo (C:L/I:L/A:L) significa que la explotación produce
+                afectaciones limitadas: el atacante podría acceder parcialmente a información,
+                modificar algunos datos o provocar pequeñas interrupciones del servicio, pero sin
+                comprometer completamente el sistema ni generar daños críticos a la operación.
+            </p>
+        </article>
+
+        <article class="articulo-bloque">
+            <h2>03. Cálculo de puntuación</h2>
+            <p>
+                Accede a la calculadora oficial y responde:<br><br>
+                <b>A) ¿Cuál es la puntuación base?</b><br><br>
+                La puntuación base, considerando la información proporcionada con anterioridad y
+                con apoyo de la calculadora oficial CVSS v3.1, fue de <b>4.7</b>.
+            </p>
+
+            <article class="articulo-bloque">
+                <div class="articulo-imagen">
+                    <img src="img/17_09.png" alt="Descripción de la imagen">
+                </div>
+            </article>
+
+            <p>
+                <b>B) ¿En qué categoría cae?</b><br><br>
+                • Baja (0.1 - 3.9)<br>
+                • Media (4.0 – 6.9)<br>
+                • Alta (7.0 – 8.9)<br>
+                • Crítica (9.0 - 10)<br><br>
+                El vector CVSS calculado se considera de categoría MEDIA, esto según la escala
+                según la escala CVSS v3.1
+            </p>
+        </article>
+
+        <!-- CONCLUSIONES -->
+        <article class="articulo-bloque">
+            <h2>Conclusión y reflexión técnica del estudiante</h2>
+            <p>
+                El uso de CVSS v3.1 en este escenario permite transformar una descripción técnica
+                de la vulnerabilidad en un criterio de severidad claro y comparable. La construcción
+                del vector mostró que, aunque el impacto sobre confidencialidad, integridad y
+                disponibilidad es bajo, la explotación remota y la ausencia de interacción del usuario
+                representan condiciones que siguen justificando atención prioritaria. El requisito de
+                privilegios elevados reduce el potencial de explotación, pero no elimina el riesgo.
+                La puntuación base obtenida, 4.7, ubica la vulnerabilidad en la categoría Media, por
+                lo que su corrección no debería postergarse indefinidamente, especialmente si
+                afecta un sistema web interno con valor operativo para la organización. En términos
+                de gestión, este resultado demuestra que CVSS no sólo sirve para clasificar
+                vulnerabilidades, sino también para sustentar decisiones de mitigación con un
+                lenguaje técnico estandarizado. Para una priorización más precisa, la valoración
+                base debe complementarse con métricas temporales y ambientales que reflejen las
+                condiciones reales del entorno.
+            </p>
+        </article>
+
+        <!-- VIDEO YOUTUBE -->
+        <article class="articulo-bloque">
+            <h2>Video</h2>
+
+            <div class="video-responsive">
+                <!-- SOLO CAMBIA EL ENLACE DENTRO DE src -->
+                <iframe width="1356" height="763" src="https://youtu.be/eV09GkxB6gk" title="How Vulnerability Scores Actually Work (CVSS Explained) - by Technology Interpreters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="pie-imagen">
+                <br>How Vulnerability Scores Actually Work (CVSS Explained) - by Technology Interpreters
+            </p>
+        </article>
+
+        <!-- REFERENCIAS -->
+        <article class="articulo-bloque">
+            <h2>Referencias técnicas</h2>
+            <p class="sangria-francesa">
+                FIRST.Org, Inc. (2026). Common Vulnerability Scoring System version 3.1
+                Specification Document. 
+                <a href="https://www.first.org/cvss/v3.1/specification-document"  target="_blank">https://www.first.org/cvss/v3.1/specification-document</a>
+            </p>
+
+            <p class="sangria-francesa">
+                NIST. (08 de abril de 2026). National Vulnerability Database (NVD). <a href="https://www.nist.gov/programs-projects/national-vulnerability-database-nvd"  target="_blank">https://www.nist.gov/programs-projects/national-vulnerability-database-nvd</a>
+            </p>
+
+            <p class="sangria-francesa">
+                NIST. (2026). CVSS v3 Calculator. 
+                <a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"  target="_blank">https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator</a>
+            </p>
+        </article>
+
+    </section>
+
+        <!-- BOTÓN EXPORTAR PDF -->
+    <div class="contenedor-boton-pdf">
+        <a href="pdf/act17-Equipo02.pdf" target="_blank" class="btn-exportar">
+            Exportar PDF
+        </a>
+    </div>
+</main>
+
+
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-left">
+            <p>© 2026 Diego López Castro</p>
+            <p>Portafolio de evidencias</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Sitio certificado con <b>SSL</b> por <b>GitHub Pages</b></p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../js/funciones.js"></script>
+
+</body>
+
+</html>
